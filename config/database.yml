@@ -15,7 +15,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: tomoyuki
   password: '1234'
-  
+
   host: localhost
 
 development:
@@ -49,5 +49,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
-  encoding: unicode
+  adapter: pg
+  database: db/production.pg
