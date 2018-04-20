@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
+  username: tomoyuki
+  password: '1234'
   host: localhost
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: el-training_production
-  username: el-training
-  password: <%= ENV['EL-TRAINING_DATABASE_PASSWORD'] %>
+  username: tomoyuki
+  password: '1234'
