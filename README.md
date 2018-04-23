@@ -1,24 +1,8 @@
-# README
+# モデル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![database](https://user-images.githubusercontent.com/1773413/39032673-7f2d9f0e-44a9-11e8-82cb-e864ce463e04.png)
 
-Things you may want to cover:
+# UI
 
-* Ruby version
+![img_20180420_141428](https://user-images.githubusercontent.com/1773413/39032776-f889b1e4-44a9-11e8-9923-0d9cb3f0ffd2.jpg)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
