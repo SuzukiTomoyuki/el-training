@@ -1,6 +1,6 @@
 # モデル
 
-![database](https://user-images.githubusercontent.com/1773413/39032673-7f2d9f0e-44a9-11e8-82cb-e864ce463e04.png)
+![database-2](https://user-images.githubusercontent.com/1773413/39116074-731af348-471e-11e8-97ca-08928b31d69f.png)
 
 # UI
 
