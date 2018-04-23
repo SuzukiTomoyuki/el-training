@@ -39,7 +39,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # NOTE: View handlerの設定で使用されるのでどの環境でも必要
-# gem 'slim'
+gem 'slim'
 #
 # ステートマシン
 gem 'aasm'
@@ -48,6 +48,9 @@ gem 'aasm'
 gem 'kaminari'
 
 gem 'bootstrap-sass', '~> 3.3.6'
+
+# erbをスリムに変換
+gem 'html2slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
