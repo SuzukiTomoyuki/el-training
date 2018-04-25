@@ -1,8 +1,24 @@
 h1
   | 俺の仕事一覧
-dl
-- @task_list.each do |task|
-  = task.caption
-  br
+table
+  thead
+    tr
+      th 仕事
+      th 優先度
+      th 状態
+      th 締め切り
+      th 付箋
+      th colspan="2" 編集
+
+  tbody
+    - @task_list.each do |task|
+      tr
+        td = task.caption
+        td = task.priority
+        td = task.state
+        td = task.deadline
+        td = task.label
+        td = link_to '削除', tasks_list_path(task.id), method: :delete
+        / td = link_to '編集', :controller => "tasks_list", :action => :update
 p
   = link_to "新しき喜び", :controller => "tasks_list", :action => :new
