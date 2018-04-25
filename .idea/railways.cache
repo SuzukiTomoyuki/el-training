@@ -1,0 +1,10 @@
+          Prefix Verb   URI Pattern                    Controller#Action
+                 GET    /                              tasks_list#index
+tasks_list_index GET    /tasks_list(.:format)          tasks_list#index
+                 POST   /tasks_list(.:format)          tasks_list#create
+  new_tasks_list GET    /tasks_list/new(.:format)      tasks_list#new
+ edit_tasks_list GET    /tasks_list/:id/edit(.:format) tasks_list#edit
+      tasks_list GET    /tasks_list/:id(.:format)      tasks_list#show
+                 PATCH  /tasks_list/:id(.:format)      tasks_list#update
+                 PUT    /tasks_list/:id(.:format)      tasks_list#update
+                 DELETE /tasks_list/:id(.:format)      tasks_list#destroy
