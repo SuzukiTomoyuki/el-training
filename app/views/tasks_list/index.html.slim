@@ -19,6 +19,6 @@ table
         td = task.deadline
         td = task.label
         td = link_to '削除', tasks_list_path(task.id), method: :delete
-        / td = link_to '編集', :controller => "tasks_list", :action => :update
+        td = link_to '編集', edit_tasks_list_path(task.id), :controller => "tasks_list"
 p
   = link_to "新しき喜び", :controller => "tasks_list", :action => :new

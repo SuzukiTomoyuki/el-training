@@ -16,8 +16,17 @@ class TasksListController < ApplicationController
     end
   end
 
+  def edit
+    @task = find_task_by_id
+  end
+
   def update
     @task = find_task_by_id
+    if @task.update(create_params)
+      redirect_to tasks_list_index_path
+    else
+      render edit_tasks_list_path
+    end
   end
 
   def destroy
