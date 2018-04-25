@@ -1,7 +1,8 @@
 h1
   | 俺の仕事一覧
 dl
+- @task_list.each do |task|
+  = task.caption
   br
-  - @task_list.each do |task|
-    = task.caption
-    br
+p
+  = link_to "新しき喜び", :controller => "tasks_list", :action => :new
