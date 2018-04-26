@@ -6,16 +6,16 @@ div class="row"
     = f.text_field :caption, required: true
     h5
     = f.label :"優先度: "
-    = f.text_field :priority, required: true
+    = f.select :priority, [['F'], ['C'], ['B'], ['A'], ['S']]
     / = f.select  "availability", options_for_select(1..200), {}, {required: 'true', autofocus: 'true', class: 'form-control'}
     h5
     = f.label :"締め切り: "
-    = f.text_field :deadline, required: true
+    = f.datetime_select :deadline
     h5
     = f.label :"状態: "
-    = f.text_field :state, required: true
+    = f.select :state, [["完了"], ["着手中"], ["着手待ち"]]
     h5
     = f.label :"付箋: "
-    = f.text_field :label, required: true
+    = f.text_field :label
     h5
     = f.submit "喜びを更新", class: "btn"
