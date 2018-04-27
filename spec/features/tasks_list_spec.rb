@@ -1,7 +1,11 @@
 require 'rails_helper'
 
-Rspec.feature "TasksList", type: :feature do
-  scenario "インデックスを表示する" do
+feature 'TasksList', type: :feature do
+  describe "#index" do
+    let(:default_datetime) { Date.new(2020, 1, 1)}
 
+    before do
+    #
+    end
   end
 end

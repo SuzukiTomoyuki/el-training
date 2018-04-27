@@ -10,9 +10,9 @@ class TasksListController < ApplicationController
   def create
     @task = Task.new(create_params)
     if @task.save
+      flash[:notice] = "新しい喜びに感謝せよ。"
       redirect_to tasks_list_index_path
     else
-      flash[:notice] = "新しい喜びに感謝せよ。"
       render new_tasks_list_path
     end
   end
