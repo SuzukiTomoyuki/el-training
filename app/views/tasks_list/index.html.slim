@@ -2,7 +2,7 @@
   = flash[:notice]
 
 h1
-  | 俺の仕事一覧
+  | 感謝
 table
   thead
     tr
@@ -21,7 +21,7 @@ table
         td = task.state
         td = task.deadline
         td = task.label
-        td = link_to '削除', tasks_list_path(task.id), method: :delete
-        td = link_to '編集', edit_tasks_list_path(task.id), :controller => "tasks_list"
+        td = link_to '削除', tasks_list_path(task.id), method: :delete, id: "delete_button"
+        td = link_to '編集', edit_tasks_list_path(task.id), :controller => "tasks_list", id: "edit_button"
 p
   = link_to "新しき喜び", :controller => "tasks_list", :action => :new

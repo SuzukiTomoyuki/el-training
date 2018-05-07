@@ -62,6 +62,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'database_rewinder'
   # gem 'selenium-webdriver'
 end
 
