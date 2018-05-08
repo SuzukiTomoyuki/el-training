@@ -1,5 +1,4 @@
 ja:
-  hello: "こんにちは"
   date:
     formats:
       default: "%Y/%m/%d"

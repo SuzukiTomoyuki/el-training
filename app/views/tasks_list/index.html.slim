@@ -9,7 +9,8 @@ table
       th 仕事
       th 優先度
       th 状態
-      th 締め切り
+      th = sortable "deadline", "締め切り"
+      th = sortable "created_at", "作成日"
       th 付箋
       th colspan="2" 編集
 
@@ -19,7 +20,8 @@ table
         td = task.caption
         td = task.priority
         td = task.state
-        td = task.deadline
+        td = task.deadline.to_s(:published_on)
+        td = task.created_at.to_s(:published_on)
         td = task.label
         td = link_to '削除', tasks_list_path(task.id), method: :delete, id: "delete_button"
         td = link_to '編集', edit_tasks_list_path(task.id), :controller => "tasks_list", id: "edit_button"
