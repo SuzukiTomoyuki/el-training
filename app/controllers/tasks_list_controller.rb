@@ -15,7 +15,7 @@ class TasksListController < ApplicationController
       flash[:notice] = "新しい喜びに感謝せよ。"
       redirect_to tasks_list_index_path
     else
-      render new_tasks_list_path
+      render 'new'
     end
   end
 
@@ -29,7 +29,7 @@ class TasksListController < ApplicationController
       flash[:notice] = "より強い試練に励むことで主に信仰を示せ。"
       redirect_to tasks_list_index_path
     else
-      render edit_tasks_list_path
+      render 'edit'
     end
   end
 

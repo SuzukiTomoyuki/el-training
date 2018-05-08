@@ -1,10 +1,14 @@
+- if @task.errors.any?
+  div id = "error_explanation"
+  - @task.errors.full_messages.each do |msg|
+    li = msg
 
 div class="row"
   h1 新規登録
 
   = form_for @task, :url => { action: 'create' }  do |f|
     = f.label :"喜び: "
-    = f.text_field :caption, required: true
+    = f.text_field :caption
     h5
     = f.label :"優先度: "
     = f.select :priority, [['F'], ['C'], ['B'], ['A'], ['S']]
