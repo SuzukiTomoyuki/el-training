@@ -42,7 +42,7 @@ class TasksListController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority, :deadline, :state, :label, :created_at)
+    params.require(:task).permit(:id, :caption, :priority_id, :deadline, :state, :label, :created_at)
   end
 
   def find_task_by_id

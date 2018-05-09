@@ -1,6 +1,12 @@
 ja:
   attributes:
     caption: 喜び
+
+  priority:
+    high: 高
+    middle: 中
+    low: 低
+
   date:
     formats:
       default: "%Y/%m/%d"

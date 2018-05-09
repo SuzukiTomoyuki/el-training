@@ -11,7 +11,7 @@ div class="row"
     = f.text_field :caption
     h5
     = f.label :"優先度: "
-    = f.select :priority, [['F'], ['C'], ['B'], ['A'], ['S']]
+    = f.select :priority_id, Task.priority_ids.map { |k, _v| [t("priority.#{k}"), k] }
     / = f.select  "availability", options_for_select(1..200), {}, {required: 'true', autofocus: 'true', class: 'form-control'}
     h5
     = f.label :"締め切り: "

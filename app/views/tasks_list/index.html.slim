@@ -9,7 +9,7 @@ table
   thead
     tr
       th 仕事
-      th 優先度
+      th = sortable "priority_id", "優先度"
       th 状態
       th = sortable "deadline", "締め切り"
       th = sortable "created_at", "作成日"
@@ -20,7 +20,7 @@ table
     - @task_list.each do |task|
       tr
         td = task.caption
-        td = task.priority
+        td = t("priority.#{task.priority_id}")
         td = task.state
         td = task.deadline.to_s(:published_on)
         td = task.created_at.to_s(:published_on)
