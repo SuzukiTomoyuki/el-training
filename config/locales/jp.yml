@@ -1,4 +1,6 @@
 ja:
+  attributes:
+    caption: 喜び
   date:
     formats:
       default: "%Y/%m/%d"
