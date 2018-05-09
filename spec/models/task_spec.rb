@@ -19,7 +19,7 @@ describe Task, type: :model do
     it "喜び（タスク）が１００文字を超えていた場合" do
       task = FactoryGirl.build(:task, caption: "はろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテスト")
       task.valid?
-      expect(task.errors[:caption]).to include("が100文字を超えて")
+      expect(task.errors[:caption]).to include("が100文字を超えている")
     end
 
   end
