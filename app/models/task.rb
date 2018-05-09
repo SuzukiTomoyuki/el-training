@@ -9,6 +9,12 @@ class Task < ApplicationRecord
       low: 2
   }
 
+  enum status_id:{
+      done: 0,
+      doing: 1,
+      to_do: 2
+  }
+
   def add_caption_error
     if caption.length > 100
       errors.add(:caption, "が100文字を超えている")

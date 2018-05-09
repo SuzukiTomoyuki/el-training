@@ -42,7 +42,7 @@ class TasksListController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority_id, :deadline, :state, :label, :created_at)
+    params.require(:task).permit(:id, :caption, :priority_id, :deadline, :status_id, :label, :created_at)
   end
 
   def find_task_by_id
@@ -54,7 +54,7 @@ class TasksListController < ApplicationController
   end
 
   def sort_column
-    Task.column_names.include?(params[:sort]) ? params[:sort] : "state"
+    Task.column_names.include?(params[:sort]) ? params[:sort] : "status_id"
   end
 
 end

@@ -10,7 +10,7 @@ table
     tr
       th 仕事
       th = sortable "priority_id", "優先度"
-      th 状態
+      th = sortable "status_id", "状態"
       th = sortable "deadline", "締め切り"
       th = sortable "created_at", "作成日"
       th 付箋
@@ -21,7 +21,7 @@ table
       tr
         td = task.caption
         td = t("priority.#{task.priority_id}")
-        td = task.state
+        td = t("status.#{task.status_id}")
         td = task.deadline.to_s(:published_on)
         td = task.created_at.to_s(:published_on)
         td = task.label
