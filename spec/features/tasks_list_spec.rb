@@ -162,6 +162,39 @@ feature 'TasksList', type: :feature do
     end
   end
 
+  describe 'serch(index)' do
+
+    before do
+      visit tasks_list_index_path
+      0.upto(2) do |i|
+        FactoryGirl.create(:task, caption: "#{i + 1}番目の喜び" ,status_id: Task.status_ids.keys[i])
+      end
+    end
+
+    describe 'タスク名（喜び）で検索' do
+      before do
+        fill_in "caption", with: "1"
+        click_on('検索')
+      end
+
+      it '"1番目の喜び"が出力される' do
+        expect(page.all("tbody tr")[0].all("td")[0].text).to match "1番目の喜び"
+      end
+    end
+
+    describe '状態で検索' do
+      before do
+        select "着手中", from: "status_id"
+        click_on('検索')
+      end
+
+      it '"2番目の喜び"が出力される' do
+        expect(page.all("tbody tr")[0].all("td")[0].text).to match "2番目の喜び"
+      end
+    end
+
+  end
+
 
   describe "#new" do
     it "新しいタスクを追加する" do

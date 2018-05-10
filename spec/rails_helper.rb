@@ -62,4 +62,6 @@ RSpec.configure do |config|
     DatabaseRewinder.clean
   end
 
+  config.use_transactional_fixtures = false
+
 end
