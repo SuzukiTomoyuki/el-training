@@ -3,6 +3,12 @@ class TasksListController < ApplicationController
 
   def index
     @task_list = Task.all.order(sort_column + ' ' + sort_direction)
+    if params[:caption].present?
+      @task_list = @task_list.get_by_caption params[:caption]
+    end
+    if params[:status_id].present?
+      @task_list = @task_list.get_by_status_id params[:status_id]
+    end
   end
 
   def new

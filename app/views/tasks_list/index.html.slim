@@ -5,6 +5,14 @@
 
 h1
   | 感謝
+h5
+  = form_tag(tasks_list_index_path, method: "get") do
+    = label_tag :name, "仕事"
+    = text_field_tag :caption, params[:caption]
+    = label_tag :name, "状態"
+    = select_tag :status_id, options_for_select(Task.status_ids.map { |k, _v| [t("status.#{k}"), k] }), include_blank: true
+    = submit_tag "検索"
+
 table
   thead
     tr

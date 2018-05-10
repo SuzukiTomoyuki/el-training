@@ -26,11 +26,6 @@ feature 'TasksList', type: :feature do
     end
 
     describe 'sort' do
-      # before do
-      #   1.upto(3) do |row|
-      #     FactoryGirl.build(:task, deadline: default_datetime + row.hour)
-      #   end
-      # end
 
       describe '作成日時でソート' do
 
