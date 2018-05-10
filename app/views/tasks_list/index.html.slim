@@ -37,3 +37,5 @@ table
         td = link_to '編集', edit_tasks_list_path(task.id), :controller => "tasks_list", id: "edit_button"
 p
   = link_to "新しき喜び", :controller => "tasks_list", :action => :new
+
+= paginate @task_list

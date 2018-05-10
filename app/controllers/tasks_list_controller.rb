@@ -9,6 +9,7 @@ class TasksListController < ApplicationController
     if params[:status_id].present?
       @task_list = @task_list.get_by_status_id params[:status_id]
     end
+    @task_list = @task_list.page(params[:page])
   end
 
   def new
