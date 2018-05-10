@@ -1,5 +1,7 @@
 class SetPriorityIdToTask < ActiveRecord::Migration[5.1]
   def change
-    change_column :tasks, :priority, :integer
+    remove_column :tasks, :priority, :string
+    add_column :tasks, :priority, :integer
   end
+
 end
