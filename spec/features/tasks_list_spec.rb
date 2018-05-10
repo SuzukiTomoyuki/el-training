@@ -10,8 +10,8 @@ feature 'TasksList', type: :feature do
       1.upto 5 do |row|
         Task.create(
                 caption: "caption#{row}",
-                priority: "S",
-                state: "着手待ち",
+                priority_id: Task.new(priority_id: :high).priority_id,
+                status_id: Task.new(status_id: :to_do).status_id,
                 created_at: default_datetime + row.hour,
                 deadline: default_datetime + row.day
         )
@@ -26,11 +26,6 @@ feature 'TasksList', type: :feature do
     end
 
     describe 'sort' do
-      # before do
-      #   1.upto(3) do |row|
-      #     FactoryGirl.build(:task, deadline: default_datetime + row.hour)
-      #   end
-      # end
 
       describe '作成日時でソート' do
 
@@ -89,20 +84,125 @@ feature 'TasksList', type: :feature do
             expect(page.all("tbody tr")[2].all("td")[3].text).to eq "2020年01月04日 00時00分"
           end
         end
-
       end
 
     end
+
   end
+
+  describe '優先度でソート(index)' do
+
+    before do
+      visit tasks_list_index_path
+      0.upto(2) do |i|
+        FactoryGirl.create(:task, priority_id: Task.priority_ids.keys[i])
+      end
+    end
+
+    context '優先度をクリック(昇順)' do
+      before do
+        click_on('優先度')
+      end
+
+      it '昇順ソート' do
+        expect(page.all("tbody tr")[0].all("td")[1].text).to match "高"
+        expect(page.all("tbody tr")[1].all("td")[1].text).to match "中"
+        expect(page.all("tbody tr")[2].all("td")[1].text).to match "低"
+      end
+    end
+
+    context '優先度をクリック(降順)' do
+      before do
+        click_on('優先度')
+        click_on('優先度')
+      end
+
+      it '降順ソート' do
+        expect(page.all("tbody tr")[0].all("td")[1].text).to match "低"
+        expect(page.all("tbody tr")[1].all("td")[1].text).to match "中"
+        expect(page.all("tbody tr")[2].all("td")[1].text).to match "高"
+      end
+    end
+  end
+
+  describe '状態でソート(index)' do
+
+    before do
+      visit tasks_list_index_path
+      0.upto(2) do |i|
+        FactoryGirl.create(:task, status_id: Task.status_ids.keys[i])
+      end
+    end
+
+    context '状態をクリック(昇順)' do
+      before do
+        click_on('状態')
+        click_on('状態')
+      end
+
+      it '昇順ソート' do
+        expect(page.all("tbody tr")[0].all("td")[2].text).to match "完了"
+        expect(page.all("tbody tr")[1].all("td")[2].text).to match "着手中"
+        expect(page.all("tbody tr")[2].all("td")[2].text).to match "着手待ち"
+      end
+    end
+
+    context '状態をクリック(降順)' do
+      before do
+        click_on('状態')
+        click_on('状態')
+        click_on('状態')
+      end
+
+      it '降順ソート' do
+        expect(page.all("tbody tr")[0].all("td")[2].text).to match "着手待ち"
+        expect(page.all("tbody tr")[1].all("td")[2].text).to match "着手中"
+        expect(page.all("tbody tr")[2].all("td")[2].text).to match "完了"
+      end
+    end
+  end
+
+  describe 'serch(index)' do
+
+    before do
+      visit tasks_list_index_path
+      0.upto(2) do |i|
+        FactoryGirl.create(:task, caption: "#{i + 1}番目の喜び" ,status_id: Task.status_ids.keys[i])
+      end
+    end
+
+    describe 'タスク名（喜び）で検索' do
+      before do
+        fill_in "caption", with: "1"
+        click_on('検索')
+      end
+
+      it '"1番目の喜び"が出力される' do
+        expect(page.all("tbody tr")[0].all("td")[0].text).to match "1番目の喜び"
+      end
+    end
+
+    describe '状態で検索' do
+      before do
+        select "着手中", from: "status_id"
+        click_on('検索')
+      end
+
+      it '"2番目の喜び"が出力される' do
+        expect(page.all("tbody tr")[0].all("td")[0].text).to match "2番目の喜び"
+      end
+    end
+
+  end
+
 
   describe "#new" do
     it "新しいタスクを追加する" do
       expect{
         visit new_tasks_list_path
         fill_in "task[caption]", with: "fxxxen task"
-        select "A", from: "task[priority]"
-        select "着手待ち", from: "task[state]"
-        # select I18n.l(Date.today, format: '%B'), from: "task[deadline]"
+        select "高", from: "task[priority_id]"
+        select "着手待ち", from: "task[status_id]"
         fill_in "task[label]", with: nil
         click_button "喜びを追加"
       }.to change(Task, :count).by(1)
@@ -126,7 +226,7 @@ feature 'TasksList', type: :feature do
 
   describe "#edit" do
     before do
-      @task = FactoryGirl.create(:task,caption:"俺はテストを行う!", deadline: Date.today)
+      @task = FactoryGirl.create(:task, caption:"俺はテストを行う!", deadline: Date.today)
       visit tasks_list_index_path
       page.all("tbody tr")[0].find_by_id("edit_button").click
     end

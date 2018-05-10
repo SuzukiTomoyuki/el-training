@@ -1,6 +1,17 @@
 ja:
   attributes:
     caption: 喜び
+
+  priority:
+    high: 高
+    middle: 中
+    low: 低
+
+  status:
+    done: 完了
+    doing: 着手中
+    to_do: 着手待ち
+
   date:
     formats:
       default: "%Y/%m/%d"

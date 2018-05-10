@@ -3,6 +3,12 @@ class TasksListController < ApplicationController
 
   def index
     @task_list = Task.all.order(sort_column + ' ' + sort_direction)
+    if params[:caption].present?
+      @task_list = @task_list.get_by_caption params[:caption]
+    end
+    if params[:status_id].present?
+      @task_list = @task_list.get_by_status_id params[:status_id]
+    end
   end
 
   def new
@@ -42,7 +48,7 @@ class TasksListController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority, :deadline, :state, :label, :created_at)
+    params.require(:task).permit(:id, :caption, :priority_id, :deadline, :status_id, :label, :created_at)
   end
 
   def find_task_by_id
@@ -54,7 +60,7 @@ class TasksListController < ApplicationController
   end
 
   def sort_column
-    Task.column_names.include?(params[:sort]) ? params[:sort] : "state"
+    Task.column_names.include?(params[:sort]) ? params[:sort] : "status_id"
   end
 
 end
