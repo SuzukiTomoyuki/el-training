@@ -1,6 +1,6 @@
 class ChangeElementStateFromTask < ActiveRecord::Migration[5.1]
   def change
-    change_column :tasks, :state, :integer
+    remove_column :tasks, :state, :string
+    add_column :tasks, :state, :integer
   end
-
 end

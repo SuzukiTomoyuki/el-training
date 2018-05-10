@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3a6ce2ae-9ed8-444b-be1d-af5bb172111b" name="デフォルト" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180509060551_set_priority_id_to_task.rb" afterPath="$PROJECT_DIR$/db/migrate/20180509060551_set_priority_id_to_task.rb" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180509065829_rename_priority_name_to_name_from_priority.rb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180509072020_drop_priority.rb" afterPath="" />
       <change beforePath="$PROJECT_DIR$/db/migrate/20180509083044_change_element_state_from_task.rb" afterPath="$PROJECT_DIR$/db/migrate/20180509083044_change_element_state_from_task.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -38,7 +35,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="20180509064455_rename_priority_id_from_task.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="20180509064455_rename_priority_id_from_task.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/db/migrate/20180509064455_rename_priority_id_from_task.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="30">
@@ -58,11 +55,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="20180509083044_change_element_state_from_task.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="20180509083044_change_element_state_from_task.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/db/migrate/20180509083044_change_element_state_from_task.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -91,8 +88,8 @@
           <file leaf-file-name="20180509060551_set_priority_id_to_task.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/db/migrate/20180509060551_set_priority_id_to_task.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="3" selection-end-column="42" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -216,8 +213,8 @@
         <option value="$PROJECT_DIR$/spec/features/tasks_list_spec.rb" />
         <option value="$PROJECT_DIR$/app/views/tasks_list/index.html.slim" />
         <option value="$PROJECT_DIR$/app/controllers/tasks_list_controller.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20180509083044_change_element_state_from_task.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180509060551_set_priority_id_to_task.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20180509083044_change_element_state_from_task.rb" />
       </list>
     </option>
   </component>
@@ -542,7 +539,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231884000" />
+    <option name="totallyTimeSpent" value="232818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1920" height="1057" extended-state="6" />
@@ -855,14 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180425082848_set_not_nil_to_task.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tasks_list/edit.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -887,26 +876,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180509083044_change_element_state_from_task.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180509060551_set_priority_id_to_task.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="3" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -939,6 +912,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180425082848_set_not_nil_to_task.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180509060551_set_priority_id_to_task.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180509083044_change_element_state_from_task.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
