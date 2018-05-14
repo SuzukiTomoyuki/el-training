@@ -50,7 +50,7 @@ class TasksListController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority_id, :deadline, :status, :label, :created_at)
+    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at)
   end
 
   # before action で　セットタスク?

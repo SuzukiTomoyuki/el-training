@@ -11,7 +11,7 @@ div class = "container-fluid"
     = f.text_field :caption
     h5
     = f.label :"優先度: "
-    = f.select :priority_id, Task.priority_ids.map { |k, _v| [t("priority.#{k}"), k] }
+    = f.select :priority, Task.priorities.map { |k, _v| [t("priority.#{k}"), k] }
     h5
     = f.label :"締め切り: "
     = f.datetime_select :deadline

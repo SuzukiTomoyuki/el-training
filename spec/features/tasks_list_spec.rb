@@ -10,7 +10,7 @@ feature 'TasksList', type: :feature do
       1.upto 5 do |row|
         Task.create(
                 caption: "caption#{row}",
-                priority_id: :high,
+                priority: :high,
                 status: :doing,
                 created_at: default_datetime + row.hour,
                 deadline: default_datetime + row.day
@@ -93,7 +93,7 @@ feature 'TasksList', type: :feature do
     before do
       visit tasks_list_index_path
       0.upto(2) do |i|
-        FactoryGirl.create(:task, priority_id: Task.priority_ids.keys[i])
+        FactoryGirl.create(:task, priority: Task.priorities.keys[i])
       end
     end
 
@@ -199,7 +199,7 @@ feature 'TasksList', type: :feature do
       expect{
         visit new_tasks_list_path
         fill_in "task[caption]", with: "fxxxen task"
-        select "高", from: "task[priority_id]"
+        select "高", from: "task[priority]"
         select "着手待ち", from: "task[status]"
         fill_in "task[label]", with: nil
         click_button "喜びを追加"

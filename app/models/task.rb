@@ -2,7 +2,7 @@ class Task < ApplicationRecord
 
   validate :add_caption_error, :check_caption_empty
 
-  enum priority_id:{
+  enum priority:{
       high: 0,
       middle: 1,
       low: 2
