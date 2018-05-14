@@ -47,6 +47,11 @@ gem 'aasm'
 # ページネーション
 gem 'kaminari'
 
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+# Use jquery-UI as the JavaScript library
+gem 'jquery-ui-rails'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 
 # erbをスリムに変換
@@ -58,6 +63,7 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem "factory_girl_rails"
+  gem 'brakeman', require: false
 end
 
 group :test do

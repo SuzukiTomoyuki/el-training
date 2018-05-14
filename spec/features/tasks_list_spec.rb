@@ -10,8 +10,8 @@ feature 'TasksList', type: :feature do
       1.upto 5 do |row|
         Task.create(
                 caption: "caption#{row}",
-                priority_id: Task.new(priority_id: :high).priority_id,
-                status_id: Task.new(status_id: :to_do).status_id,
+                priority_id: :high,
+                status_id: :doing,
                 created_at: default_datetime + row.hour,
                 deadline: default_datetime + row.day
         )
@@ -43,8 +43,6 @@ feature 'TasksList', type: :feature do
 
         context '作成日をクリック(降順)' do
           before do
-            click_on('作成日')
-            click_on('作成日')
             click_on('作成日')
             click_on('作成日')
           end

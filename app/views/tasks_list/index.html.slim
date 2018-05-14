@@ -4,19 +4,20 @@
   = flash[:notice]
 
 h1
-  | 感謝
+  | 喜びたち
 h5
+  /　form_for
   = form_tag(tasks_list_index_path, method: "get") do
-    = label_tag :name, "仕事"
+    = label_tag :name, "喜び"
     = text_field_tag :caption, params[:caption]
     = label_tag :name, "状態"
     = select_tag :status_id, options_for_select(Task.status_ids.map { |k, _v| [t("status.#{k}"), k] }), include_blank: true
     = submit_tag "検索"
 
-table
+table class="table-bordered table-hover"
   thead
     tr
-      th 仕事
+      th 喜び
       th = sortable "priority_id", "優先度"
       th = sortable "status_id", "状態"
       th = sortable "deadline", "締め切り"
@@ -36,6 +37,7 @@ table
         td = link_to '削除', tasks_list_path(task.id), method: :delete, id: "delete_button"
         td = link_to '編集', edit_tasks_list_path(task.id), :controller => "tasks_list", id: "edit_button"
 p
-  = link_to "新しき喜び", :controller => "tasks_list", :action => :new
+  / = link_to "新しき喜び", class: "btn btn-primary", :controller => "tasks_list", :action => :new
+  = link_to " 新しき喜び", new_tasks_list_path, class: "btn btn-info btn-lg"
 
 = paginate @task_list
