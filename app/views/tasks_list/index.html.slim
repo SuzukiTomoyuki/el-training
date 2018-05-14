@@ -11,7 +11,7 @@ h5
     = label_tag :name, "喜び"
     = text_field_tag :caption, params[:caption]
     = label_tag :name, "状態"
-    = select_tag :status_id, options_for_select(Task.status_ids.map { |k, _v| [t("status.#{k}"), k] }), include_blank: true
+    = select_tag :status, options_for_select(Task.statuses.map { |k, _v| [t("status.#{k}"), k] }), include_blank: true
     = submit_tag "検索"
 
 table class="table-bordered table-hover"
@@ -19,7 +19,7 @@ table class="table-bordered table-hover"
     tr
       th 喜び
       th = sortable "priority_id", "優先度"
-      th = sortable "status_id", "状態"
+      th = sortable "status", "状態"
       th = sortable "deadline", "締め切り"
       th = sortable "created_at", "作成日"
       th 付箋
@@ -30,7 +30,7 @@ table class="table-bordered table-hover"
       tr
         td = task.caption
         td = t("priority.#{task.priority_id}")
-        td = t("status.#{task.status_id}")
+        td = t("status.#{task.status}")
         td = task.deadline.to_s(:published_on)
         td = task.created_at.to_s(:published_on)
         td = task.label

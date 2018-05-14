@@ -17,7 +17,7 @@ div class="row"
     = f.datetime_select :deadline
     h5
     = f.label :"状態: "
-    = f.select :status_id, Task.status_ids.map { |k, _v| [t("status.#{k}"), k] }
+    = f.select :status, Task.status_ids.map { |k, _v| [t("status.#{k}"), k] }
     h5
     = f.label :"付箋: "
     = f.text_field :label

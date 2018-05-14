@@ -9,7 +9,7 @@ class Task < ApplicationRecord
   }
 
   # idはだめ
-  enum status_id:{
+  enum status:{
       done: 0,
       doing: 1,
       to_do: 2
@@ -19,8 +19,8 @@ class Task < ApplicationRecord
     where("caption like ?", "%#{caption}%")
   }
 
-  scope :get_by_status_id, ->(status_id) {
-    where(status_id: status_id)
+  scope :get_by_status, ->(status) {
+    where(status: status)
   }
 
   # searchを作る

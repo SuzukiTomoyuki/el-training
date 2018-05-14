@@ -7,8 +7,8 @@ class TasksListController < ApplicationController
     if params[:caption].present?
       @task_list = @task_list.get_by_caption params[:caption]
     end
-    if params[:status_id].present?
-      @task_list = @task_list.get_by_status_id params[:status_id]
+    if params[:status].present?
+      @task_list = @task_list.get_by_status params[:status]
     end
     @task_list = @task_list.page(params[:page])
   end
@@ -50,7 +50,7 @@ class TasksListController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority_id, :deadline, :status_id, :label, :created_at)
+    params.require(:task).permit(:id, :caption, :priority_id, :deadline, :status, :label, :created_at)
   end
 
   # before action で　セットタスク?
@@ -63,7 +63,7 @@ class TasksListController < ApplicationController
   end
 
   def sort_column
-    Task.column_names.include?(params[:sort]) ? params[:sort] : "status_id"
+    Task.column_names.include?(params[:sort]) ? params[:sort] : "status"
   end
 
 end
