@@ -54,6 +54,8 @@ gem 'jquery-ui-rails'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'toastr-rails'
+
 # erbをスリムに変換
 gem 'html2slim'
 

@@ -12,8 +12,38 @@
  *
  *= require_tree .
  *= require_self
+ *= require toastr
  */
 
 // Bootstrap Sass
 @import "bootstrap-sprockets";
 @import "bootstrap";
+// toastr
+@import "toastr";
+
+@for $i from 0 through 30 {
+  .mt#{$i * 5} {
+    margin-top:#{$i * 5}px !important;
+  }
+  .mb#{$i * 5} {
+    margin-bottom:#{$i * 5}px !important;
+  }
+  .pt#{$i * 5} {
+    padding-top:#{$i * 5}px !important;
+  }
+  .pb#{$i * 5} {
+    padding-bottom:#{$i * 5}px !important;
+  }
+}
+
+@font-face {
+  font-family: 'Nashi';
+  src: font-url('Nyashi.ttf') format('truetype');
+  //font-weight: normal;
+  //font-style: normal;
+}
+
+body{
+  font-family: 'Nashi';
+  line-height: 2.5;
+}

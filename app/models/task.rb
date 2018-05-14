@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
 
-  validate :add_caption_error, :check_caption_empty
+  validate :validate_caption_error, :check_caption_empty
 
   enum priority:{
       high: 0,
@@ -26,7 +26,7 @@ class Task < ApplicationRecord
   # searchを作る
 
   # validate_caption_error   ここの機能の名前にちなんで
-  def add_caption_error
+  def validate_caption_error
     if caption.length > 100
       errors.add(:caption, "が100文字を超えている")
     end

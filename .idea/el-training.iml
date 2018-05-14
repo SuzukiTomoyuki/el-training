@@ -991,6 +991,18 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="toastr-rails (vbundled(1.0.3)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/toastr-rails-1.0.3/vendor" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/toastr-rails-1.0.3/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/toastr-rails-1.0.3/vendor" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/toastr-rails-1.0.3/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="turbolinks (vbundled(5.1.1)) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/turbolinks-5.1.1/lib" />

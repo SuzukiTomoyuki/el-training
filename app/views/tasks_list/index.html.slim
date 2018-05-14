@@ -1,43 +1,46 @@
+html
+  head
+  body
+    div class="container"
 
+      - if flash[:notice]
+        javascript:
+          toastr.success('#{flash[:notice]}');
+      h1
+        | 喜びたち
+      h5
+        div class="form-group　bg-warning"
+          div.col-sm-6.bg-warning
+            = form_for(tasks_list_index_path, method: "get") do
+              = label_tag :name, "喜び", class: "control-label"
+              = text_field_tag :caption, params[:caption], class: "form-control"
+              = label_tag :name, "状態", class: "control-label"
+              = select_tag :status, options_for_select(Task.statuses.map { |k, _v| [t("status.#{k}"), k] }), include_blank: true, class: "form-control"
+              = submit_tag "検索", class: "btn"
 
-- if flash[:notice]
-  = flash[:notice]
-
-h1
-  | 喜びたち
-h5
-  /　form_for
-  = form_tag(tasks_list_index_path, method: "get") do
-    = label_tag :name, "喜び"
-    = text_field_tag :caption, params[:caption]
-    = label_tag :name, "状態"
-    = select_tag :status, options_for_select(Task.statuses.map { |k, _v| [t("status.#{k}"), k] }), include_blank: true
-    = submit_tag "検索"
-
-table class="table-bordered table-hover"
-  thead
-    tr
-      th 喜び
-      th = sortable "priority", "優先度"
-      th = sortable "status", "状態"
-      th = sortable "deadline", "締め切り"
-      th = sortable "created_at", "作成日"
-      th 付箋
-      th colspan="2" 編集
-
-  tbody
-    - @task_list.each do |task|
-      tr
-        td = task.caption
-        td = t("priority.#{task.priority}")
-        td = t("status.#{task.status}")
-        td = task.deadline.to_s(:published_on)
-        td = task.created_at.to_s(:published_on)
-        td = task.label
-        td = link_to '削除', tasks_list_path(task.id), method: :delete, id: "delete_button"
-        td = link_to '編集', edit_tasks_list_path(task.id), :controller => "tasks_list", id: "edit_button"
-p
-  / = link_to "新しき喜び", class: "btn btn-primary", :controller => "tasks_list", :action => :new
-  = link_to " 新しき喜び", new_tasks_list_path, class: "btn btn-info btn-lg"
-
-= paginate @task_list
+      div.col-sm-12.mt20
+        table class="table-bordered table-hover table-striped"
+          thead
+            tr class="bg-info"
+              th.col-sm-7 喜び
+              th = sortable "priority", "優先度"
+              th = sortable "status", "状態"
+              th = sortable "deadline", "締め切り"
+              / th = sortable "created_at", "作成日"
+              th 付箋
+              th colspan="2" 編集
+          tbody
+            - @task_list.each do |task|
+              tr padding= '10px'
+                td = task.caption
+                td = t("priority.#{task.priority}")
+                td = t("status.#{task.status}")
+                td
+                  = task.deadline.to_s(:published_on)
+                / td = task.created_at.to_s(:published_on)
+                td = task.label
+                td = link_to '削除', tasks_list_path(task.id), method: :delete, id: "delete_button"
+                td = link_to '編集', edit_tasks_list_path(task.id), :controller => "tasks_list", id: "edit_button"
+        = paginate @task_list
+        br
+        = link_to " 新しき喜び", new_tasks_list_path, class: "btn btn-info btn-lg"
