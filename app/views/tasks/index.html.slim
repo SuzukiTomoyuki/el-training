@@ -41,9 +41,8 @@ html
                   td = task.deadline.to_s(:published_on)
                   / td = task.created_at.to_s(:published_on)
                   td = task.label
-                  td = link_to '削除', task_path(task.id), method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
                   td
-                    button type="button" class="btn" data-toggle="modal" data-target="#edit_button_#{task.id}" 編集
+                    button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit_button_#{task.id}" 編集
 
                     div class="modal fade" id="edit_button_#{task.id}" role="dialog"
                       div.modal-dialog
@@ -53,6 +52,7 @@ html
                             h4 class="modal-title" 編集
                           div.modal-body
                             = render partial: 'form', locals: {task: task, submit_text: t("task.edit")}
+                  td = link_to '削除', task_path(task.id),class: 'btn btn-danger' ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
         = paginate @task_list
         br
         / = link_to " 新しき喜び", new_tasks_list_path, class: "btn btn-info btn-lg"
