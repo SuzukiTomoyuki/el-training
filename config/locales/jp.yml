@@ -12,6 +12,16 @@ ja:
     doing: 着手中
     to_do: 着手待ち
 
+  confirm:
+    confirm: 本当に削除する？
+    title: 削除
+    commit: 削除
+    cancel: やめる
+
+  task:
+    add: 喜びを追加
+    edit: 喜びを編集
+
   date:
     formats:
       default: "%Y/%m/%d"

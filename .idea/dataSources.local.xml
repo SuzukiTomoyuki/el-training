@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails el-training: test" uuid="a674c695-d84b-46c2-9de8-8996021f75aa">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>tomoyuki</user-name>
+    </data-source>
+    <data-source name="Rails el-training: development" uuid="bdd3770f-60f6-4bf0-8363-cc02f441e521">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>tomoyuki</user-name>
+    </data-source>
+  </component>
+</project>

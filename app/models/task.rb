@@ -1,15 +1,14 @@
 class Task < ApplicationRecord
 
-  # validates :caption, length: { maximum: 100 }
-  validate :add_caption_error, :check_caption_empty
+  validate :validate_caption_error, :check_caption_empty
 
-  enum priority_id:{
+  enum priority:{
       high: 0,
       middle: 1,
       low: 2
   }
 
-  enum status_id:{
+  enum status:{
       done: 0,
       doing: 1,
       to_do: 2
@@ -19,11 +18,13 @@ class Task < ApplicationRecord
     where("caption like ?", "%#{caption}%")
   }
 
-  scope :get_by_status_id, ->(status_id) {
-    where(status_id: status_id)
+  scope :get_by_status, ->(status) {
+    where(status: status)
   }
 
-  def add_caption_error
+  # searchを作る
+
+  def validate_caption_error
     if caption.length > 100
       errors.add(:caption, "が100文字を超えている")
     end
@@ -31,7 +32,7 @@ class Task < ApplicationRecord
 
   def check_caption_empty
     if caption.empty?
-      errors.add(:caption, "が無い。何も無い。")
+      errors.add(:caption, "ない")
     end
   end
 
