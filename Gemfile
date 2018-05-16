@@ -54,7 +54,11 @@ gem 'jquery-ui-rails'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# トースター
 gem 'toastr-rails'
+
+# 確認ダイアログ
+gem 'data-confirm-modal'
 
 # erbをスリムに変換
 gem 'html2slim'

@@ -285,6 +285,18 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="data-confirm-modal (vbundled(1.6.2)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/data-confirm-modal-1.6.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/data-confirm-modal-1.6.2/vendor" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/data-confirm-modal-1.6.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/data-confirm-modal-1.6.2/vendor" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="database_rewinder (vbundled(0.8.3)) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/database_rewinder-0.8.3/lib" />

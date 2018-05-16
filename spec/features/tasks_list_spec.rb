@@ -197,7 +197,7 @@ feature 'TasksList', type: :feature do
   describe "#new" do
     it "新しいタスクを追加する" do
       expect{
-        visit new_tasks_list_path
+        visit new_task_path
         fill_in "task[caption]", with: "fxxxen task"
         select "高", from: "task[priority]"
         select "着手待ち", from: "task[status]"

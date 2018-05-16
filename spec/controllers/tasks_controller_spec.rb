@@ -1,6 +1,6 @@
 # require 'rails_helper'
 #
-# describe TasksListController, type: :controller do
+# describe TasksController, type: :controller do
 #
 #   describe "GET #edit" do
 #     before do
