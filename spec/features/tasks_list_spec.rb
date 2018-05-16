@@ -10,8 +10,8 @@ feature 'TasksList', type: :feature do
       1.upto 5 do |row|
         Task.create(
                 caption: "caption#{row}",
-                priority_id: Task.new(priority_id: :high).priority_id,
-                status_id: Task.new(status_id: :to_do).status_id,
+                priority: :high,
+                status: :doing,
                 created_at: default_datetime + row.hour,
                 deadline: default_datetime + row.day
         )
@@ -43,8 +43,6 @@ feature 'TasksList', type: :feature do
 
         context '作成日をクリック(降順)' do
           before do
-            click_on('作成日')
-            click_on('作成日')
             click_on('作成日')
             click_on('作成日')
           end
@@ -95,7 +93,7 @@ feature 'TasksList', type: :feature do
     before do
       visit tasks_list_index_path
       0.upto(2) do |i|
-        FactoryGirl.create(:task, priority_id: Task.priority_ids.keys[i])
+        FactoryGirl.create(:task, priority: Task.priorities.keys[i])
       end
     end
 
@@ -130,7 +128,7 @@ feature 'TasksList', type: :feature do
     before do
       visit tasks_list_index_path
       0.upto(2) do |i|
-        FactoryGirl.create(:task, status_id: Task.status_ids.keys[i])
+        FactoryGirl.create(:task, status: Task.statuses.keys[i])
       end
     end
 
@@ -167,7 +165,7 @@ feature 'TasksList', type: :feature do
     before do
       visit tasks_list_index_path
       0.upto(2) do |i|
-        FactoryGirl.create(:task, caption: "#{i + 1}番目の喜び" ,status_id: Task.status_ids.keys[i])
+        FactoryGirl.create(:task, caption: "#{i + 1}番目の喜び" ,status: Task.statuses.keys[i])
       end
     end
 
@@ -184,7 +182,7 @@ feature 'TasksList', type: :feature do
 
     describe '状態で検索' do
       before do
-        select "着手中", from: "status_id"
+        select "着手中", from: "status"
         click_on('検索')
       end
 
@@ -199,10 +197,10 @@ feature 'TasksList', type: :feature do
   describe "#new" do
     it "新しいタスクを追加する" do
       expect{
-        visit new_tasks_list_path
+        visit new_task_path
         fill_in "task[caption]", with: "fxxxen task"
-        select "高", from: "task[priority_id]"
-        select "着手待ち", from: "task[status_id]"
+        select "高", from: "task[priority]"
+        select "着手待ち", from: "task[status]"
         fill_in "task[label]", with: nil
         click_button "喜びを追加"
       }.to change(Task, :count).by(1)

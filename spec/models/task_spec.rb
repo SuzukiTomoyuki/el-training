@@ -13,12 +13,12 @@ describe Task, type: :model do
     it "喜び(タスク)を入力しなかった場合" do
       task = FactoryGirl.build(:task, caption: "")
       task.valid?
-      expect(task.errors[:caption]).to include("が無い。何も無い。")
+      expect(task.errors[:caption]).to include("ない")
     end
 
     it "喜び（タスク）が１００文字を超えていた場合" do
       task = FactoryGirl.build(:task, caption: "はろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテストはろーテスト")
-      task.valid?
+      task.valid?     # データとして正しいか　　これをやらないとエラーにならない
       expect(task.errors[:caption]).to include("が100文字を超えている")
     end
 
