@@ -1,6 +1,9 @@
 ja:
   attributes:
     caption: 喜び
+    name: 名前
+    email: メールアドレス
+    pass: パスワード
 
   priority:
     high: 高
