@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # has_secure_password
   validates :name,
     uniqueness: {
       message: "とメールアドレスが同じ組み合わせのユーザが既に存在します。",
