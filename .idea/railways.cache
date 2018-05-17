@@ -1,4 +1,5 @@
    Prefix Verb   URI Pattern               Controller#Action
+users_new GET    /users/new(.:format)      users#new
           GET    /                         tasks#index
     tasks GET    /tasks(.:format)          tasks#index
           POST   /tasks(.:format)          tasks#create
@@ -8,3 +9,11 @@ edit_task GET    /tasks/:id/edit(.:format) tasks#edit
           PATCH  /tasks/:id(.:format)      tasks#update
           PUT    /tasks/:id(.:format)      tasks#update
           DELETE /tasks/:id(.:format)      tasks#destroy
+    users GET    /users(.:format)          users#index
+          POST   /users(.:format)          users#create
+ new_user GET    /users/new(.:format)      users#new
+edit_user GET    /users/:id/edit(.:format) users#edit
+     user GET    /users/:id(.:format)      users#show
+          PATCH  /users/:id(.:format)      users#update
+          PUT    /users/:id(.:format)      users#update
+          DELETE /users/:id(.:format)      users#destroy
