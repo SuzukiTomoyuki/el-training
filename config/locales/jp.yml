@@ -14,13 +14,13 @@ ja:
 
   confirm:
     confirm: 本当に削除する？
-    title: 削除
-    commit: 削除
+    title: 削除する？
+    commit: 破壊
     cancel: やめる
 
   task:
     add: 喜びを追加
-    edit: 喜びを編集
+    edit: 喜びを更新
 
   date:
     formats:

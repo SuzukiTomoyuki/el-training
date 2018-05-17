@@ -74,8 +74,10 @@ end
 
 group :test do
   gem 'capybara'
+  # gem 'capybara-webkit'
   gem 'database_rewinder'
-  # gem 'selenium-webdriver'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 group :development do
