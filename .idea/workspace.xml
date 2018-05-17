@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a6ce2ae-9ed8-444b-be1d-af5bb172111b" name="デフォルト" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/spec/supports/capybara.rb" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change beforePath="$PROJECT_DIR$/.idea/el-training.iml" afterPath="$PROJECT_DIR$/.idea/el-training.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="$PROJECT_DIR$/app/views/tasks/_form.html.slim" afterPath="$PROJECT_DIR$/app/views/tasks/_form.html.slim" />
-      <change beforePath="$PROJECT_DIR$/app/views/tasks/index.html.slim" afterPath="$PROJECT_DIR$/app/views/tasks/index.html.slim" />
-      <change beforePath="$PROJECT_DIR$/config/locales/jp.yml" afterPath="$PROJECT_DIR$/config/locales/jp.yml" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/tasks_controller_spec.rb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/spec/features/tasks_list_spec.rb" afterPath="$PROJECT_DIR$/spec/features/tasks_spec.rb" />
-      <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" />
-      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -52,8 +40,8 @@
           <file leaf-file-name="tasks_spec.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spec/features/tasks_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="215" column="43" lean-forward="false" selection-start-line="215" selection-start-column="38" selection-end-line="215" selection-end-column="43" />
+                <state relative-caret-position="454">
+                  <caret line="245" column="44" lean-forward="false" selection-start-line="245" selection-start-column="44" selection-end-line="245" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -148,8 +136,8 @@
           <file leaf-file-name="jp.yml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/locales/jp.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="14" />
+                <state relative-caret-position="210">
+                  <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="15" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -158,14 +146,14 @@
           <file leaf-file-name="_form.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/tasks/_form.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="25" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.slim">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="8">
@@ -177,6 +165,26 @@
                     <element signature="e#2426#2445#0" expanded="true" />
                     <element signature="e#3064#3077#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/routes.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="schema.rb" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/db/schema.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -404,6 +412,11 @@
             <path>
               <item name="el-training" type="b2602c69:ProjectViewProjectNode" />
               <item name="el-training" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="el-training" type="b2602c69:ProjectViewProjectNode" />
+              <item name="el-training" type="462c0819:PsiDirectoryNode" />
               <item name="spec" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -445,7 +458,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="ToolWindow実行.ShowToolbar" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="produc&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/environments/production.rb&#10;gem&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;pro&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/environments/production.rb&#10;kamina&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/initializers/kaminari_config.rb&#10;data-con&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.3.0/gems/data-confirm-modal-1.6.2/vendor/assets/javascripts/data-confirm-modal.js&#10;status_id&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/migrate/20180509083704_rename_stat_to_status_id_from_task.rb&#10;task&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/task.rb&#10;index&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/tasks_list/index.html.slim&#10;priority&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="rout&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;produc&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/environments/production.rb&#10;gem&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;pro&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/environments/production.rb&#10;kamina&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/initializers/kaminari_config.rb&#10;data-con&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.3.0/gems/data-confirm-modal-1.6.2/vendor/assets/javascripts/data-confirm-modal.js&#10;status_id&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/migrate/20180509083704_rename_stat_to_status_id_from_task.rb&#10;task&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/task.rb&#10;index&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/tasks_list/index.html.slim&#10;priority&#9;null&#9;null" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -595,12 +608,12 @@
       <workItem from="1526341844470" duration="23438000" />
       <workItem from="1526429225004" duration="20543000" />
       <workItem from="1526453034374" duration="9156000" />
-      <workItem from="1526514667093" duration="16162000" />
+      <workItem from="1526514667093" duration="16957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354555000" />
+    <option name="totallyTimeSpent" value="355350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1920" height="1057" extended-state="6" />
@@ -744,14 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180424081128_remove_update_time_from_task.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -833,14 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,14 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/_form.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/task_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -966,14 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/jp.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -992,10 +973,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/_form.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/tasks_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="215" column="43" lean-forward="false" selection-start-line="215" selection-start-column="38" selection-end-line="215" selection-end-column="43" />
+        <state relative-caret-position="454">
+          <caret line="245" column="44" lean-forward="false" selection-start-line="245" selection-start-column="44" selection-end-line="245" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/jp.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding />
         </state>
       </provider>
