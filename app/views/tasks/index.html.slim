@@ -51,7 +51,7 @@ html
                             button type="button" class="close" data-dismiss="modal"
                             h4 class="modal-title" 編集
                           div.modal-body
-                            = render partial: 'form', locals: {task: task, submit_text: t("task.edit")}
+                            = render partial: 'form_task', locals: {task: task, submit_text: t("task.edit")}
                   td = link_to '削除', task_path(task.id),class: 'btn btn-danger delete-task-btn' ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
         = paginate @task_list
         br
@@ -67,6 +67,6 @@ html
                 button type="button" class="close" data-dismiss="modal"
                 h4 class="modal-title" 喜びを追加
               div.modal-body
-                = render partial: 'form', locals: { task: @task, submit_text: t("task.add") }
+                = render partial: 'form_task', locals: { task: @task, submit_text: t("task.add") }
 
         / button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#new_modal" 新しき喜び
