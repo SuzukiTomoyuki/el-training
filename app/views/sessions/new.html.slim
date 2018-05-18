@@ -2,15 +2,24 @@ html
   head
   body
     div.container
+      / - if @session.errors.any?
+      /   div id = "error_explanation"
+      /     - @session.errors.full_messages.each do |msg|
+      /       javascript:
+      //          toastr.error('#{msg}');
+
+      / - if flash[:alert]
+      /   javascript:
+      //      toastr.alert('#{flash[:alert]}');
       fieldset
         legend ログイン
         = form_tag do
           div
-            = label_tag :name, 'ユーザ名'
-            = text_field_tag :name, params[:name]
+            = label_tag :email, 'メールアドレス'
+            = text_field_tag :email, params[:email]
           div
-            = label_tag :pass, 'パスワード'
-            = password_field_tag :pass, params[:pass]
+            = label_tag :password, 'パスワード'
+            = password_field_tag :password, params[:password]
           div
             = submit_tag "ログイン"
 
