@@ -35,10 +35,11 @@ html
         table class="table-bordered table-hover table-striped"
           thead
             tr class="bg-info"
-              th.col-sm-7 喜び
+              th.col-sm-6 喜び
               th = sortable "priority", "優先度"
               th = sortable "status", "状態"
               th = sortable "deadline", "締め切り"
+              th 作成者
               / th = sortable "created_at", "作成日"
               th 付箋
               th colspan="2" 編集
@@ -51,6 +52,7 @@ html
                   td = t("status.#{task.status}")
                   td = task.deadline.to_s(:published_on)
                   / td = task.created_at.to_s(:published_on)
+                  td = task.holder.name
                   td = task.label
                   td
                     div id="edit_button" type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit_button_#{task.id}" 編集

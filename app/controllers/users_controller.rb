@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  # skip_before_action :user_logged_in?, only: [new, create]
+
   def new
     @user = User.new
   end
@@ -6,7 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(create_params)
     if @user.save
-      flash[:notice] = "新しいユーザを登録しました"
+      flash[:success] = "新しいユーザを登録しました"
+      redirect_to login_path
     else
       render "new"
     end

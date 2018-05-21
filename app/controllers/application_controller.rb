@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  before_action :user_logged_in?
+  # before_action :user_logged_in?
 
   def user_logged_in?
     if session[:user_id]
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       end
     end
     return if @current_user
-    # flash[:referer] = require.fullpath
+    flash[:warning] = "ログインしてください"
     redirect_to login_path
   end
 

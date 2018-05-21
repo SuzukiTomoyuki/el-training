@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :user_logged_in?
+  # skip_before_action :user_logged_in?
 
   def new
   end
@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     @_current_user = session[:user_id] = nil
+    flash[:success] = "ログアウトしました"
     redirect_to login_path
   end
 end

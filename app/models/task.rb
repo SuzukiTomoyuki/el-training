@@ -1,4 +1,5 @@
 class Task < ApplicationRecord
+  belongs_to :holder, class_name: 'User', foreign_key: 'user_id'
 
   validate :validate_caption_error, :check_caption_empty
 

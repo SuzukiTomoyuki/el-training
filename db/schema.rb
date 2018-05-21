@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180518060956) do
+ActiveRecord::Schema.define(version: 20180521032408) do
 
   create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "deadline"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20180518060956) do
     t.string "password"
     t.string "password_confirmation"
     t.string "remember_token"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name", "email"], name: "index_users_on_name_and_email", unique: true
   end
 

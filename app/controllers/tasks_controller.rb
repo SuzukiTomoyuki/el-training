@@ -1,10 +1,13 @@
 class TasksController < ApplicationController
+  before_action :user_logged_in?
+
   helper_method :sort_column, :sort_direction
 
   def index
     # task_list -> tasks
     @task = Task.new
     @task_list = Task.all.order(sort_column + ' ' + sort_direction)
+    # @task_list = Task.joins(:users).all.order(sort_column + ' ' + sort_direction)
     @user = User.find(session[:user_id])
     if params[:caption].present?
       @task_list = @task_list.get_by_caption params[:caption]
@@ -21,6 +24,8 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(create_params)
+    # p User.find(session[:user_id]).name
+    @task.user_id = User.find(session[:user_id]).id
     if @task.save
       flash[:notice] = "新しい喜び"
       # redirect_to tasks_path
@@ -53,7 +58,7 @@ class TasksController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at)
+    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id)
   end
 
   # before action で　セットタスク?

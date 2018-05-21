@@ -2,15 +2,6 @@ html
   head
   body
     div.container
-      / - if @session.errors.any?
-      /   div id = "error_explanation"
-      /     - @session.errors.full_messages.each do |msg|
-      /       javascript:
-      //          toastr.error('#{msg}');
-
-      / - if flash[:alert]
-      /   javascript:
-      //      toastr.alert('#{flash[:alert]}');
       fieldset
         legend ログイン
         = form_tag do
@@ -22,4 +13,4 @@ html
             = password_field_tag :password, params[:password]
           div
             = submit_tag "ログイン"
-
+      li = link_to 'アカウントを持っていない方はこちら', new_user_path
