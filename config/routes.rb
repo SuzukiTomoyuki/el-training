@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
+
+  get 'login', to: 'sessions#new'
+
+  post 'login' => 'sessions#create'
+
+  get 'sessions/destroy'
+
+  get 'users/new'
+
   get '/', to: 'tasks#index'
   # post "/" => 'tasks#index'
   # get '/new', to: 'tasks#new'
   # post '/new' => 'tasks#new'
   # get '/tasks/:id' => 'tasks#update'
   # post '/tasks/:id' => 'tasks#update'
-  resources :tasks
+  resources :tasks, :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
