@@ -60,6 +60,8 @@ gem 'toastr-rails'
 # 確認ダイアログ
 gem 'data-confirm-modal'
 
+gem 'bcrypt', '~> 3.1.7'
+
 # erbをスリムに変換
 gem 'html2slim'
 
@@ -74,8 +76,10 @@ end
 
 group :test do
   gem 'capybara'
+  # gem 'capybara-webkit'
   gem 'database_rewinder'
-  # gem 'selenium-webdriver'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 group :development do

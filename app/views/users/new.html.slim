@@ -1,0 +1,26 @@
+html
+  head
+  body
+    div.container
+      - if @user.errors.any?
+        div id = "error_explanation"
+          - @user.errors.full_messages.each do |msg|
+            javascript:
+              toastr.error('#{msg}');
+
+      h1 ユーザー登録
+      = form_for @user do |f|
+        div.form-group
+          = f.label :"ユーザー名", class: "control-label"
+          = f.text_field :name, class: "form-control"
+        div.form-group
+          = f.label :"e-mail", class: "control-label"
+          = f.text_field :email, class: "form-control"
+        div.form-group
+          = f.label :"パスワード", class: "control-label"
+          = f.password_field :password, class: "form-control"
+        div.form-group
+          = f.label :"パスワード(確認)", class: "control-label"
+          = f.password_field :password_confirmation, class: "form-control"
+        div.form-group
+          = f.submit "登録", class: "btn btn-primary"
