@@ -5,6 +5,7 @@ class TasksController < ApplicationController
     # task_list -> tasks
     @task = Task.new
     @task_list = Task.all.order(sort_column + ' ' + sort_direction)
+    @user = User.find(session[:user_id])
     if params[:caption].present?
       @task_list = @task_list.get_by_caption params[:caption]
     end

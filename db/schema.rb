@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180518060956) do
     t.string "email"
     t.string "password"
     t.string "password_confirmation"
+    t.string "remember_token"
     t.index ["name", "email"], name: "index_users_on_name_and_email", unique: true
   end
 

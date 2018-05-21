@@ -7,6 +7,10 @@ class User < ApplicationRecord
   }
   validate :check_empty
 
+  def User.new_remember_token
+    SecureRandom.urlsafe_base64
+  end
+
   def check_empty
     # if password.empty?
     #   errors.add(:password, "を入力してください")

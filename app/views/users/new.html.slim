@@ -6,7 +6,7 @@ html
         div id = "error_explanation"
           - @user.errors.full_messages.each do |msg|
             javascript:
-                toastr.error('#{msg}');
+              toastr.error('#{msg}');
 
       h1 ユーザー登録
       = form_for @user do |f|
