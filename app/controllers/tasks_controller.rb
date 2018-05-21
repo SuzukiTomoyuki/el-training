@@ -6,16 +6,15 @@ class TasksController < ApplicationController
   def index
     # task_list -> tasks
     @task = Task.new
-    @task_list = Task.all.order(sort_column + ' ' + sort_direction)
-    # @task_list = Task.joins(:users).all.order(sort_column + ' ' + sort_direction)
+    @tasks = Task.all.order(sort_column + ' ' + sort_direction)
     @user = User.find(session[:user_id])
     if params[:caption].present?
-      @task_list = @task_list.get_by_caption params[:caption]
+      @tasks = @tasks.get_by_caption params[:caption]
     end
     if params[:status].present?
-      @task_list = @task_list.get_by_status params[:status]
+      @tasks = @tasks.get_by_status params[:status]
     end
-    @task_list = @task_list.page(params[:page])
+    @tasks = @tasks.page(params[:page])
   end
 
   def new
