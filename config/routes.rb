@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    root 'tasks#index'
+    resources :tasks
+  end
+
   get 'login', to: 'sessions#new'
 
   post 'login' => 'sessions#create'
