@@ -52,7 +52,8 @@ class TasksController < ApplicationController
   end
 
   def show
-
+    @task = find_task_by_id
+    # @id =  123
   end
 
   def destroy

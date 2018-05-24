@@ -1,0 +1,16 @@
+/ = tasks
+table class="table-bordered table-hover table-striped task"
+  thead
+    tr class="bg-info"
+      th.text-center 詳細
+    tbody
+      div.form-group
+        tr
+          td = "優先度　#{t("priority.#{tasks.priority}")}"
+        tr
+          td = "締め切り　#{tasks.deadline.to_s(:published_on)}"
+        tr
+          td = "作成者　#{tasks.holder.name}"
+        tr
+          td = "付箋　#{tasks.label}"
+
