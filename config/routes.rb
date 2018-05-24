@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    root 'tasks#index'
+    root 'tasks#details_task'
     resources :tasks
   end
 
@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get '/', to: 'tasks#index'
-  # post "/" => 'tasks#index'
+  get '/', to: 'tasks#details_task'
+  # post "/" => 'tasks#details_task'
   # get '/new', to: 'tasks#new'
   # post '/new' => 'tasks#new'
   # get '/tasks/:id' => 'tasks#update'

@@ -30,18 +30,44 @@ html
               = render partial: 'form_serch'
 
     div.container
+      table class="table-bordered table-hover table-striped view_to_do"
+        thead
+          tr class="bg-info"
+            th 着手待ち
+        tbody
+          div.form-group
+            - @tasks_to_do.each do |task|
+              tr
+                td = task.caption
+      table class="table-bordered table-hover table-striped view_doing"
+        thead
+          tr class="bg-info"
+            th 着手中
+        tbody
+          div.form-group
+            - @tasks_doing.each do |task|
+              tr
+                td = task.caption
+      table class="table-bordered table-hover table-striped view_done"
+        thead
+          tr class="bg-info"
+            th 完了
+        tbody
+          div.form-group
+            - @tasks_done.each do |task|
+              tr
+                td = task.caption
+      table class="table-bordered table-hover table-striped view_task_detail"
+        thead
+          tr class="bg-info"
+            th 詳細
+        tbody
+
+    div.container
 
       - if flash[:notice]
         javascript:
-          toastr.success('#{flash[:notice]}');
-      / h1
-      /   | 喜びたち
-      / h5
-      /   div class="form-group　bg-warning"
-      /     div.col-sm-6.bg-warning
-      /       br
-      /       = render partial: 'form_serch'
-      /       br
+            toastr.success('#{flash[:notice]}');
       div id="new_button" type="button" class="btn btn-info btn-lg" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal"
 
       / div.col-sm-12.mt20
@@ -54,7 +80,6 @@ html
               th = sortable "status", "状態"
               th = sortable "deadline", "締め切り"
               th 作成者
-              / th = sortable "created_at", "作成日"
               th 付箋
               th colspan="2" 編集
           tbody
@@ -65,7 +90,6 @@ html
                   td = t("priority.#{task.priority}")
                   td = t("status.#{task.status}")
                   td = task.deadline.to_s(:published_on)
-                  / td = task.created_at.to_s(:published_on)
                   td = task.holder.name
                   td = task.label
                   td
@@ -83,9 +107,6 @@ html
         = paginate @tasks
         br
         / = link_to " 新しき喜び", new_tasks_list_path, class: "btn btn-info btn-lg"
-
-
-
         div class="modal fade" id="new_modal" role="dialog"
           div.modal-dialog
 
@@ -95,5 +116,3 @@ html
                 h4 class="modal-title" 喜びを追加
               div.modal-body
                 = render partial: 'form_task', locals: { task: @task, submit_text: t("task.add") }
-
-        / button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#new_modal" 新しき喜び

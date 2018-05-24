@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe "tasks/details_task.html.erb", type: :view do
+RSpec.describe Label, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end

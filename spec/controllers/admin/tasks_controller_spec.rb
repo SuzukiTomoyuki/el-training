@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Admin::TasksController, type: :controller do
 
-  describe "GET #index" do
+  describe "GET #details_task" do
     it "returns http success" do
-      get :index
+      get :details_task
       expect(response).to have_http_status(:success)
     end
   end

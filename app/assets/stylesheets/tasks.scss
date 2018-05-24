@@ -2,3 +2,7 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.view_to_do, .view_doing, .view_done, .view_task_detail{
+  float: left;
+  width: 25%;
+}

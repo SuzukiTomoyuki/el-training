@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Tasks', type: :feature do
   # コンピテンシーではアクションで切ってる
-  describe "#index" do
+  describe "#details_task" do
     let(:default_datetime) { Date.new(2020, 1, 1)}
     let(:user) { FactoryGirl.create(:user) }
 
@@ -96,7 +96,7 @@ feature 'Tasks', type: :feature do
 
   end
 
-  describe '優先度でソート(index)' do
+  describe '優先度でソート(details_task)' do
 
 
     let(:user) { FactoryGirl.create(:user) }
@@ -139,7 +139,7 @@ feature 'Tasks', type: :feature do
     end
   end
 
-  describe '状態でソート(index)' do
+  describe '状態でソート(details_task)' do
 
     let(:user) { FactoryGirl.create(:user) }
 
@@ -181,7 +181,7 @@ feature 'Tasks', type: :feature do
     end
   end
 
-  describe 'serch(index)' do
+  describe 'serch(details_task)' do
 
     let(:user) { FactoryGirl.create(:user) }
 
