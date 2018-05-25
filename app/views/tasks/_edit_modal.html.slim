@@ -1,0 +1,8 @@
+div class="modal fade" id="edit_button_#{task.id}" role="dialog"
+  div.modal-dialog
+    div.modal-content
+      div.modal-header
+        button type="button" class="close" data-dismiss="modal"
+        h4 class="modal-title" 編集
+      div.modal-body
+        = render partial: 'form_task', locals: {task: task, submit_text: t("task.edit")}

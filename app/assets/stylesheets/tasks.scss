@@ -2,7 +2,44 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.back_ground_color{
+  background-color: #CCFFFF	;
+}
+
+
 .task{
   float: left;
-  width: 25%;
+  width: 24%;
+  margin: 5px;
+  box-sizing: border-box;
+}
+.task-detail{
+  width: 15%;
+  margin: 10px;
+}
+.waku_image{
+  background-image:  url("/assets/images/Chalkboard-background.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  tr td {
+    padding: 0 50px;
+  }
+}
+
+.kureyon_font{
+  color: white;
+  font-size: 20px;
+}
+
+.under {
+  border-bottom: double 6px #87CEFA;
+}
+
+.table_title{
+  width: 15%;
+}
+
+.table_width{
+  height: 100px;
 }
