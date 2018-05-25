@@ -1,5 +1,5 @@
           Prefix Verb   URI Pattern                     Controller#Action
-      admin_root GET    /admin(.:format)                admin/tasks#details_task
+      admin_root GET    /admin(.:format)                admin/tasks#index
      admin_tasks GET    /admin/tasks(.:format)          admin/tasks#index
                  POST   /admin/tasks(.:format)          admin/tasks#create
   new_admin_task GET    /admin/tasks/new(.:format)      admin/tasks#new
@@ -12,7 +12,7 @@
                  POST   /login(.:format)                sessions#create
 sessions_destroy GET    /sessions/destroy(.:format)     sessions#destroy
        users_new GET    /users/new(.:format)            users#new
-                 GET    /                               tasks#details_task
+                 GET    /                               tasks#index
            tasks GET    /tasks(.:format)                tasks#index
                  POST   /tasks(.:format)                tasks#create
         new_task GET    /tasks/new(.:format)            tasks#new
