@@ -28,6 +28,7 @@ ja:
 
   confirm:
     confirm: 本当に削除する？
+    confirm_admin: 削除するとユーザが作ったタスクも全て削除されます。
     title: 削除する？
     commit: 破壊
     cancel: やめる

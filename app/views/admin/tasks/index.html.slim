@@ -96,7 +96,7 @@ html
               button type="button" class="close" data-dismiss="modal"
               h4 class="modal-title" 喜びを追加
             div.modal-body
-              = render partial: 'form_task', locals: { task: @task, submit_text: t("task.add") }
+              = render partial: 'form_task_new', locals: { task: @task, submit_text: t("task.add") }
 
 
     div.container
@@ -104,3 +104,17 @@ html
       - if flash[:notice]
         javascript:
             toastr.success('#{flash[:notice]}');
+  javascript:
+      // $("#new_task_status").val('to_do');
+      $("#status_to_do").click(function () {
+              $("#new_task_status").val('to_do');
+          }
+      );
+      $("#status_donig").click(function () {
+              $("#new_task_status").val('doing');
+          }
+      );
+      $("#status_done").click(function () {
+              $("#new_task_status").val('done');
+          }
+      );

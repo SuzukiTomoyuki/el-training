@@ -61,7 +61,8 @@ html
               button type="button" class="close" data-dismiss="modal"
               h4 class="modal-title" 喜びを追加
             div.modal-body
-              = render partial: 'form_task', locals: { task: @task, submit_text: t("task.add") }
+              = render partial: 'form_task_new', locals: { task: @task, submit_text: t("task.add") }
+
 
 
     div.container
@@ -69,50 +70,19 @@ html
       - if flash[:notice]
         javascript:
             toastr.success('#{flash[:notice]}');
-      / div id="new_button" type="button" class="btn btn-info btn-lg" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal"
-      /
-      / / div.col-sm-12.mt20
-      / div
-      /   table class="table-bordered table-hover table-striped"
-      /     thead
-      /       tr class="bg-info"
-      /         th.col-sm-6 喜び
-      /         th = sortable "priority", "優先度"
-      /         th = sortable "status", "状態"
-      /         th = sortable "deadline", "締め切り"
-      /         th 作成者
-      /         th 付箋
-      /         th colspan="2" 編集
-      /     tbody
-      /       div.form-group
-      /         - @tasks.each do |task|
-      /           tr
-      /             td = task.caption
-      /             td = t("priority.#{task.priority}")
-      /             td = t("status.#{task.status}")
-      /             td = task.deadline.to_s(:published_on)
-      /             td = task.holder.name
-      /             td = task.label
-      /             td
-      /               div id="edit_button" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
-      /
-      /               div class="modal fade" id="edit_button_#{task.id}" role="dialog"
-      /                 div.modal-dialog
-      /                   div.modal-content
-      /                     div.modal-header
-      /                       button type="button" class="close" data-dismiss="modal"
-      /                       h4 class="modal-title" 編集
-      /                     div.modal-body
-      /                       = render partial: 'form_task', locals: {task: task, submit_text: t("task.edit")}
-      /             td = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
-      /   = paginate @tasks
-      /   br
-      /   / = link_to " 新しき喜び", new_tasks_list_path, class: "btn btn-info btn-lg"
-      /   div class="modal fade" id="new_modal" role="dialog"
-      /     div.modal-dialog
-      /       div.modal-content
-      /         div.modal-header
-      /           button type="button" class="close" data-dismiss="modal"
-      /           h4 class="modal-title" 喜びを追加
-      /         div.modal-body
-      /           = render partial: 'form_task', locals: { task: @task, submit_text: t("task.add") }
+
+javascript:
+    // $("#new_task_status").val('to_do');
+    $("#status_to_do").click(function () {
+            console.log($("#new_task_status").val());
+            $("#new_task_status").val('to_do');
+        }
+    );
+    $("#status_donig").click(function () {
+            $("#new_task_status").val('doing');
+        }
+    );
+    $("#status_done").click(function () {
+            $("#new_task_status").val('done');
+        }
+    );
