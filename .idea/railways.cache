@@ -8,6 +8,14 @@
                  PATCH  /admin/tasks/:id(.:format)      admin/tasks#update
                  PUT    /admin/tasks/:id(.:format)      admin/tasks#update
                  DELETE /admin/tasks/:id(.:format)      admin/tasks#destroy
+     admin_users GET    /admin/users(.:format)          admin/users#index
+                 POST   /admin/users(.:format)          admin/users#create
+  new_admin_user GET    /admin/users/new(.:format)      admin/users#new
+ edit_admin_user GET    /admin/users/:id/edit(.:format) admin/users#edit
+      admin_user GET    /admin/users/:id(.:format)      admin/users#show
+                 PATCH  /admin/users/:id(.:format)      admin/users#update
+                 PUT    /admin/users/:id(.:format)      admin/users#update
+                 DELETE /admin/users/:id(.:format)      admin/users#destroy
            login GET    /login(.:format)                sessions#new
                  POST   /login(.:format)                sessions#create
 sessions_destroy GET    /sessions/destroy(.:format)     sessions#destroy
