@@ -9,6 +9,11 @@ class User < ApplicationRecord
   }
   validate :check_empty
 
+  enum admin:{
+      admin: true,
+      common: false
+  }
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end

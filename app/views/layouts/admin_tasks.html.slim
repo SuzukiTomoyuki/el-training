@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    = render 'layouts/header'
+  body
+    nav class="navbar back_ground_color_admin"
+      div.container
+        div.navbar-header
+          a.navbar-brand
+            = t("description.title")
+        div class="collapse navbar-collapse" id="navbarIndex"
+          ul class="nav navbar-nav"
+            li = link_to t("description.index_users"), admin_users_path
+          ul class="nav navbar-nav"
+            li = link_to t("description.index_tasks"), admin_tasks_path
+          ul class="nav navbar-nav navbar-right"
+            li
+              a class="btn" class="glyphicon glyphicon-search" data-toggle="modal" data-target="#serch_task"
+            li
+              a data-toggle="dropdown" role="button" ようこそ#{@user.name}さん
+              span class="create"
+              ul.dropdown-menu role="menu"
+                li = link_to  t("description.logout"), sessions_destroy_path
+
+      div class="modal fade" id="serch_task" role="dialog"
+        div.modal-dialog
+          div.modal-content
+            div.modal-header
+              button type="button" class="close" data-dismiss="modal"
+              h4 class="modal-title" 検索
+            div.modal-body
+              / = render partial: 'form_task', locals: {task: @task, submit_text: t("task.add")}
+              = render partial: 'form_serch'
+    = render 'layouts/taster'
+    = yield

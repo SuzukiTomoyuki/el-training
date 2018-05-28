@@ -1,4 +1,11 @@
 ja:
+
+  description:
+    title: お仕事管理♡
+    index_users: ユーザ一覧
+    index_tasks: タスク一覧
+    logout: ログアウト
+
   attributes:
     caption: 喜び
     name: 名前
@@ -14,6 +21,10 @@ ja:
     done: 完了
     doing: 着手中
     to_do: 着手待ち
+
+  role:
+    admin: 管理者
+    common: 一般
 
   confirm:
     confirm: 本当に削除する？

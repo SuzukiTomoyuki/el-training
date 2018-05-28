@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  layout "tasks"
+
   before_action :user_logged_in?
 
   helper_method :sort_column, :sort_direction
