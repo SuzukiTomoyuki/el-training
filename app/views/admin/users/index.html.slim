@@ -2,9 +2,9 @@ html
   head
   body
     div.container.tab-pane
-      table class="table-bordered table-hover table-striped"
+      table class="waku_image_user"
         thead
-          tr class="bg-info"
+          tr
             th.text-center 名前
             th.text-center e-mail
             th.text-center 権限
@@ -16,10 +16,10 @@ html
             tr
               td.text-center = user.name
               td.text-center = user.email
-              td = t("role.#{user.admin}")
-              td = user.created_at.to_s(:published_on)
+              td.text-center = t("role.#{user.admin}")
+              td.text-center = user.created_at.to_s(:published_on)
               td.text-center = user.tasks.size
-              td
+              td.text-center
                 div id="edit_button_user" type="button" class="btn glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_user#{user.id}"
                 = render partial: 'edit_user_modal', locals: {user: user}
               td

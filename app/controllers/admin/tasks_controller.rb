@@ -1,7 +1,7 @@
 class Admin::TasksController < ApplicationController
   layout 'admin_tasks'
 
-  before_action :user_logged_in?
+  before_action :user_logged_in?, :admin_user?
 
   helper_method :sort_column, :sort_direction
 

@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   layout 'admin_users'
+  before_action :admin_user?
 
   def index
     @users = User.all
@@ -9,10 +10,15 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     @user = find_user_by_id
-    destroy_task
-    @user.destroy
-    flash[:notice] = "ユーザとタスク削除完了"
-    redirect_to admin_users_path
+    if !@user.admin?
+      destroy_task
+      @user.destroy
+      flash[:notice] = "ユーザとタスク削除完了"
+      redirect_to admin_users_path
+    elsif User.admin.group(:admin).size.values[0] == 1
+      flash[:error] = "管理者が０人になるためユーザを削除できません"
+      redirect_to admin_users_path
+    end
   end
 
   def edit

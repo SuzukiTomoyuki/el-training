@@ -16,6 +16,14 @@
   margin: 5px;
   box-sizing: border-box;
 }
+.task_animation{
+  float: left;
+  width: 24%;
+  margin: 5px;
+  box-sizing: border-box;
+  //animation: rotation 2s ease 0s infinite alternate none running;
+  animation: rotation2 3s ease 0s infinite alternate none running;
+}
 .task-detail{
   width: 15%;
   margin: 10px;
@@ -28,6 +36,16 @@
   tr td {
     padding: 0 50px;
   }
+}
+
+.waku_image_user{
+  background-image:  url("/assets/images/Chalkboard-background.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  width: 90%;
+  margin: 10px;
 }
 
 .kureyon_font{
@@ -45,4 +63,29 @@
 
 .table_width{
   height: 100px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(-1deg);
+  }
+  //50% {
+  //  transform: rotate(0deg);
+  //  background-color: #1b6d85;
+  //}
+  100% {
+    transform: rotate(1deg);
+  }
+}
+@keyframes rotation2 {
+  0% {
+    transform: translateY(-5px);
+  }
+  //50% {
+  //  transform: rotate(0deg);
+  //  background-color: #1b6d85;
+  //}
+  100% {
+    transform: translateY(1px);
+  }
 }
