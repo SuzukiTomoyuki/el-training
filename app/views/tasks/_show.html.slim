@@ -2,22 +2,25 @@
 / table align="right" class="table-bordered table-hover table-striped task"
 thead
   tr
-    th.text-center.under 詳細
+    th.text-center.under colspan="#{tasks.labels.size}" 詳細
   tbody
     tr
-      td 優先度
+      td colspan="#{tasks.labels.size}" 優先度
     tr
-      td.text-center = t("priority.#{tasks.priority}")
+      td.text-center colspan="#{tasks.labels.size}" = t("priority.#{tasks.priority}")
     tr
-      td 締め切り
+      td colspan="#{tasks.labels.size}" 締め切り
     tr
-      td.text-center = tasks.deadline.to_s(:published_on)
+      td.text-center colspan="#{tasks.labels.size}" = tasks.deadline.to_s(:published_on)
     tr
-      td 作成者
+      td colspan="#{tasks.labels.size}" 作成者
     tr
-      td.text-center = tasks.holder.name
+      td.text-center colspan="#{tasks.labels.size}" = tasks.holder.name
     tr
-      td 付せん
+      td colspan="#{tasks.labels.size}" 付せん
     tr
-      td.text-center = tasks.label
+      - tasks.labels.each do |label|
+        td.text-center
+          div.label_border
+            = label.name
 

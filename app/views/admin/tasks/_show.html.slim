@@ -19,5 +19,6 @@ thead
     tr
       td 付せん
     tr
-      td.text-center = tasks.label
+      - tasks.labels.each do |label|
+        td.text-center = label.name
 

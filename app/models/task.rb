@@ -4,7 +4,7 @@ class Task < ApplicationRecord
   belongs_to :holder, class_name: 'User', foreign_key: 'user_id'
   # after_save :create_labels
 
-  validate :validate_caption_error, :check_caption_empty
+  validate :validate_caption_error, :check_caption_empty, :create_labels
 
   enum priority:{
       high: 0,
@@ -43,10 +43,10 @@ class Task < ApplicationRecord
 
   def create_labels
     #   ここでフォームから受け取ったラベルをどう区切るか設定する split
-    labels_text.split(",").each do | label_name |
-      label = Label.find_or_create_by(name: label_name)
-      tl = self.task_labels.where(label_id: label)
-      self.task_labels.create(label: label)
+    label.split(" ").each do | label_name |
+      label_id = Label.find_or_create_by(name: label_name)
+      # tl = self.task_labels.where(label_id: label_id)
+      self.task_labels.find_or_create_by(label: label_id)
     end
   end
 
