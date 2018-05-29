@@ -1,0 +1,4 @@
+- if flash.present?
+  -flash.each do |type, message|
+    javascript:
+      toastr["#{type}"]("#{message}");

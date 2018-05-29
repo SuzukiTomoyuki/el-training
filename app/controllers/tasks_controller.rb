@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  layout "tasks"
+
   before_action :user_logged_in?
 
   helper_method :sort_column, :sort_direction
@@ -6,14 +8,17 @@ class TasksController < ApplicationController
   def index
     # task_list -> tasks
     @task = Task.new
-    @tasks = Task.all.order(sort_column + ' ' + sort_direction)
     @user = User.find(session[:user_id])
+    @tasks = Task.all.order(sort_column + ' ' + sort_direction)
     if params[:caption].present?
       @tasks = @tasks.get_by_caption params[:caption]
     end
     if params[:status].present?
       @tasks = @tasks.get_by_status params[:status]
     end
+    @tasks_to_do = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 2
+    @tasks_doing = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 1
+    @tasks_done = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 0
     @tasks = @tasks.page(params[:page])
   end
 
@@ -46,6 +51,11 @@ class TasksController < ApplicationController
     else
       render json: { messages: @task.errors.full_messages }, status: :bad_request
     end
+  end
+
+  def show
+    @task = find_task_by_id
+    # @id =  123
   end
 
   def destroy

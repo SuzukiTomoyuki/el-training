@@ -54,6 +54,8 @@ gem 'jquery-ui-rails'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# gem 'rails-i18n'
+
 # トースター
 gem 'toastr-rails'
 
@@ -78,6 +80,7 @@ group :test do
   gem 'capybara'
   # gem 'capybara-webkit'
   gem 'database_rewinder'
+  # gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end

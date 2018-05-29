@@ -1,4 +1,13 @@
 ja:
+
+  description:
+    title: お仕事管理♡
+    index_users: ユーザ一覧
+    index_tasks: タスク一覧
+    admin: 管理者用
+    common: 一般用
+    logout: ログアウト
+
   attributes:
     caption: 喜び
     name: 名前
@@ -15,8 +24,13 @@ ja:
     doing: 着手中
     to_do: 着手待ち
 
+  role:
+    admin: 管理者
+    common: 一般
+
   confirm:
     confirm: 本当に削除する？
+    confirm_admin: 削除するとユーザが作ったタスクも全て削除されます。
     title: 削除する？
     commit: 破壊
     cancel: やめる

@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  # before_action :user_logged_in?
-
   def user_logged_in?
     if session[:user_id]
       begin
@@ -14,6 +12,13 @@ class ApplicationController < ActionController::Base
     return if @current_user
     flash[:warning] = "ログインしてください"
     redirect_to login_path
+  end
+
+  def admin_user?
+    if User.find(session[:user_id]).admin?
+    else
+      render partial: 'errors/forbidden'
+    end
   end
 
   def reset_user_session

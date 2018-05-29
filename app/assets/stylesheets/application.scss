@@ -42,8 +42,22 @@
   //font-weight: normal;
   //font-style: normal;
 }
+@font-face {
+  font-family: 'crayon';
+  src: font-url('crayon.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'kokubanB';
+  src: font-url('kokubanB.ttf') format('truetype');
+}
+
 
 body{
   font-family: 'Nashi';
+  line-height: 2.5;
+}
+
+.detail_task_font{
+  font-family: 'crayon';
   line-height: 2.5;
 }

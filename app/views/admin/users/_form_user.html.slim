@@ -1,0 +1,17 @@
+= form_for [:admin, user], html: { class: "data-form" } do |f|
+  div.form-group
+    = f.label :"名前:"
+    = f.text_field :name, class: "form-control"
+  div.form-group
+    = f.label :"e-mail:"
+    = f.text_field :email, class: "form-control"
+  div.form-group
+    = f.label :"権限:"
+    - if user.admin? and User.admin.group(:admin).size.values[0] == 1
+      div.red_font
+        = f.label :"管理者が一人しかいないため権限を変更できません。"
+      = f.select :admin, User.admins.map { |k, _v| [t("role.#{k}"), k] }, {}, class:"form-control", id: "edit_user_status", disabled: true
+    - else
+      = f.select :admin, User.admins.map { |k, _v| [t("role.#{k}"), k] }, {}, class:"form-control", id:"edit_user_status"
+  div.form-group
+    div id="submit_button" class="btn btn-primary data-submit" #{submit_text}

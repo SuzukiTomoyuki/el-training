@@ -2,10 +2,16 @@ require 'rails_helper'
 
 feature 'Tasks', type: :feature do
   # コンピテンシーではアクションで切ってる
-  describe "#index" do
+  describe "#details_task" do
     let(:default_datetime) { Date.new(2020, 1, 1)}
+    let(:user) { FactoryGirl.create(:user) }
 
     before do
+      user
+      visit login_path
+      fill_in 'メールアドレス', with: 'hogehoge@gmail.com'
+      fill_in 'パスワード', with: '12345'
+      click_on 'ログイン'
       allow(Date).to receive(:today).and_return(:default_datetime)
       1.upto 5 do |row|
         Task.create(
@@ -13,7 +19,8 @@ feature 'Tasks', type: :feature do
                 priority: :high,
                 status: :doing,
                 created_at: default_datetime + row.hour,
-                deadline: default_datetime + row.day
+                deadline: default_datetime + row.day,
+                user_id: user.id
         )
         visit tasks_path
       end
@@ -89,12 +96,20 @@ feature 'Tasks', type: :feature do
 
   end
 
-  describe '優先度でソート(index)' do
+  describe '優先度でソート(details_task)' do
+
+
+    let(:user) { FactoryGirl.create(:user) }
 
     before do
+      user
+      visit login_path
+      fill_in 'メールアドレス', with: 'hogehoge@gmail.com'
+      fill_in 'パスワード', with: '12345'
+      click_on 'ログイン'
       visit tasks_path
       0.upto(2) do |i|
-        FactoryGirl.create(:task, priority: Task.priorities.keys[i])
+        FactoryGirl.create(:task, priority: Task.priorities.keys[i], user_id: user.id)
       end
     end
 
@@ -124,12 +139,19 @@ feature 'Tasks', type: :feature do
     end
   end
 
-  describe '状態でソート(index)' do
+  describe '状態でソート(details_task)' do
+
+    let(:user) { FactoryGirl.create(:user) }
 
     before do
+      user
+      visit login_path
+      fill_in 'メールアドレス', with: 'hogehoge@gmail.com'
+      fill_in 'パスワード', with: '12345'
+      click_on 'ログイン'
       visit tasks_path
       0.upto(2) do |i|
-        FactoryGirl.create(:task, status: Task.statuses.keys[i])
+        FactoryGirl.create(:task, status: Task.statuses.keys[i], user_id: user.id)
       end
     end
 
@@ -159,12 +181,19 @@ feature 'Tasks', type: :feature do
     end
   end
 
-  describe 'serch(index)' do
+  describe 'serch(details_task)' do
+
+    let(:user) { FactoryGirl.create(:user) }
 
     before do
+      user
+      visit login_path
+      fill_in 'メールアドレス', with: 'hogehoge@gmail.com'
+      fill_in 'パスワード', with: '12345'
+      click_on 'ログイン'
       visit tasks_path
       0.upto(2) do |i|
-        FactoryGirl.create(:task, caption: "#{i + 1}番目の喜び" ,status: Task.statuses.keys[i])
+        FactoryGirl.create(:task, caption: "#{i + 1}番目の喜び" ,status: Task.statuses.keys[i], user_id: user.id)
       end
     end
 
@@ -198,8 +227,15 @@ end
 
 feature 'Tasks_js', type: :feature, js:true do
 
+  let(:user) { FactoryGirl.create(:user) }
+
   describe "#new" do
     before do
+      user
+      visit login_path
+      fill_in 'メールアドレス', with: 'hogehoge@gmail.com'
+      fill_in 'パスワード', with: '12345'
+      click_on 'ログイン'
       visit tasks_path
       find("#new_button").click
     end
@@ -219,8 +255,16 @@ feature 'Tasks_js', type: :feature, js:true do
   end
 
   describe "#delete" do
+
+    let(:user) { FactoryGirl.create(:user) }
+
     before do
-      task = FactoryGirl.create(:task, deadline: Date.today)
+      user
+      visit login_path
+      fill_in 'メールアドレス', with: 'hogehoge@gmail.com'
+      fill_in 'パスワード', with: '12345'
+      click_on 'ログイン'
+      task = FactoryGirl.create(:task, deadline: Date.today, user_id: user.id)
       visit tasks_path(task)
     end
     it "indexに表示されているタスクを削除する" do
@@ -234,8 +278,16 @@ feature 'Tasks_js', type: :feature, js:true do
   end
 
   describe "#edit" do
+
+    let(:user) { FactoryGirl.create(:user) }
+
     before do
-      @task = FactoryGirl.create(:task, caption:"俺はテストを行う!", deadline: Date.today)
+      user
+      visit login_path
+      fill_in 'メールアドレス', with: 'hogehoge@gmail.com'
+      fill_in 'パスワード', with: '12345'
+      click_on 'ログイン'
+      @task = FactoryGirl.create(:task, caption:"俺はテストを行う!", deadline: Date.today, user_id: user.id)
       visit tasks_path(@task)
       # page.all("tbody tr")[0].find_by_id("edit_button").click
     end

@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    = render 'layouts/header'
+  body
+    nav class="navbar back_ground_color_admin"
+      div.container
+        div.navbar-header
+          a.navbar-brand
+            = t("description.title")
+        div class="collapse navbar-collapse" id="navbarIndex"
+          = render partial: 'layouts/navbar_my_name'
+          ul class="nav navbar-nav"
+            li = link_to t("description.index_users"), admin_users_path
+          ul class="nav navbar-nav"
+            li = link_to t("description.index_tasks"), admin_tasks_path
+
+    = render 'layouts/taster'
+    = yield
