@@ -1,0 +1,17 @@
+html
+  head
+  body
+    div.container.tab-pane
+      table.waku_image_user
+        thead
+          tr
+            th.text-center ラベル名
+            th.text-center タスク数
+            th.text-center 編集
+        tbody
+          - @labels.zip(@label_ids).each do |label|
+            tr
+              td.text-center = label[0][0]
+              td.text-center = label[0][1]
+              td.text-center
+                = link_to '', admin_label_path(label[1].id), class: 'btn delete-user-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm_admin") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}

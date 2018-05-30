@@ -28,11 +28,12 @@ class Admin::TasksController < ApplicationController
 
   def create
     @task = Task.new(create_params)
+    @user = User.find(session[:user_id])
     # p User.find(session[:user_id]).name
     @task.user_id = User.find(session[:user_id]).id
     if @task.save
       flash[:notice] = "新しい喜び"
-      # redirect_to tasks_path
+      # redirect_to admin_tasks_path
     else
       # render 'new'
       render json: { messages: @task.errors.full_messages }, status: :bad_request
@@ -62,7 +63,7 @@ class Admin::TasksController < ApplicationController
     @task = find_task_by_id
     @task.destroy
     flash[:notice] = "悲しみ"
-    redirect_to tasks_path
+    redirect_to admin_tasks_path
   end
 
   private

@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
 
   # namespace :admin do
+  #   get 'labels/index'
+  # end
+  #
+  # namespace :admin do
+  #   get 'labels/destroy'
+  # end
+  #
+  # get 'labels/index'
+  #
+  # get 'labels/destroy'
+
+  # namespace :admin do
   #   get 'users/index'
   # end
   #
@@ -18,9 +30,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'tasks#index'
-    # root 'users#index'
-    # get '/users/index', to: 'users#index'
-    resources :tasks, :users
+    resources :tasks, :users, :labels
   end
 
   get 'login', to: 'sessions#new'

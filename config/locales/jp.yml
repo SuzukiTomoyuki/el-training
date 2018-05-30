@@ -4,6 +4,7 @@ ja:
     title: お仕事管理♡
     index_users: ユーザ一覧
     index_tasks: タスク一覧
+    index_labels: ラベル一覧
     admin: 管理者用
     common: 一般用
     logout: ログアウト
