@@ -13,7 +13,8 @@ html
           div.form-group
             - @tasks_to_do.each do |task|
               tr
-                td = task.holder.name
+                td
+                  img width="50px" src = "/assets/images/#{task.holder.image_name}"
                 td class="table_width" = link_to task.caption, task_path(task), remote: true
                 td
                   div id="edit_button_to_do" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
@@ -30,7 +31,8 @@ html
           div.form-group
             - @tasks_doing.each do |task|
               tr
-                td = task.holder.name
+                td
+                  img width="50px" src = "/assets/images/#{task.holder.image_name}"
                 td class="table_width" = link_to task.caption, task_path(task), remote: true
                 td
                   div id="edit_button_doing" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
@@ -46,7 +48,8 @@ html
           div.form-group
             - @tasks_done.each do |task|
               tr
-                td = task.holder.name
+                td
+                  img width="50px" src = "/assets/images/#{task.holder.image_name}"
                 td class="table_width" = link_to task.caption, task_path(task), remote: true
                 td
                   div id="edit_button_done" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"

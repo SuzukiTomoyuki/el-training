@@ -26,13 +26,12 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
-
+    @user = find_user_by_id
   end
 
 
   def update
     @user = find_user_by_id
-    p @user.name
     if @user.update(create_params)
       flash[:notice] = "ユーザ情報を更新"
     else
@@ -42,7 +41,7 @@ class Admin::UsersController < ApplicationController
 
   private
   def create_params
-    params.require(:user).permit(:id, :name, :email, :password, :password_confirmation, :admin)
+    params.require(:user).permit(:id, :name, :email, :password, :password_confirmation, :admin, :image_name)
   end
 
   def find_user_by_id

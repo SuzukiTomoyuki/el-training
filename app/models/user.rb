@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  # mount_uploader :image_name, PictureUploader
+  attr_accessor :image
   has_many :tasks, dependent: :destroy
 
   has_secure_password

@@ -2,10 +2,12 @@ ul class="nav navbar-nav navbar-right"
   li
     a class="btn" class="glyphicon glyphicon-search" data-toggle="modal" data-target="#serch_task"
   li
-    a data-toggle="dropdown" role="button" ようこそ#{@user.name}さん
+    a data-toggle="dropdown"
+      img width="25px" src = "/assets/images/#{@user.image_name}"
     span class="create"
     ul.dropdown-menu role="menu"
       - if @user.admin?
         li = link_to t("description.admin"), admin_root_path
         li = link_to t("description.common"), tasks_path
+      li = link_to "プロフィール", edit_user_path(@user.id)
       li = link_to t("description.logout"), sessions_destroy_path

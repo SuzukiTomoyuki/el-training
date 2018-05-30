@@ -64,6 +64,9 @@ gem 'data-confirm-modal'
 
 gem 'bcrypt', '~> 3.1.7'
 
+# 画像アップロード
+# gem 'carrierwave'
+
 # erbをスリムに変換
 gem 'html2slim'
 

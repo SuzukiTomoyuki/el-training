@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528005910) do
+ActiveRecord::Schema.define(version: 20180530024311) do
 
   create_table "labels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20180528005910) do
     t.string "password_confirmation"
     t.string "remember_token"
     t.boolean "admin", default: false, null: false
+    t.string "image_name", default: "default_user.png"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name", "email"], name: "index_users_on_name_and_email", unique: true
   end
