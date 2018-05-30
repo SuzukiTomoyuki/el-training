@@ -18,7 +18,7 @@ html
                 td
                   div id="edit_button_to_do" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
                   = render partial: 'edit_modal', locals: { task: task }
-                  = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
+                  = link_to '', admin_task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
 
       table class="table-bordered table-hover table-striped task"
         thead
@@ -35,7 +35,7 @@ html
                 td
                   div id="edit_button_doing" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
                   = render partial: 'edit_modal', locals: {task: task}
-                  = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
+                  = link_to '', admin_task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
       table class="table-bordered table-hover table-striped task"
         thead
           tr class="bg-info"
@@ -51,7 +51,7 @@ html
                 td
                   div id="edit_button_done" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
                   = render partial: 'edit_modal', locals: {task: task}
-                  = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
+                  = link_to '', admin_task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
 
       table align="right" padding= "10px" class="task_animation kureyon_font waku_image detail_task_font" id="show_task_detail"
 

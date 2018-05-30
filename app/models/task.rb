@@ -1,10 +1,12 @@
 class Task < ApplicationRecord
-  has_many :task_labels
+  has_many :task_labels, dependent: :destroy
   has_many :labels, through: :task_labels
   belongs_to :holder, class_name: 'User', foreign_key: 'user_id'
   # after_save :create_labels
+  before_update :create_labels
+  after_create :create_labels
 
-  validate :validate_caption_error, :check_caption_empty, :create_labels
+  validate :validate_caption_error, :check_caption_empty
 
   enum priority:{
       high: 0,
