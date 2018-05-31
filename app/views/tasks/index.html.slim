@@ -1,57 +1,56 @@
 html
   head
   body
-    div.back_ground_color style="width: 100%;"
+    div.waku_image_task
+      table class="task waku_image_task"
+        thead
+          tr
+            th.text-center class="task_bord_title table_title_font" colspan="2" 着手待ち
+            th.text-left class="table_title"
+              div type="button" class="btn" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal" id="status_to_do"
+        tbody
+          - @tasks_to_do.each do |task|
+            tr
+              td.text-right
+                img width="50px" src = "/assets/images/#{task.holder.image_name}"
+              td.text-center class="task_caption_width task_caption_font" = link_to task.caption, task_path(task), remote: true
+              td
+                div id="edit_button_to_do" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
+                = render partial: 'edit_modal', locals: { task: task }
+                = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
 
-      table class="table-bordered table-hover table-striped task"
+      table class="task waku_image_task"
         thead
-          tr class="bg-info"
-            th.text-center colspan="2" 着手待ち
-            th.text-right class="table_title"
-              div type="button" class="btn btn-info" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal" id="status_to_do"
+          tr
+            th.text-center class="task_bord_title table_title_font" colspan="2" 着手中
+            th.text-left class="table_title"
+              div type="button" class="btn" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal" id="status_donig"
         tbody
-          div.form-group
-            - @tasks_to_do.each do |task|
-              tr
-                td = task.holder.name
-                td class="table_width" = link_to task.caption, task_path(task), remote: true
-                td
-                  div id="edit_button_to_do" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
-                  = render partial: 'edit_modal', locals: { task: task }
-                  = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
-
-      table class="table-bordered table-hover table-striped task"
+          - @tasks_doing.each do |task|
+            tr
+              td.text-right
+                img width="50px" src = "/assets/images/#{task.holder.image_name}"
+              td.text-center class="task_caption_width task_caption_font" = link_to task.caption, task_path(task), remote: true
+              td
+                div id="edit_button_doing" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
+                = render partial: 'edit_modal', locals: {task: task}
+                = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
+      table class="task waku_image_task"
         thead
-          tr class="bg-info"
-            th.text-center colspan="2" 着手中
-            th.text-right class="table_title"
-              div type="button" class="btn btn-info" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal" id="status_donig"
+          tr
+            th.text-center class="task_bord_title table_title_font" colspan="2" 完了
+            th.text-left class="table_title"
+              div type="button" class="btn" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal" id="status_done"
         tbody
-          div.form-group
-            - @tasks_doing.each do |task|
-              tr
-                td = task.holder.name
-                td class="table_width" = link_to task.caption, task_path(task), remote: true
-                td
-                  div id="edit_button_doing" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
-                  = render partial: 'edit_modal', locals: {task: task}
-                  = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
-      table class="table-bordered table-hover table-striped task"
-        thead
-          tr class="bg-info"
-            th.text-center colspan="2" 完了
-            th.text-right class="table_title"
-              div type="button" class="btn btn-info" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal" id="status_done"
-        tbody
-          div.form-group
-            - @tasks_done.each do |task|
-              tr
-                td = task.holder.name
-                td class="table_width" = link_to task.caption, task_path(task), remote: true
-                td
-                  div id="edit_button_done" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
-                  = render partial: 'edit_modal', locals: {task: task}
-                  = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
+          - @tasks_done.each do |task|
+            tr
+              td.text-right
+                img width="50px" src = "/assets/images/#{task.holder.image_name}"
+              td.text-center class="task_caption_width task_caption_font" = link_to task.caption, task_path(task), remote: true
+              td
+                div id="edit_button_done" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
+                = render partial: 'edit_modal', locals: {task: task}
+                = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
 
       table align="right" padding= "10px" class="task_animation kureyon_font waku_image detail_task_font" id="show_task_detail"
 
