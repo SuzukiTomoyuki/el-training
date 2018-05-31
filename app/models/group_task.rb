@@ -1,4 +1,4 @@
 class GroupTask < ApplicationRecord
-  belongs_to :group_id
-  belongs_to :task_id
+  belongs_to :group
+  belongs_to :task
 end

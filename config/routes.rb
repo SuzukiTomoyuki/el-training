@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'group/new'
+
+  get 'group/update'
+
   # namespace :admin do
   #   get 'labels/index'
   # end
