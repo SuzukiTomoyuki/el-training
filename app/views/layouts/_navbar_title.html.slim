@@ -1,0 +1,8 @@
+div.navbar-header
+  ul
+    a.navbar-brand data-toggle="dropdown"
+      = t("description.title")
+    span class="create"
+    ul.dropdown-menu role="menu"
+      - @user.groups.each do |group|
+        li = group.name

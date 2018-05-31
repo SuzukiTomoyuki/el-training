@@ -36,6 +36,18 @@
   }
 }
 
+input[type="text"] {
+  width: 300px;
+  height: 40px;
+  border: none;
+}
+
+.huchidori_font {
+  font-size: 150%;
+  color: #2E2F30;
+  text-shadow: 1px 1px 0 white;
+}
+
 @font-face {
   font-family: 'Nashi';
   src: font-url('Nyashi.ttf') format('truetype');

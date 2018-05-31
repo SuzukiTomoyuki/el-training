@@ -1,18 +1,18 @@
 = form_for [:admin, task], html: { class: "data-form" }  do |f|
   div.form-group
-    = f.label :"喜び: ", class: "control-label"
+    = f.label :"喜び: ", class: "control-label huchidori_font"
     = f.text_field :caption, class: "form-control"
   div.form-group
-    = f.label :"優先度: "
+    = f.label :"優先度: ", class: "control-label huchidori_font"
     = f.select :priority, Task.priorities.map { |k, _v| [t("priority.#{k}"), k] }, {}, class: "form-control"
   div.form-group
-    = f.label :"締め切り: "
+    = f.label :"締め切り: ", class: "control-label huchidori_font"
     = f.date_select :deadline, {}, class: "form-control"
   div.form-group
-    = f.label :"状態: "
+    = f.label :"状態: ", class: "control-label huchidori_font"
     = f.select :status, Task.statuses.map { |k, _v| [t("status.#{k}"), k] },{}, class: "form-control", id: "new_task_status"
   div.form-group
-    = f.label :"付箋: "
+    = f.label :"付箋: ", class: "control-label huchidori_font"
     = f.text_field :label, class: "form-control"
   div.form-group
     div id="submit_button" class="btn btn-primary data-submit" #{submit_text}

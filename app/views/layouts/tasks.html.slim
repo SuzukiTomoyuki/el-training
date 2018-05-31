@@ -5,9 +5,7 @@ html
   body.background_color
     nav class="navbar header_color"
       div.container
-        div.navbar-header
-          a.navbar-brand
-            = t("description.title")
+        = render partial: 'layouts/navbar_title'
         div class="collapse navbar-collapse" id="navbarIndex"
           = render partial: 'layouts/navbar_my_name'
 
