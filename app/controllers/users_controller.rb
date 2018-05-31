@@ -1,4 +1,4 @@
-require 'Kconv'
+require 'kconv'
 
 class UsersController < ApplicationController
   layout "users"
