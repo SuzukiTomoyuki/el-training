@@ -15,6 +15,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = find_user_by_id
+    if session[:user_id] != @user.id
+      render partial: 'errors/forbidden'
+    end
   end
 
   def update
