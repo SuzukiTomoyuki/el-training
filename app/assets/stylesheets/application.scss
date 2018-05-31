@@ -50,6 +50,14 @@
   font-family: 'kokubanB';
   src: font-url('kokubanB.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'RiiTN_R';
+  src: font-url('RiiTN_R.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Magic';
+  src: font-url('TanukiMagic.ttf') format('truetype');
+}
 
 
 body{
@@ -60,4 +68,12 @@ body{
 .detail_task_font{
   font-family: 'crayon';
   line-height: 2.5;
+}
+.task_caption_font {
+  font-family: 'RiiTN_R';
+  font-size: 120%;
+}
+.table_title_font {
+  font-family: 'Magic';
+  font-size: 200%;
 }
