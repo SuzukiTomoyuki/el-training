@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     # task_list -> tasks
     @task = Task.new
     @user = User.find(session[:user_id])
-    # @group = Group.find(params[:group_id])
+    # @groups = Group.find(params[:group_id])
     @tasks = Task.all.order(sort_column + ' ' + sort_direction)
     if params[:caption].present?
       @tasks = @tasks.get_by_caption params[:caption]

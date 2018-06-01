@@ -1,6 +1,6 @@
 = form_for [:admin, task], html: { class: "data-form" }  do |f|
   div.form-group
-    = f.label :"喜び: ", class: "control-label huchidori_font"
+    = f.label :"#{t("ttributes.caption")}: ", class: "control-label huchidori_font"
     = f.text_field :caption, class: "form-control"
   div.form-group
     = f.label :"優先度: ", class: "control-label huchidori_font"

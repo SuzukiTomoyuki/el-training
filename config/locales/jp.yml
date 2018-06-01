@@ -9,8 +9,8 @@ ja:
     common: 一般用
     logout: ログアウト
 
-  attributes:
-    caption: 喜び
+  ttributes:
+    caption: お仕事♡
     name: 名前
     email: メールアドレス
     pass: パスワード
@@ -37,8 +37,8 @@ ja:
     cancel: やめる
 
   task:
-    add: 喜びを追加
-    edit: 喜びを更新
+    add: お仕事♡追加
+    edit: お仕事♡更新
 
   date:
     formats:

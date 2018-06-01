@@ -3,6 +3,10 @@ div.navbar-header
     a.navbar-brand data-toggle="dropdown"
       = t("description.title")
     span class="create"
-    ul.dropdown-menu role="menu"
+    ul.dropdown-menu
       - @user.groups.each do |group|
-        li = group.name
+        - if params[:controller].to_s == "admin/tasks"
+          li.text-center = link_to group.name, admin_group_tasks_path(group.id)
+        - else
+          li.text-center = link_to group.name, group_tasks_path(group.id)
+      li.text-center = link_to "グループ追加", new_group_path

@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# gem 'capistrano-rails', groups: :development
 
 # NOTE: View handlerの設定で使用されるのでどの環境でも必要
 gem 'slim'
@@ -69,6 +69,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # erbをスリムに変換
 gem 'html2slim'
+
+gem 'select2-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
