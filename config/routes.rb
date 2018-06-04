@@ -1,6 +1,22 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'groups/index'
+  end
+
+  namespace :admin do
+    get 'groups/new'
+  end
+
+  namespace :admin do
+    get 'groups/update'
+  end
+
+  namespace :admin do
+    get 'groups/destroy'
+  end
+
+  namespace :admin do
     root 'tasks#index'
     resources :tasks, :users, :labels
     resources :groups do

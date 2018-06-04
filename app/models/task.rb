@@ -54,4 +54,8 @@ class Task < ApplicationRecord
     end
   end
 
+  def link_group
+
+  end
+
 end

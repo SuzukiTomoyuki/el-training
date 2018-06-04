@@ -25,9 +25,7 @@ class TasksController < ApplicationController
     end
 
     if group == nil
-      @tasks_to_do = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 2
-      @tasks_doing = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 1
-      @tasks_done = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 0
+      redirect_to group_tasks_path(1)
     else
       @tasks_to_do = Task.all.where(id: group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
       @tasks_doing = Task.all.where(id: group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
@@ -41,10 +39,12 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(create_params)
+    @user = User.find(session[:user_id])
+    group = Group.find(params[:group_id])
     @task.user_id = User.find(session[:user_id]).id
-    if @task.save
-      flash[:notice] = "新しい喜び"
-      # redirect_to tasks_path
+    if @task.save!
+      group.group_tasks.create(task: @task)
+      flash[:notice] = "タスクが追加されました"
     else
       render json: { messages: @task.errors.full_messages }, status: :bad_request
     end

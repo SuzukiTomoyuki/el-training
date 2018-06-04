@@ -1,21 +1,19 @@
-class GroupsController < ApplicationController
-  def new
+class Admin::GroupsController < ApplicationController
+  def index
     @group = Group.new
   end
 
-  def create
-    @group = Group.new(create_params)
-    if @group.save
+  def new
+  end
 
-    end
+  def create
+
   end
 
   def update
-    @user = find_group_by_id
   end
 
-  def show
-    @group = Group.find(params[:id])
+  def destroy
   end
 
   private
