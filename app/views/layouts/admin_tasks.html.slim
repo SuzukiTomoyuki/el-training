@@ -9,6 +9,8 @@ html
         div class="collapse navbar-collapse" id="navbarIndex"
           = render partial: 'layouts/navbar_my_name'
           ul class="nav navbar-nav"
+            li = link_to t("description.index_groups"), admin_groups_path
+          ul class="nav navbar-nav"
             li = link_to t("description.index_users"), admin_users_path
           ul class="nav navbar-nav"
             li = link_to t("description.index_tasks"), admin_tasks_path
