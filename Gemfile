@@ -70,6 +70,7 @@ gem 'bcrypt', '~> 3.1.7'
 # erbをスリムに変換
 gem 'html2slim'
 
+gem "jquery-turbolinks"
 gem 'select2-rails'
 
 

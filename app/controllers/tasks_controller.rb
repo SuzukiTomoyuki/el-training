@@ -17,10 +17,22 @@ class TasksController < ApplicationController
     if params[:status].present?
       @tasks = @tasks.get_by_status params[:status]
     end
-    @tasks_to_do = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 2
-    @tasks_doing = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 1
-    @tasks_done = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 0
-    # @tasks = @tasks.page(params[:page])
+
+    begin
+      group = Group.find(params[:group_id])
+    rescue
+      group = nil
+    end
+
+    if group == nil
+      @tasks_to_do = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 2
+      @tasks_doing = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 1
+      @tasks_done = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 0
+    else
+      @tasks_to_do = Task.all.where(id: group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
+      @tasks_doing = Task.all.where(id: group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
+      @tasks_done = Task.all.where(id: group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
+    end
   end
 
   def new
@@ -66,7 +78,7 @@ class TasksController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id)
+    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id, :group_id)
   end
 
   # before action で　セットタスク?

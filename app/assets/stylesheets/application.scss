@@ -14,7 +14,7 @@
  *= require_self
  *= require toastr
  *= require select2
- *= require select2-bootstrap
+ //*= require select2-bootstrap
  */
 
 // Bootstrap Sass
@@ -41,7 +41,7 @@
 input[type="text"] {
   width: 300px;
   height: 40px;
-  border: none;
+  //border: none;
 }
 
 .huchidori_font {

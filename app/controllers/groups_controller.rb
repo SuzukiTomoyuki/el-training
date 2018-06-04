@@ -14,12 +14,16 @@ class GroupsController < ApplicationController
     @user = find_group_by_id
   end
 
+  def show
+    @group = Group.find(params[:id])
+  end
+
   private
   def find_group_by_id
     Group.find(params[:id])
   end
 
   def create_params
-    params.require(:group).permit(:id, :name, :users, user_id: [])
+    params.require(:group).permit(:id, :name, user_ids: [])
   end
 end
