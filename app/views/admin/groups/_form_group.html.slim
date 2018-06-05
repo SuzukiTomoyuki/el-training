@@ -1,0 +1,9 @@
+= form_for [:admin, group], html: { class: "data-form" } do |f|
+  div.form-group
+    = f.label :"グループ名:", class: "control-label huchidori_font"
+    = f.text_field :name, class: "form-control"
+  / div.form-group
+  /   = f.label :"メンバー:", class: "control-label huchidori_font"
+  /   = select_tag "group[user_ids]", options_from_collection_for_select(User.all, :id, :name) , class: "searchable", multiple: true, include_blank: true
+  div.form-group
+    div id="submit_button" class="btn btn-primary data-submit" #{submit_text}

@@ -1,6 +1,8 @@
 class Task < ApplicationRecord
   has_many :task_labels, dependent: :destroy
   has_many :labels, through: :task_labels
+  has_many :group_tasks, dependent: :destroy
+  has_many :groups, through: :group_tasks
   belongs_to :holder, class_name: 'User', foreign_key: 'user_id'
   # after_save :create_labels
   before_update :create_labels
@@ -50,6 +52,10 @@ class Task < ApplicationRecord
       # tl = self.task_labels.where(label_id: label_id)
       self.task_labels.find_or_create_by(label: label_id)
     end
+  end
+
+  def link_group
+
   end
 
 end

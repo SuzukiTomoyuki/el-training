@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  *= require toastr
+ *= require select2
+ //*= require select2-bootstrap
  */
 
 // Bootstrap Sass
@@ -34,6 +36,18 @@
   .pb#{$i * 5} {
     padding-bottom:#{$i * 5}px !important;
   }
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 40px;
+  //border: none;
+}
+
+.huchidori_font {
+  font-size: 150%;
+  color: #2E2F30;
+  text-shadow: 1px 1px 0 white;
 }
 
 @font-face {

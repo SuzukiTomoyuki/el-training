@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require rails-ujs
+//= require select2
 //= require turbolinks
 //= require_tree .
 // Bootstrap Sass
@@ -47,4 +49,23 @@ $(function(){
             }
         })
     })
+});
+
+$('.js-searchable').select2({
+    width: 200,
+    allowClear: true
+});
+
+$(document).on('turbolinks:load', function(){
+    var flg = "close";
+   $("#member_label").click(function () {
+       if (flg == "close"){
+           $("#member_label_text").text("メンバーを非表示 △");
+           flg = "open";
+       }else {
+           $("#member_label_text").text("メンバーを表示 ▽");
+           flg = "close"
+       }
+
+   })
 });

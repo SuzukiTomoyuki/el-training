@@ -13,6 +13,15 @@
 }
 
 
+.modal-content {
+  background-image: url("/assets/images/mokume.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
 .task{
   float: left;
   width: 24%;
@@ -77,6 +86,21 @@
 
 }
 
+.user_icon {
+  background-color: #f7ecb5;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.user_icon2 {
+  background-color: #f7ecb5;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin: 5px 20px;
+}
+
 .label_border {
   //padding: 0.2em 0.5em;
   margin: 5px 0;
@@ -99,6 +123,53 @@
 
 .table_width{
   height: 100px;
+}
+
+.members {
+  //display: none;
+}
+
+.hidden_box {
+  margin: 2em 0;/*前後の余白*/
+  padding: 0;
+}
+
+/*ボタン装飾*/
+.hidden_box label {
+  padding: 5px;
+  font-weight: bold;
+  //border: solid 2px black;
+  text-decoration: underline;
+  color: gray;
+  cursor :pointer;
+}
+
+/*ボタンホバー時*/
+.hidden_box label:hover {
+  background: #efefef;
+}
+
+/*チェックは見えなくする*/
+.hidden_box input {
+  display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box .hidden_show {
+  display: none;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.hidden_box input:checked ~ .hidden_show {
+  display: inline;
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
 }
 
 @keyframes rotation {
