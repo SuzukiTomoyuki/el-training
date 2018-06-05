@@ -1,0 +1,24 @@
+html
+  head
+  body
+    div.container
+      / = @tasks_to_do.size
+      / = @tasks_doing.size
+      / = @tasks_done.size
+      .user_panel
+        table
+          tbody
+            tr
+              td.text-center rowspan="2"
+                img.user_icon2 width="80px" src = "/assets/images/#{@user.image_name}"
+              td.text-center 着手待ち
+              / td.text-center = @tasks_to_do
+            tr
+              td.text-center = @tasks_to_do.size
+            tr
+              td.text-center 着手中
+              td.text-center 完了
+            tr
+              td.text-center = @tasks_doing.size
+              td.text-center = @tasks_done.size
+

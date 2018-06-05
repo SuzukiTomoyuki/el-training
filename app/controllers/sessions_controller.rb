@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "ログインしました"
-      redirect_to tasks_path
+      redirect_to user_path(session[:user_id])
     else
       flash[:error] = "メールアドレスもしくはパスワードが違います"
       render "new"

@@ -18,20 +18,10 @@ class Admin::TasksController < ApplicationController
     # end
     @group_new = Group.new
 
-    begin
-      @group = Group.find(params[:group_id])
-    rescue
-      @group = nil
-    end
-
-
-    if @group == nil
-      redirect_to admin_group_tasks_path(1)
-    else
-      @tasks_to_do = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
-      @tasks_doing = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
-      @tasks_done = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
-    end
+    @group = Group.find(params[:group_id])
+    @tasks_to_do = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
+    @tasks_doing = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
+    @tasks_done = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
   end
 
   def new
