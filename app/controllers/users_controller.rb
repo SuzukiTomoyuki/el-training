@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     @tasks_to_do = task.get_by_status 2
     @tasks_doing = task.get_by_status 1
     @tasks_done = task.get_by_status 0
-    @group = Group.all
+    @group = Group.new
+    @groups = Group.all
   end
 
   def edit

@@ -3,6 +3,7 @@ class Admin::GroupsController < ApplicationController
   before_action :admin_user?
 
   def index
+    @group = Group.new
     @groups = Group.all
     @user = User.find(session[:user_id])
   end

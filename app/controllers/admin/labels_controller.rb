@@ -3,6 +3,7 @@ class Admin::LabelsController < ApplicationController
   before_action :admin_user?
 
   def index
+    @group = Group.new
     @labels = TaskLabel.joins(:label).group("labels.name").count.sort_by(&:last).reverse
     @label_ids = []
     @labels.each do |label|

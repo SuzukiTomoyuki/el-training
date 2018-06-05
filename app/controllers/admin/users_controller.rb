@@ -5,6 +5,7 @@ class Admin::UsersController < ApplicationController
   def index
     @users = User.all
     @user = User.find(session[:user_id])
+    @group = Group.new
   end
 
 
@@ -27,6 +28,7 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = find_user_by_id
+    @group = Group.new
   end
 
 

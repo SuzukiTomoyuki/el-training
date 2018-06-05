@@ -16,12 +16,12 @@ class Admin::TasksController < ApplicationController
     # if params[:status].present?
     #   @tasks = @tasks.get_by_status params[:status]
     # end
-    @group_new = Group.new
+    @group = Group.new
 
-    @group = Group.find(params[:group_id])
-    @tasks_to_do = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
-    @tasks_doing = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
-    @tasks_done = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
+    @group_tasks = Group.find(params[:group_id])
+    @tasks_to_do = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
+    @tasks_doing = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
+    @tasks_done = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
   end
 
   def new

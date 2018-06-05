@@ -11,13 +11,13 @@ html
                 th.text-center
             tbody
               tr
-                - @group.users.each do |user|
+                - @group_tasks.users.each do |user|
               tr
-                - @group.users.each do |user|
+                - @group_tasks.users.each do |user|
                   td.text-center
                     img.user_icon2 width="80px" src = "/assets/images/#{user.image_name}"
               tr
-                - @group.users.each do |user|
+                - @group_tasks.users.each do |user|
                   td.text-center = user.name
 
     div.waku_image_task

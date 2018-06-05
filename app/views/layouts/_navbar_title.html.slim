@@ -9,4 +9,6 @@ div.navbar-header
           li.text-center = link_to group.name, admin_group_tasks_path(group.id)
         - else
           li.text-center = link_to group.name, group_tasks_path(group.id)
-      li.text-center = link_to "グループ追加", new_group_path
+      / li.text-center = link_to "グループ追加", new_group_path
+      li.text-center
+        div id="new_group" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#new_group_modal"
