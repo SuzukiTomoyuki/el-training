@@ -1,6 +1,25 @@
 html
   head
   body
+    .members
+      div.container.hidden_box
+        label id="member_label_text" for="member_label" メンバーを表示 ▽
+        input type="checkbox" id="member_label"
+          table align="center" class="hidden_show"
+            thead
+              tr
+                th.text-center
+            tbody
+              tr
+                - @group.users.each do |user|
+              tr
+                - @group.users.each do |user|
+                  td.text-center
+                    img.user_icon2 width="80px" src = "/assets/images/#{user.image_name}"
+              tr
+                - @group.users.each do |user|
+                  td.text-center = user.name
+
     div.waku_image_task
       table class="task waku_image_task"
         thead
@@ -12,7 +31,7 @@ html
           - @tasks_to_do.each do |task|
             tr
               td.text-right
-                img width="50px" src = "/assets/images/#{task.holder.image_name}"
+                img.user_icon width="50px" src = "/assets/images/#{task.holder.image_name}"
               td.text-center class="task_caption_width task_caption_font" = link_to task.caption, task_path(task), remote: true
               td
                 div id="edit_button_to_do" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
@@ -29,7 +48,7 @@ html
           - @tasks_doing.each do |task|
             tr
               td.text-right
-                img width="50px" src = "/assets/images/#{task.holder.image_name}"
+                img.user_icon width="50px" src = "/assets/images/#{task.holder.image_name}"
               td.text-center class="task_caption_width task_caption_font" = link_to task.caption, task_path(task), remote: true
               td
                 div id="edit_button_doing" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
@@ -45,7 +64,7 @@ html
           - @tasks_done.each do |task|
             tr
               td.text-right
-                img width="50px" src = "/assets/images/#{task.holder.image_name}"
+                img.user_icon width="50px" src = "/assets/images/#{task.holder.image_name}"
               td.text-center class="task_caption_width task_caption_font" = link_to task.caption, task_path(task), remote: true
               td
                 div id="edit_button_done" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
@@ -59,7 +78,7 @@ html
           div.modal-content
             div.modal-header
               button type="button" class="close" data-dismiss="modal"
-              h4 class="modal-title" 喜びを追加
+              h4 class="modal-title huchidori_font" #{t("ttributes.caption")}を追加
             div.modal-body
               = render partial: 'form_task_new', locals: { task: @task, submit_text: t("task.add") }
 

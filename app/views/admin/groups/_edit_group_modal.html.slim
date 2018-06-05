@@ -1,0 +1,8 @@
+div class="modal fade black_font" id="edit_button_group#{group.id}" role="dialog"
+  div.modal-dialog
+    div.modal-content
+      div.modal-helper
+        button type="button" class="close" data-dismiss="modal"
+        h4 class="modal-title huchidori_font" 編集
+      div.modal-body
+        = render partial: 'form_group', locals: {group: group, submit_text: "更新"}

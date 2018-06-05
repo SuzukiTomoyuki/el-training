@@ -1,6 +1,6 @@
 = form_for(tasks_path, method: "get") do
-  = label_tag :name, "喜び", class: "control-label"
+  = label_tag :name, t("ttributes.caption"), class: "control-label huchidori_font"
   = text_field_tag :caption, params[:caption], class: "form-control"
-  = label_tag :name, "状態", class: "control-label"
+  = label_tag :name, "状態", class: "control-label huchidori_font"
   = select_tag :status, options_for_select(Task.statuses.map { |k, _v| [t("status.#{k}"), k] }), include_blank: true, class: "form-control"
   = submit_tag "検索", class: "btn"

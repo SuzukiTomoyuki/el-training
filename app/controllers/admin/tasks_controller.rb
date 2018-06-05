@@ -9,17 +9,29 @@ class Admin::TasksController < ApplicationController
     # task_list -> tasks
     @task = Task.new
     @user = User.find(session[:user_id])
-    @tasks = Task.all.order(sort_column + ' ' + sort_direction)
-    if params[:caption].present?
-      @tasks = @tasks.get_by_caption params[:caption]
+    # @tasks = Task.all.order(sort_column + ' ' + sort_direction)
+    # if params[:caption].present?
+    #   @tasks = @tasks.get_by_caption params[:caption]
+    # end
+    # if params[:status].present?
+    #   @tasks = @tasks.get_by_status params[:status]
+    # end
+    @group_new = Group.new
+
+    begin
+      @group = Group.find(params[:group_id])
+    rescue
+      @group = nil
     end
-    if params[:status].present?
-      @tasks = @tasks.get_by_status params[:status]
+
+
+    if @group == nil
+      redirect_to admin_group_tasks_path(1)
+    else
+      @tasks_to_do = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
+      @tasks_doing = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
+      @tasks_done = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
     end
-    @tasks_to_do = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 2
-    @tasks_doing = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 1
-    @tasks_done = Task.all.order(sort_column + ' ' + sort_direction).get_by_status 0
-    @tasks = @tasks.page(params[:page])
   end
 
   def new
@@ -29,13 +41,12 @@ class Admin::TasksController < ApplicationController
   def create
     @task = Task.new(create_params)
     @user = User.find(session[:user_id])
-    # p User.find(session[:user_id]).name
+    group = Group.find(params[:group_id])
     @task.user_id = User.find(session[:user_id]).id
-    if @task.save
-      flash[:notice] = "新しい喜び"
-      # redirect_to admin_tasks_path
+    if @task.save!
+      group.group_tasks.create(task: @task)
+      flash[:notice] = "タスクが追加されました"
     else
-      # render 'new'
       render json: { messages: @task.errors.full_messages }, status: :bad_request
     end
   end
@@ -47,7 +58,7 @@ class Admin::TasksController < ApplicationController
   def update
     @task = find_task_by_id
     if @task.update(create_params)
-      flash[:notice] = "より強い喜び"
+      flash[:notice] = "タスクが編集されました"
       # redirect_to tasks_path
     else
       render json: { messages: @task.errors.full_messages }, status: :bad_request
@@ -68,7 +79,7 @@ class Admin::TasksController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id)
+    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id, :group_ids)
   end
 
   # before action で　セットタスク?
