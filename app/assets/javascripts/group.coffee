@@ -2,8 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
-  $(".searchable").select2({
+$(document).on 'turbolinks:load', ->
+  $(".select2").select2({
     width:      200,  # 横幅
     allowClear: true  # x で選択したものを削除できる
 # 詳細は http://ivaynberg.github.io/select2/#documentation

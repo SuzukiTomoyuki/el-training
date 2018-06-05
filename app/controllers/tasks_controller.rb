@@ -19,17 +19,17 @@ class TasksController < ApplicationController
     end
 
     begin
-      group = Group.find(params[:group_id])
+      @group = Group.find(params[:group_id])
     rescue
-      group = nil
+      @group = nil
     end
 
-    if group == nil
+    if @group == nil
       redirect_to group_tasks_path(1)
     else
-      @tasks_to_do = Task.all.where(id: group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
-      @tasks_doing = Task.all.where(id: group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
-      @tasks_done = Task.all.where(id: group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
+      @tasks_to_do = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
+      @tasks_doing = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
+      @tasks_done = Task.all.where(id: @group.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
     end
   end
 

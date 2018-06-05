@@ -1,6 +1,9 @@
 class GroupsController < ApplicationController
+  layout "users"
+
   def new
     @group = Group.new
+    @user = User.find(session[:user_id])
   end
 
   def create

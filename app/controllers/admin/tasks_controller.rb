@@ -20,7 +20,6 @@ class Admin::TasksController < ApplicationController
 
     begin
       @group = Group.find(params[:group_id])
-      @group_id = Group.select(:id).find(params[:group_id])
     rescue
       @group = nil
     end
