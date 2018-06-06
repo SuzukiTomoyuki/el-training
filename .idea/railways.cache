@@ -24,7 +24,7 @@
                       PATCH  /admin/labels/:id(.:format)                      admin/labels#update
                       PUT    /admin/labels/:id(.:format)                      admin/labels#update
                       DELETE /admin/labels/:id(.:format)                      admin/labels#destroy
-    admin_group_tasks GET    /admin/groups/:group_id/tasks(.:format)          admin/tasks#index
+    admin_group_tasks GET    /admin/groups/:group_id/tasks(.:format)          admin/tasks#index_group
                       POST   /admin/groups/:group_id/tasks(.:format)          admin/tasks#create
  new_admin_group_task GET    /admin/groups/:group_id/tasks/new(.:format)      admin/tasks#new
 edit_admin_group_task GET    /admin/groups/:group_id/tasks/:id/edit(.:format) admin/tasks#edit
@@ -44,6 +44,7 @@ edit_admin_group_task GET    /admin/groups/:group_id/tasks/:id/edit(.:format) ad
                       POST   /login(.:format)                                 sessions#create
      sessions_destroy GET    /sessions/destroy(.:format)                      sessions#destroy
             users_new GET    /users/new(.:format)                             users#new
+                 root GET    /                                                tasks#index
                 tasks GET    /tasks(.:format)                                 tasks#index
                       POST   /tasks(.:format)                                 tasks#create
              new_task GET    /tasks/new(.:format)                             tasks#new
@@ -60,7 +61,7 @@ edit_admin_group_task GET    /admin/groups/:group_id/tasks/:id/edit(.:format) ad
                       PATCH  /users/:id(.:format)                             users#update
                       PUT    /users/:id(.:format)                             users#update
                       DELETE /users/:id(.:format)                             users#destroy
-          group_tasks GET    /groups/:group_id/tasks(.:format)                tasks#index
+          group_tasks GET    /groups/:group_id/tasks(.:format)                tasks#index_group
                       POST   /groups/:group_id/tasks(.:format)                tasks#create
        new_group_task GET    /groups/:group_id/tasks/new(.:format)            tasks#new
       edit_group_task GET    /groups/:group_id/tasks/:id/edit(.:format)       tasks#edit

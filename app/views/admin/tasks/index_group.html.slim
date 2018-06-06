@@ -1,6 +1,29 @@
 html
   head
   body
+    .members
+      div.container.hidden_box
+        label id="member_label_text" for="member_label" メンバーを表示 ▽
+        input type="checkbox" id="member_label"
+          table align="center" class="hidden_show"
+            thead
+              tr
+                th.text-center
+            tbody
+              tr
+              / - @group.users.each do |user|
+              /   td.text-center
+              /     - if user.admin?
+              /       img width="30px" src = "/assets/images/oukan.png"
+              tr
+                - @group_tasks.users.each do |user|
+                  td.text-center
+                    img.user_icon2 width="80px" src = "/assets/images/#{user.image_name}"
+              tr
+                - @group_tasks.users.each do |user|
+                  td.text-center = user.name
+
+
     table class="task waku_image_task"
       thead
         tr

@@ -6,25 +6,24 @@ class TasksController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    # task_list -> tasks
     @task = Task.new
     @user = User.find(session[:user_id])
-    # @groups = Group.find(params[:group_id])
-    @tasks = Task.all.order(sort_column + ' ' + sort_direction)
-    if params[:caption].present?
-      @tasks = @tasks.get_by_caption params[:caption]
-    end
-    if params[:status].present?
-      @tasks = @tasks.get_by_status params[:status]
-    end
-
     @group = Group.new
-    @group_tasks = Group.find(params[:group_id])
+    # @group_tasks = Group.find(params[:group_id])
+    @tasks_to_do = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 2
+    @tasks_doing = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 1
+    @tasks_done = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 0
+  end
 
+  def index_group
+    @task = Task.new
+    @user = User.find(session[:user_id])
+    @group = Group.new
+
+    @group_tasks = Group.find(params[:group_id])
     @tasks_to_do = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
     @tasks_doing = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
     @tasks_done = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
-
   end
 
   def new

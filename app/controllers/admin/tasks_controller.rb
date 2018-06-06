@@ -6,6 +6,16 @@ class Admin::TasksController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
+    @task = Task.new
+    @user = User.find(session[:user_id])
+    @group = Group.new
+    # @group_tasks = Group.find(params[:group_id])
+    @tasks_to_do = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 2
+    @tasks_doing = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 1
+    @tasks_done = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 0
+  end
+
+  def index_group
     # task_list -> tasks
     @task = Task.new
     @user = User.find(session[:user_id])
@@ -23,6 +33,7 @@ class Admin::TasksController < ApplicationController
     @tasks_doing = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
     @tasks_done = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
   end
+
 
   def new
     @task = Task.new
