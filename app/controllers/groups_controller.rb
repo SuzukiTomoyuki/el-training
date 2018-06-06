@@ -9,6 +9,10 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(create_params)
     if @group.save
+      flash[:notice] = "グループを作成しました"
+      redirect_to group_tasks_path(@group.id)
+    else
+      render json: { messages: @task.errors.full_messages }, status: :bad_request
     end
   end
 

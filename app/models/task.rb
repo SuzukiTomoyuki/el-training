@@ -46,10 +46,9 @@ class Task < ApplicationRecord
 
 
   def create_labels
-    #   ここでフォームから受け取ったラベルをどう区切るか設定する split
-    label.split(" ").each do | label_name |
+    self.label = nil
+    label.gsub(/(\s|　)+/, ' ').split(" ").each do | label_name |
       label_id = Label.find_or_create_by(name: label_name)
-      # tl = self.task_labels.where(label_id: label_id)
       self.task_labels.find_or_create_by(label: label_id)
     end
   end

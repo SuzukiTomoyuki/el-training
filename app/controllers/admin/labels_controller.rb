@@ -15,6 +15,7 @@ class Admin::LabelsController < ApplicationController
   def destroy
     label = find_label_by_id
     label.destroy
+    flash[:notice] = "グループが削除されました。"
     redirect_to admin_labels_path
   end
 end

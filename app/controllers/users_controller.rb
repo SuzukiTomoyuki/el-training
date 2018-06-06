@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @group = Group.new
     @user = find_user_by_id
     if session[:user_id] != @user.id
       render partial: 'errors/forbidden'

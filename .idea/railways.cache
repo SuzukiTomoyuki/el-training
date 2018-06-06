@@ -1,8 +1,4 @@
                Prefix Verb   URI Pattern                                      Controller#Action
-   admin_groups_index GET    /admin/groups/index(.:format)                    admin/groups#index
-     admin_groups_new GET    /admin/groups/new(.:format)                      admin/groups#new
-  admin_groups_update GET    /admin/groups/update(.:format)                   admin/groups#update
- admin_groups_destroy GET    /admin/groups/destroy(.:format)                  admin/groups#destroy
            admin_root GET    /admin(.:format)                                 admin/tasks#index
           admin_tasks GET    /admin/tasks(.:format)                           admin/tasks#index
                       POST   /admin/tasks(.:format)                           admin/tasks#create
@@ -48,7 +44,6 @@ edit_admin_group_task GET    /admin/groups/:group_id/tasks/:id/edit(.:format) ad
                       POST   /login(.:format)                                 sessions#create
      sessions_destroy GET    /sessions/destroy(.:format)                      sessions#destroy
             users_new GET    /users/new(.:format)                             users#new
-                      GET    /                                                tasks#index
                 tasks GET    /tasks(.:format)                                 tasks#index
                       POST   /tasks(.:format)                                 tasks#create
              new_task GET    /tasks/new(.:format)                             tasks#new
