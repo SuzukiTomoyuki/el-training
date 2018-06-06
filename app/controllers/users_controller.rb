@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # skip_before_action :user_logged_in?, only: [new, create]
 
   def new
+    @group = Group.new
     @user = User.new
     render :layout => 'new_user'
   end
