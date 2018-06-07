@@ -1,0 +1,14 @@
+- tasks.each do |task|
+  tr
+    td.text-right
+      img.user_icon width="50px" src = "/assets/images/#{task.holder.image_name}"
+    - if task.deadline - (Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)) < 0.day
+      td.text-center class="task_caption_width_red task_caption_font" = link_to task.caption, task_path(task), remote: true
+    - elsif task.deadline - (Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)) < 3.day
+      td.text-center class="task_caption_width_yellow task_caption_font" = link_to task.caption, task_path(task), remote: true
+    - else
+      td.text-center class="task_caption_width task_caption_font" = link_to task.caption, task_path(task), remote: true
+    td
+      div id="edit_button_to_do" type="button" class="btn" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_#{task.id}"
+      = render partial: 'edit_modal', locals: { task: task }
+      = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}

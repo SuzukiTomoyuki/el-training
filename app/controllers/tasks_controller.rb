@@ -34,10 +34,12 @@ class TasksController < ApplicationController
     @task = Task.new(create_params)
     @user = User.find(session[:user_id])
     group = Group.find(params[:group_id])
+    pp group
     @task.user_id = User.find(session[:user_id]).id
     if @task.save!
       group.group_tasks.create(task: @task)
       flash[:notice] = "タスクが追加されました"
+      # redirect_back(fallback_location: root_path)
     else
       render json: { messages: @task.errors.full_messages }, status: :bad_request
     end
@@ -50,7 +52,7 @@ class TasksController < ApplicationController
   def update
     @task = find_task_by_id
     if @task.update(create_params)
-      flash[:notice] = "より強い喜び"
+      flash[:notice] = "タスクを更新"
       # redirect_to tasks_path
     else
       render json: { messages: @task.errors.full_messages }, status: :bad_request
@@ -66,8 +68,10 @@ class TasksController < ApplicationController
     @task = find_task_by_id
     @task.destroy
     flash[:notice] = "悲しみ"
-    redirect_to tasks_path
+    # redirect_to tasks_path
+    redirect_back(fallback_location: root_path)
   end
+
 
   private
   def create_params

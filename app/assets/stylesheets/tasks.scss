@@ -79,7 +79,25 @@
 }
 .task_caption_width {
   width: 60%;
+  background-image: url("/assets/images/postit_blue.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.task_caption_width_yellow {
+  width: 60%;
   background-image: url("/assets/images/postit_yellow.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.task_caption_width_red {
+  width: 60%;
+  background-image: url("/assets/images/postit_red.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;

@@ -44,9 +44,10 @@ class Admin::TasksController < ApplicationController
     @user = User.find(session[:user_id])
     group = Group.find(params[:group_id])
     @task.user_id = User.find(session[:user_id]).id
-    if @task.save!
+    if @task.save
       group.group_tasks.create(task: @task)
       flash[:notice] = "タスクが追加されました"
+      # redirect_back(fallback_location: root_path)
     else
       render json: { messages: @task.errors.full_messages }, status: :bad_request
     end
@@ -60,7 +61,7 @@ class Admin::TasksController < ApplicationController
     @task = find_task_by_id
     if @task.update(create_params)
       flash[:notice] = "タスクが編集されました"
-      # redirect_to tasks_path
+      # redirect_back(fallback_location: root_path)
     else
       render json: { messages: @task.errors.full_messages }, status: :bad_request
     end
@@ -68,14 +69,13 @@ class Admin::TasksController < ApplicationController
 
   def show
     @task = find_task_by_id
-    # @id =  123
   end
 
   def destroy
     @task = find_task_by_id
     @task.destroy
-    flash[:notice] = "悲しみ"
-    redirect_to admin_tasks_path
+    flash[:notice] = "タスクが削除されました"
+    redirect_back(fallback_location: root_path)
   end
 
   private

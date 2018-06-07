@@ -29,6 +29,7 @@ $(function(){
         var $form = $(this).parents('.data-form');
         var query = $form.serialize();
         console.log($form.attr('action'));
+        // return false;
 
         $.ajax({
             url: $form.attr('action'),

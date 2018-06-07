@@ -13,3 +13,4 @@ div.navbar-header
       li.text-center
         div id="new_group" data-toggle="modal" data-target="#new_group_modal"
           label グループを作成
+          / = render partial: 'layouts/form_group_new', locals: { group: @group }
