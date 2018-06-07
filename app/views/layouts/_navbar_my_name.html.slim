@@ -7,8 +7,8 @@ ul class="nav navbar-nav navbar-right"
     span class="create"
     ul.dropdown-menu role="menu"
       - if @user.admin?
-        li = link_to t("description.admin"), admin_user_path(@user.id)
-        li = link_to t("description.common"), user_path(@user.id)
+        li = link_to t("description.admin"), admin_root_path
+        li = link_to t("description.common"), root_path
       - if @user.id != nil
         li = link_to "プロフィール", edit_user_path(@user.id)
       li = link_to t("description.logout"), sessions_destroy_path

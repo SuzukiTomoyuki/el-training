@@ -46,7 +46,9 @@ class Task < ApplicationRecord
 
 
   def create_labels
-    self.label = nil
+    self.task_labels.each do |label|
+      Label.where(id: label.label_id).destroy_all
+    end
     label.gsub(/(\s|　)+/, ' ').split(" ").each do | label_name |
       label_id = Label.find_or_create_by(name: label_name)
       self.task_labels.find_or_create_by(label: label_id)

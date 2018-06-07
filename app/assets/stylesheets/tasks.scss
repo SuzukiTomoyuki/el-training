@@ -79,7 +79,34 @@
 }
 .task_caption_width {
   width: 60%;
+  background-image: url("/assets/images/postit_blue.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.task_caption_width_yellow {
+  width: 60%;
   background-image: url("/assets/images/postit_yellow.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.task_caption_width_red {
+  width: 60%;
+  background-image: url("/assets/images/postit_red.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.task_caption_width_green {
+  width: 60%;
+  background-image: url("/assets/images/postit_green.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -107,6 +134,15 @@
   border: dashed 2px #ffc3c3;
   border-radius: 8px;
 }
+
+.group_title {
+  background-image: url("/assets/images/group_title.png");
+  background-size: 100% 100%;
+  font-size: 25px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #555, -1px 1px 1px #555, 1px -1px 1px #555, -1px -1px 1px #555, 1px 1px 1px #555, -1px 1px 1px #555, 1px -1px 1px #555, -1px -1px 1px #555, 5px 5px #9ccc65;
+}
+
 
 .kureyon_font{
   color: black;

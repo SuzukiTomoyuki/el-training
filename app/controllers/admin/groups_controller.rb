@@ -8,12 +8,20 @@ class Admin::GroupsController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
-  def new
-  end
-
-  def create
-
-  end
+  # def new
+  #   @group = Group.new
+  #   @user = User.find(session[:user_id])
+  # end
+  #
+  # def create
+  #   @group = Group.new(create_params)
+  #   if @group.save
+  #     flash[:notice] = "グループを作成しました"
+  #     redirect_to group_tasks_path(@group.id)
+  #   else
+  #     render json: { messages: @task.errors.full_messages }, status: :bad_request
+  #   end
+  # end
 
   def update
     @group = find_group_by_id
