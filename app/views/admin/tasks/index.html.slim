@@ -1,6 +1,25 @@
 html
   head
   body
+    .tasks_summary.col-xs-12
+      table.col-xs-3
+        tbody
+          th.text-center.group_title 自分のタスク
+      div.col-xs-5.col-sm-offset-4
+        h5
+          span.text-muted
+            img.user_icon width="30px" src = "/assets/images/postit_blue.png" まだ大丈夫：
+            = @task_blue_count
+          span.text-muted
+            img.user_icon width="30px" src = "/assets/images/postit_yellow.png" 期限三日以内：
+            = @task_yellow_count
+          span.text-muted
+            img.user_icon width="30px" src = "/assets/images/postit_red.png" 期限切れ：
+            = @task_red_count
+          span.text-muted
+            img.user_icon width="30px" src = "/assets/images/postit_green.png" 完了：
+            = @task_status_done_count
+
     .tasks
       table class="task waku_image_task"
         thead

@@ -9,7 +9,13 @@ class TasksController < ApplicationController
     @task = Task.new
     @user = User.find(session[:user_id])
     @group = Group.new
-    # @group_tasks = Group.find(params[:group_id])
+
+    @task_status_done_count = Task.all.where(user_id: session[:user_id]).where(status: 0).size
+    time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
+    @task_blue_count = Task.all.where(user_id: session[:user_id]).where("deadline > '#{time_now + 3.day}'").where.not(status: 0).size
+    @task_yellow_count = Task.all.where(user_id: session[:user_id]).where(deadline: (time_now)..(3.days.since)).where.not(status: 0).size
+    @task_red_count = Task.all.where(user_id: session[:user_id]).where("deadline < '#{time_now}'").where.not(status: 0).size
+
     @tasks_to_do = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 2
     @tasks_doing = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 1
     @tasks_done = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 0
@@ -21,6 +27,13 @@ class TasksController < ApplicationController
     @group = Group.new
 
     @group_tasks = Group.find(params[:group_id])
+
+    @task_status_done_count = Task.all.where(id: @group_tasks.tasks.ids).where(status: 0).size
+    time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
+    @task_blue_count = Task.all.where(id: @group_tasks.tasks.ids).where("deadline > '#{time_now + 3.day}'").where.not(status: 0).size
+    @task_yellow_count = Task.all.where(id: @group_tasks.tasks.ids).where(deadline: (time_now)..(3.days.since)).where.not(status: 0).size
+    @task_red_count = Task.all.where(id: @group_tasks.tasks.ids).where("deadline < '#{time_now}'").where.not(status: 0).size
+
     @tasks_to_do = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
     @tasks_doing = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
     @tasks_done = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0

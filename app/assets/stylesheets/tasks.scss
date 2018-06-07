@@ -104,6 +104,15 @@
 
 }
 
+.task_caption_width_green {
+  width: 60%;
+  background-image: url("/assets/images/postit_green.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
 .user_icon {
   background-color: #f7ecb5;
   border-radius: 10px;
@@ -125,6 +134,15 @@
   border: dashed 2px #ffc3c3;
   border-radius: 8px;
 }
+
+.group_title {
+  background-image: url("/assets/images/group_title.png");
+  background-size: 100% 100%;
+  font-size: 25px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #555, -1px 1px 1px #555, 1px -1px 1px #555, -1px -1px 1px #555, 1px 1px 1px #555, -1px 1px 1px #555, 1px -1px 1px #555, -1px -1px 1px #555, 5px 5px #9ccc65;
+}
+
 
 .kureyon_font{
   color: black;
