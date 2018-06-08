@@ -1,4 +1,4 @@
-= form_for [@group_tasks, task], html: { class: "data-form" }  do |f|
+= form_for [@group_tasks, task], html: { class: "data-form" }, remote: true do |f|
   div.form-group
     = f.label :"#{t("ttributes.caption")}: ", class: "control-label huchidori_font"
     = f.text_field :caption, class: "form-control"

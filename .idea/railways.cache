@@ -1,4 +1,12 @@
                Prefix Verb   URI Pattern                                      Controller#Action
+            api_tasks GET    /api/tasks(.:format)                             api/tasks#index
+                      POST   /api/tasks(.:format)                             api/tasks#create
+         new_api_task GET    /api/tasks/new(.:format)                         api/tasks#new
+        edit_api_task GET    /api/tasks/:id/edit(.:format)                    api/tasks#edit
+             api_task GET    /api/tasks/:id(.:format)                         api/tasks#show
+                      PATCH  /api/tasks/:id(.:format)                         api/tasks#update
+                      PUT    /api/tasks/:id(.:format)                         api/tasks#update
+                      DELETE /api/tasks/:id(.:format)                         api/tasks#destroy
            admin_root GET    /admin(.:format)                                 admin/tasks#index
           admin_tasks GET    /admin/tasks(.:format)                           admin/tasks#index
                       POST   /admin/tasks(.:format)                           admin/tasks#create

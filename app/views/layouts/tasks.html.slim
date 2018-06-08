@@ -8,6 +8,9 @@ html
         = render partial: 'layouts/navbar_title'
         div class="collapse navbar-collapse" id="navbarIndex"
           = render partial: 'layouts/navbar_my_name'
+          ul class="nav navbar-nav"
+            li = link_to t("description.index_tasks"), tasks_path
+
 
       div class="modal fade" id="serch_task" role="dialog"
         div.modal-dialog
