@@ -13,12 +13,21 @@ class TasksController < ApplicationController
     @task_status_done_count = Task.all.where(user_id: session[:user_id]).where(status: 0).size
     time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
     @task_blue_count = Task.all.where(user_id: session[:user_id]).where("deadline > '#{time_now + 3.day}'").where.not(status: 0).size
-    @task_yellow_count = Task.all.where(user_id: session[:user_id]).where(deadline: (time_now)..(3.days.since)).where.not(status: 0).size
+    @task_yellow_count = Task.all.where(user_id: session[:user_id]).where(deadline: (time_now)..(4.days.since)).where.not(status: 0).size
     @task_red_count = Task.all.where(user_id: session[:user_id]).where("deadline < '#{time_now}'").where.not(status: 0).size
+
+    pp Task.all.select("caption").where(user_id: session[:user_id]).where("deadline < '#{time_now}'").where.not(status: 0)
 
     @tasks_to_do = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 2
     @tasks_doing = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 1
     @tasks_done = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 0
+
+    # respond_to do |format|
+    #   format.html
+    #   format.json {
+    #     pp params[:message][:status]
+    #   }
+    # end
   end
 
   def index_group

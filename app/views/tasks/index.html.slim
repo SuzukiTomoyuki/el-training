@@ -20,30 +20,31 @@ html
             img.user_icon width="30px" src = "/assets/images/postit_green.png" 完了：
             = @task_status_done_count
 
-    .tasks
-      table class="task waku_image_task"
-        thead
-          tr
-            th.text-center class="task_bord_title table_title_font" colspan="2" 着手待ち
-            th.text-left class="table_title"
-        tbody
-          = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_to_do }
-
-      table class="task waku_image_task"
-        thead
-          tr
-            th.text-center class="task_bord_title table_title_font" colspan="2" 着手中
-            th.text-left class="table_title"
-        tbody
-          = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_doing }
-
-      table class="task waku_image_task"
-        thead
-          tr
-            th.text-center class="task_bord_title table_title_font" colspan="2" 完了
-            th.text-left class="table_title"
-        tbody
-          = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_done }
+    .tasks id="jquery-ui-draggable-connectToSortable"
+      div.jquery-ui-draggable-drop
+        table class="task waku_image_task jquery_ui_status" id="jquery_ui_to_do" data-status="to_do"
+          thead
+            tr
+              th.text-center class="task_bord_title table_title_font" colspan="2" 着手待ち
+              th.text-left class="table_title"
+          tbody.jquery-ui-sortable
+            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_to_do }
+      div.jquery-ui-draggable-drop
+        table class="task waku_image_task jquery_ui_status" id="jquery_ui_doing" data-status="doing"
+          thead
+            tr
+              th.text-center class="task_bord_title table_title_font" colspan="2" 着手中
+              th.text-left class="table_title"
+          tbody.jquery-ui-sortable
+            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_doing }
+      div.jquery-ui-draggable-drop
+        table class="task waku_image_task jquery_ui_status" id="jquery_ui_done" data-status="done"
+          thead
+            tr
+              th.text-center class="task_bord_title table_title_font" colspan="2" 完了
+              th.text-left class="table_title"
+          tbody.jquery-ui-sortable
+            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_done }
 
       table align="right" padding= "10px" class="task_animation kureyon_font waku_image detail_task_font" id="show_task_detail"
 

@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
 
+  namespace :api do
+    # get 'tasks/index'
+    # patch 'tasks/index'
+    # put 'tasks/index'
+    resources :tasks
+  end
+
   namespace :admin do
     root 'tasks#index'
     resources :tasks, :users, :labels

@@ -49,8 +49,6 @@ gem 'kaminari'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Use jquery-UI as the JavaScript library
-gem 'jquery-ui-rails'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
