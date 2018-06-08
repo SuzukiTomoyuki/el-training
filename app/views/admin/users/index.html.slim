@@ -23,4 +23,4 @@ html
                 div id="edit_button_user" type="button" class="btn glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_user#{user.id}"
                 = render partial: 'edit_user_modal', locals: {user: user}
               td
-                = link_to '', admin_user_path(user.id), class: 'btn delete-user-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm_admin") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
+                = link_to '', admin_user_path(user.id), class: 'btn delete-user-btn glyphicon glyphicon-trash' ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm_admin") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}

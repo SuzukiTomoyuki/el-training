@@ -21,13 +21,6 @@ class TasksController < ApplicationController
     @tasks_to_do = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 2
     @tasks_doing = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 1
     @tasks_done = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 0
-
-    # respond_to do |format|
-    #   format.html
-    #   format.json {
-    #     pp params[:message][:status]
-    #   }
-    # end
   end
 
   def index_group

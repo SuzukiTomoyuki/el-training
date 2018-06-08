@@ -21,37 +21,6 @@
 // = require data-confirm-modal
 //= require turbolinks
 
-
-// $(function(){
-//     // tasks create
-//     $('.data-submit').on('click', function(){
-//         // var $form = $(this).parent('.modal-body').children('.data-from');
-//         var $form = $(this).parents('.data-form');
-//         var query = $form.serialize();
-//         console.log($form.attr('action'));
-//         // return false;
-//
-//         $.ajax({
-//             url: $form.attr('action'),
-//             type: $form.attr('method'),
-//             data: query,
-//             headers: {
-//                 'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
-//             },
-//         })
-//         .done((data) => {
-//             location.reload();
-//         })
-//         .fail((data) => {
-//             console.log(data);
-//             var messages = data.responseJSON.messages;
-//             for(var i=0; i < messages.length; i++) {
-//                 toastr.error(messages[i]);
-//             }
-//         })
-//     })
-// });
-
 $(document).on('turbolinks:load', function(){
     $('.data-submit').on('click', function(){
         // var $form = $(this).parent('.modal-body').children('.data-from');
@@ -105,7 +74,6 @@ $(document).on('turbolinks:load', function(){
         revert: true,
         start: function(event,ui){
         },
-
         receive: function(event,ui){
 
             var form = $(this).parent('.jquery_ui_status');
@@ -127,20 +95,18 @@ $(document).on('turbolinks:load', function(){
             console.log(form.attr('data-status'));
 
             $.ajax({
-                url: 'api/tasks/update',
+                url: '/api/tasks/' + task_id,
                 type: 'PATCH',
                 data: {
                    task: { id: task_id, status: form.attr('data-status') }
                 },
                 dateType: 'json'
-
             })
             .done( function(response) {
                 if (task_id != null || form.attr('data-status') != null) {
                     location.reload();
                 }
             })
-
         }
     });
 });

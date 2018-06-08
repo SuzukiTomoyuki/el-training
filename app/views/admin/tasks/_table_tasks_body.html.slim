@@ -1,7 +1,6 @@
 - tasks.each do |task|
-  - task.status
   - if task.status != 'done'
-    tr
+    tr.jquery-ui-draggable data-task-id="#{task.id}" data-task-status="#{task.status}"
       td.text-right
         img.user_icon width="80%" src = "/assets/images/#{task.holder.image_name}"
       - if task.deadline - (Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)) < 0.day
@@ -15,7 +14,7 @@
         = render partial: 'edit_modal', locals: { task: task }
         = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
   - else
-    tr
+    tr.jquery-ui-draggable data-task-id="#{task.id}" data-task-status="#{task.status}"
       td.text-right
         img.user_icon width="80%" src = "/assets/images/#{task.holder.image_name}"
       td.text-center class="task_caption_width_green task_caption_font" = link_to task.caption, task_path(task), remote: true
