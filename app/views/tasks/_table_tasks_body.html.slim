@@ -1,6 +1,6 @@
 - tasks.each do |task|
   - if task.status != 'done'
-    tr.jquery-ui-draggable data-task-id="#{task.id}" data-task-status="#{task.status}" data-task-caption="#{task.caption}" data-task-label="#{task.label}" id="#{task.id}"
+    tr.jquery-ui-draggable data-task-id="#{task.id}" data-task-status="#{task.status}" data-task-caption="#{task.caption}" data-task-label="#{task.label}" data-task-user="#{task.user.name}" data-task-charge-user="#{task.charge_user.name}" id="#{task.id}"
       td.text-right
         img.user_icon width="80%" src = "/assets/images/#{task.charge_user.image_name}"
       - if task.deadline - (Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)) < 0.day
@@ -14,7 +14,7 @@
         = render partial: 'edit_modal', locals: { task: task }
         = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash'  ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
   - else
-    tr.jquery-ui-draggable data-task-id="#{task.id}" data-task-status="#{task.status}" data-task-caption="#{task.caption}" data-task-label="#{task.label}" id="#{task.id}"
+    tr.jquery-ui-draggable data-task-id="#{task.id}" data-task-status="#{task.status}" data-task-caption="#{task.caption}" data-task-label="#{task.label}" data-task-user="#{task.user.name}" data-task-charge-user="#{task.charge_user.name}" id="#{task.id}"
       td.text-right
         img.user_icon width="80%" src = "/assets/images/#{task.charge_user.image_name}"
       td.text-center class="task_caption_width_green task_caption_font" = link_to task.caption, task_path(task), remote: true

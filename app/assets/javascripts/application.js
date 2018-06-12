@@ -156,11 +156,14 @@ $(document).on('turbolinks:load', function(){
         tasks = [];
         items = $(tableId).children();
         // console.log(items.eq(0).attr('data-task-id'));
-        for (var i = 0; i < items.length; ++i) {
-            task = {caption: items.eq(i).attr('data-task-caption')};
+        for (var i = 1; i < items.length; ++i) {
+            task = {caption: items.eq(i).attr('data-task-caption'),
+                user: items.eq(i).attr('data-task-user'),
+                chargeUser: items.eq(i).attr('data-task-charge-user'),
+                label: items.eq(i).attr('data-task-label')};
             tasks.push(task);
         }
-        console.log(tasks);
+        return tasks
         // var arrObj = {};
         // for (var i = 0; i < tasks.length; i++) {
         //     arrObj[tasks[i]['status']] = tasks[i];
@@ -168,6 +171,19 @@ $(document).on('turbolinks:load', function(){
         // for (var key in arrObj) {
         //     task_id = arrObj[key].id;
         // }
+    }
+    function serchTasks(tasks, selectedRadio, searchResult){
+        for (var i = 0; i < tasks.length; i++) {
+            searchText = $(this).val();
+            // targetText = $(this).text();
+            console.log(serchText);
+
+            // 検索対象となるリストに入力された文字列が存在するかどうかを判断
+            if (tasks[i][selectedRadio].indexOf(searchText) != -1) {
+                // 存在する場合はそのリストのテキストを用意した配列に格納
+                searchResult.push(targetText);
+            }
+        }
     }
 
 
@@ -184,26 +200,31 @@ $(document).on('turbolinks:load', function(){
         // 検索結果を格納するための配列を用意
         searchResult = [];
 
+        // console.log(searchText);
+
         // 検索結果エリアの表示を空にする
-        $('#search-result__list').empty();
+        $('.search-result__list').empty();
         $('.search-result__hit-num').empty();
 
         // 検索ボックスに値が入ってる場合
         if (searchText != '') {
-            $('.task th').each(function() {
-                targetText = $(this).text();
-                console.log(targetText);
+            radioSelected = $('input[name=searchTasks]:checked').val();
+            console.log(taskToDo.length);
+
+            for (var i = 0; i < taskToDo.length; i++) {
+                // console.log(searchText);
 
                 // 検索対象となるリストに入力された文字列が存在するかどうかを判断
-                if (targetText.indexOf(searchText) != -1) {
+                if (taskToDo[i].caption.indexOf(searchText) != -1) {
                     // 存在する場合はそのリストのテキストを用意した配列に格納
-                    searchResult.push(targetText);
+                    searchResult.push(taskToDo[i].caption);
                 }
-            });
+            }
+            console.log(searchResult);
 
             // 検索結果をページに出力
             for (var i = 0; i < searchResult.length; i ++) {
-                $('<span>').text(searchResult[i]).appendTo('#search-result__list');
+                $('<span>').text(searchResult[i]).appendTo('.search-result__list');
             }
 
             // ヒットの件数をページに出力
@@ -214,9 +235,8 @@ $(document).on('turbolinks:load', function(){
     $('#search-text').on('input', searchWord);
 
     $('.ayame_image').dblclick(function(){
-        console.log("ダブルクリック");
         $('.arrow_box').css('display', 'block');
-        $('p').html("何か用か？");
+        // $('p').html("何か用か？");
 
         // var form = $(this).parent('.jquery_ui_status');
         // tasks = [];

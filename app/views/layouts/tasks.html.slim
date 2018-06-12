@@ -24,11 +24,20 @@ html
       .arrow_box style="display: none;"
         .hukidashi_text
           p
-          form
-            input.center-block type="text" size="16" maxlength="15" id="search-text" placeholder="入力するのじゃ！"
+          .form-serch-task
+            input.center-block type="text" size="25" maxlength="15" id="search-text" placeholder="入力するのじゃ！"
+            div
+              label
+                input type="radio" name="searchTasks" value="caption" checked="checked" タスク
+              label
+                input type="radio" name="searchTasks" value="chargeUser" 担当者
+              label
+                input type="radio" name="searchTasks" value="user" 作成者
+              label
+                input type="radio" name="searchTasks" value="label" ラベル
             div.serch-result
-              div.serch-result__hit-num
-              div.serch-result__list
+              div.search-result__hit-num
+              div.search-result__list
       .ayame_image
         img width="250%" src = "/assets/images/system/sd_ayame.png"
 
