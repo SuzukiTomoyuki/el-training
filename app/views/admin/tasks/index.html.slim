@@ -22,41 +22,38 @@ html
 
     .tasks id="jquery-ui-draggable-connectToSortable"
       div.jquery-ui-draggable-drop
-        table class="task waku_image_task jquery_ui_status" id="jquery_ui_to_do" data-status="to_do"
+        table class="task waku_image_task jquery_ui_status" data-status="to_do"
           thead
             tr
               th.text-center class="task_bord_title table_title_font" colspan="2" 着手待ち
               th.text-left class="table_title"
-                div type="button" class="btn" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal" id="status_to_do"
-          tbody.jquery-ui-sortable
+          tbody.jquery-ui-sortable id="jquery_ui_to_do"
+            tr
+              th.text-center
+              th.text-center
             = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_to_do }
-        table class="task waku_image_task jquery_ui_status" id="jquery_ui_doing" data-status="doing"
+        table class="task waku_image_task jquery_ui_status" data-status="doing"
           thead
             tr
               th.text-center class="task_bord_title table_title_font" colspan="2" 着手中
               th.text-left class="table_title"
-                div type="button" class="btn" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal" id="status_donig"
-          tbody.jquery-ui-sortable
+          tbody.jquery-ui-sortable id="jquery_ui_doing"
+            tr
+              th.text-center
+              th.text-center
             = render partial: 'tasks/table_tasks_body', locals: {tasks: @tasks_doing}
-        table class="task waku_image_task jquery_ui_status" id="jquery_ui_done" data-status="done"
+        table class="task waku_image_task jquery_ui_status" data-status="done"
           thead
             tr
               th.text-center class="task_bord_title table_title_font" colspan="2" 完了
               th.text-left class="table_title"
-                div type="button" class="btn" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#new_modal" id="status_done"
-          tbody.jquery-ui-sortable
+          tbody.jquery-ui-sortable id="jquery_ui_done"
+            tr
+              th.text-center
+              th.text-center
             = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_done }
 
       table align="right" padding= "10px" class="task_animation kureyon_font waku_image detail_task_font" id="show_task_detail"
-
-    div class="modal fade" id="new_modal" role="dialog"
-      div.modal-dialog
-        div.modal-content
-          div.modal-header
-            button type="button" class="close" data-dismiss="modal"
-            h4 class="modal-title huchidori_font" #{t("ttributes.caption")}を追加
-          div.modal-body
-            = render partial: 'form_task_new', locals: { task: @task, submit_text: t("task.add") }
 
 
     div.container

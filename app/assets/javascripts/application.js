@@ -72,14 +72,28 @@ $(document).on('turbolinks:load', function(){
 $(document).on('turbolinks:load', function(){
     $('.jquery-ui-sortable').sortable({
         revert: true,
+        // update: function(ev, ui) {
+        //   var updateArray = $(".jquery-ui-sortable").sortable("toArray").join(",");
+        //   $.cookie(".jquery-ui-sortable", updateArray, {expires: 30});
+        //   console.log(updateArray);
+        // },
         start: function(event,ui){
+            // $('#jquery_ui_to_do tbody > tr:last').after('<tr><td></td><td> + タスクを追加</td></tr>');
+            // $('#jquery_ui_doing tbody > tr:last').after('<tr><td></td><td> + タスクを追加</td></tr>');
+            // $('#jquery_ui_done tbody > tr:last').after('<tr><td></td><td> + タスクを追加</td></tr>');
+        },
+        stop: function(event, ui) {
+            // console.log("remove");
+            // $('#jquery_ui_to_do tbody > tr:last').remove();
         },
         receive: function(event,ui){
+            // $('#jquery_ui_to_do tbody > tr:last').after('<tr><td></td><td>タスクを追加</td></tr>');
+
 
             var form = $(this).parent('.jquery_ui_status');
             tasks = [];
             items = $(this).children();
-            console.log(items.eq(0).attr('data-task-id'));
+            // console.log(items.eq(0).attr('data-task-id'));
             for (var i = 0; i < items.length; ++i) {
                 task = {id: items.eq(i).attr('data-task-id'), status: items.eq(i).attr('data-task-status')};
                 tasks.push(task);
@@ -91,8 +105,8 @@ $(document).on('turbolinks:load', function(){
             for (var key in arrObj) {
              task_id = arrObj[key].id;
             }
-            console.log(task_id);
-            console.log(form.attr('data-status'));
+            // console.log(task_id);
+            // console.log(form.attr('data-status'));
 
             $.ajax({
                 url: '/api/tasks/' + task_id,
@@ -109,6 +123,14 @@ $(document).on('turbolinks:load', function(){
             })
         }
     });
+    // if($.cookie('.jquery-ui-sortable')){
+    //     var cokieValue = $.cookie(".jquery-ui-sortable").split(",").reverse();
+    //     $.each(
+    //         cokieValue,
+    //         function(index, value) {$('#'+value).prependTo(".jquery-ui-sortable");},
+    //         console.log(cokieValue)
+    //     );
+    // }
 });
 
 $(document).on('turbolinks:load', function(){
@@ -118,7 +140,123 @@ $(document).on('turbolinks:load', function(){
         stop: function(e, ui){
         }
     });
+    $('.ayame').draggable();
 });
 $(document).on('turbolinks:load', function(){
     $('#jquery-ui-draggable-connectToSortable').disableSelection();
+});
+
+$(document).on('turbolinks:load', function(){
+    // var timer;
+
+
+
+    function taskData(tableId){
+        // var form = $(this).parent('.jquery_ui_status');
+        tasks = [];
+        items = $(tableId).children();
+        // console.log(items.eq(0).attr('data-task-id'));
+        for (var i = 0; i < items.length; ++i) {
+            task = {caption: items.eq(i).attr('data-task-caption')};
+            tasks.push(task);
+        }
+        console.log(tasks);
+        // var arrObj = {};
+        // for (var i = 0; i < tasks.length; i++) {
+        //     arrObj[tasks[i]['status']] = tasks[i];
+        // }
+        // for (var key in arrObj) {
+        //     task_id = arrObj[key].id;
+        // }
+    }
+
+
+    searchWord = function(){
+        var taskToDo = taskData('#jquery_ui_to_do');
+        var taskDoing = taskData('#jquery_ui_doing');
+        var taskDone = taskData('#jquery_ui_done');
+
+        var searchResult,
+            searchText = $(this).val(), // 検索ボックスに入力された値
+            targetText,
+            hitNum;
+
+        // 検索結果を格納するための配列を用意
+        searchResult = [];
+
+        // 検索結果エリアの表示を空にする
+        $('#search-result__list').empty();
+        $('.search-result__hit-num').empty();
+
+        // 検索ボックスに値が入ってる場合
+        if (searchText != '') {
+            $('.task th').each(function() {
+                targetText = $(this).text();
+                console.log(targetText);
+
+                // 検索対象となるリストに入力された文字列が存在するかどうかを判断
+                if (targetText.indexOf(searchText) != -1) {
+                    // 存在する場合はそのリストのテキストを用意した配列に格納
+                    searchResult.push(targetText);
+                }
+            });
+
+            // 検索結果をページに出力
+            for (var i = 0; i < searchResult.length; i ++) {
+                $('<span>').text(searchResult[i]).appendTo('#search-result__list');
+            }
+
+            // ヒットの件数をページに出力
+            hitNum = '<span>検索結果</span>：' + searchResult.length + '件あったぞ！';
+            $('.search-result__hit-num').append(hitNum);
+        }
+    };
+    $('#search-text').on('input', searchWord);
+
+    $('.ayame_image').dblclick(function(){
+        console.log("ダブルクリック");
+        $('.arrow_box').css('display', 'block');
+        $('p').html("何か用か？");
+
+        // var form = $(this).parent('.jquery_ui_status');
+        // tasks = [];
+        // items = $(this).children();
+        // // console.log(items.eq(0).attr('data-task-id'));
+        // for (var i = 0; i < items.length; ++i) {
+        //     task = {id: items.eq(i).attr('data-task-id'), status: items.eq(i).attr('data-task-status')};
+        //     tasks.push(task);
+        // }
+        // var arrObj = {};
+        // for (var i = 0; i < tasks.length; i++) {
+        //     arrObj[tasks[i]['status']] = tasks[i];
+        // }
+        // for (var key in arrObj) {
+        //     task_id = arrObj[key].id;
+        // }
+
+        // $('li').append("<a class='btn glyphicon glyphicon-search data-toggle=\"modal\" data-target=\"#serch_task\"'></a>");
+
+        // document.addEventListener("DOMContentLoaded", load, false);
+        // function countDown() {
+        //     $('.arrow_box').css('display', 'none');
+        //     return true;
+        // }
+        // function restartTimer() {
+        //     clearTimeout(timer);
+        //     timer = setTimeout('countDown()', 10000);
+        //     return true;
+        // }
+        // function load() {
+        //     timer=setTimeout('countDown()',10000);
+        //     document.body.addEventListener("mousedown", restartTimer, false);
+        //     document.body.addEventListener("keypress", restartTimer, false);
+        // }
+    });
+    $('.arrow_box').dblclick(function(){
+        $('.arrow_box').css('display', 'none')
+    });
+
+
+
+
 });

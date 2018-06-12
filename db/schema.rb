@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180604055654) do
+ActiveRecord::Schema.define(version: 20180612024054) do
 
   create_table "group_tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "group_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20180604055654) do
     t.integer "priority"
     t.integer "status"
     t.integer "user_id"
+    t.integer "charge_user_id", default: 0
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
