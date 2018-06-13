@@ -28,7 +28,6 @@ $(document).on('turbolinks:load', function(){
         var query = $form.serialize();
         console.log(query);
         // return false;
-
         $.ajax({
             url: $form.attr('action'),
             type: $form.attr('method'),
@@ -65,72 +64,7 @@ $(document).on('turbolinks:load', function(){
            $("#member_label_text").text("メンバーを表示 ▽");
            flg = "close"
        }
-
    })
-});
-
-$(document).on('turbolinks:load', function(){
-    $('.jquery-ui-sortable').sortable({
-        revert: true,
-        // update: function(ev, ui) {
-        //   var updateArray = $(".jquery-ui-sortable").sortable("toArray").join(",");
-        //   $.cookie(".jquery-ui-sortable", updateArray, {expires: 30});
-        //   console.log(updateArray);
-        // },
-        start: function(event,ui){
-            // $('#jquery_ui_to_do tbody > tr:last').after('<tr><td></td><td> + タスクを追加</td></tr>');
-            // $('#jquery_ui_doing tbody > tr:last').after('<tr><td></td><td> + タスクを追加</td></tr>');
-            // $('#jquery_ui_done tbody > tr:last').after('<tr><td></td><td> + タスクを追加</td></tr>');
-        },
-        stop: function(event, ui) {
-            // console.log("remove");
-            // $('#jquery_ui_to_do tbody > tr:last').remove();
-        },
-        receive: function(event,ui){
-            // $('#jquery_ui_to_do tbody > tr:last').after('<tr><td></td><td>タスクを追加</td></tr>');
-
-
-            var form = $(this).parent('.jquery_ui_status');
-            tasks = [];
-            items = $(this).children();
-            // console.log(items.eq(0).attr('data-task-id'));
-            for (var i = 0; i < items.length; ++i) {
-                task = {id: items.eq(i).attr('data-task-id'), status: items.eq(i).attr('data-task-status')};
-                tasks.push(task);
-            }
-            var arrObj = {};
-            for (var i = 0; i < tasks.length; i++) {
-                arrObj[tasks[i]['status']] = tasks[i];
-            }
-            for (var key in arrObj) {
-             task_id = arrObj[key].id;
-            }
-            // console.log(task_id);
-            // console.log(form.attr('data-status'));
-
-            $.ajax({
-                url: '/api/tasks/' + task_id,
-                type: 'PATCH',
-                data: {
-                   task: { id: task_id, status: form.attr('data-status') }
-                },
-                dateType: 'json'
-            })
-            .done( function(response) {
-                if (task_id != null || form.attr('data-status') != null) {
-                    location.reload();
-                }
-            })
-        }
-    });
-    // if($.cookie('.jquery-ui-sortable')){
-    //     var cokieValue = $.cookie(".jquery-ui-sortable").split(",").reverse();
-    //     $.each(
-    //         cokieValue,
-    //         function(index, value) {$('#'+value).prependTo(".jquery-ui-sortable");},
-    //         console.log(cokieValue)
-    //     );
-    // }
 });
 
 $(document).on('turbolinks:load', function(){
@@ -140,7 +74,12 @@ $(document).on('turbolinks:load', function(){
         stop: function(e, ui){
         }
     });
-    $('.ayame').draggable();
+    $('.ayame').draggable({
+        stop: function(e, ui){
+            $.cookie('ayame_position_top', $('#ayame').offset().top);
+            $.cookie('ayame_position_left', $('#ayame').offset().left);
+        }
+    });
 });
 $(document).on('turbolinks:load', function(){
     $('#jquery-ui-draggable-connectToSortable').disableSelection();
@@ -148,14 +87,97 @@ $(document).on('turbolinks:load', function(){
 
 $(document).on('turbolinks:load', function(){
     // var timer;
+    $('.notice_text').css('display', 'none');
 
+    var img = new Array();
+    img[0] = new Image();
+    img[0].src = "/assets/images/system/sd_ayame_nomal.png";
+    img[1] = new Image();
+    img[1].src = "/assets/images/system/sd_ayame_smile.png";
 
+    var $ayameAnim = $.Deferred( function( ayameAnim ){
+        ayameAnim.then(anim_01)
+            .then(anim_02)
+            .then(anim_03)
+    });
+
+    if ($.cookie('ayame_face') == 'smile') {
+        document.getElementById("ayame_image").src = img[1].src;
+        $.cookie('ayame_face', 'nomal');
+        $('.arrow_box').removeClass('arrow_box_temp');
+        $('.notice_text').css('display', 'block');
+        $('.form-serch-task').css('display', 'none');
+        $('#notice_text_label').text("おお！タスクを完了したのか！エライぞ！");
+        setTimeout(function(){
+            $('.arrow_box').addClass('arrow_box_temp');
+            $('.notice_text').css('display', 'none');
+            $('.form-serch-task').css('display', 'block');
+            $ayameAnim.resolve();
+        }, 5000);
+    } else {
+
+    }
+
+    function anim_01 (){
+        return $(".ayame_img").delay(100).animate({
+            top: "+=100px"
+        },100);
+    }
+    function anim_02 (){
+        return $(".ayame_img").animate({
+            top: "0px"
+        },100);
+    }
+    function anim_03 (){
+        document.getElementById("ayame_image").src = img[0].src;
+    }
+
+    $('#ayame').offset({ top: $.cookie('ayame_position_top'), left: $.cookie('ayame_position_left')});
+
+    $.cookie('done_counter', $('#jquery_ui_done').children().length - 1);
+
+    $('.jquery-ui-sortable').sortable({
+        revert: true,
+        receive: function(event,ui){
+            var form = $(this).parent('.jquery_ui_status');
+            tasks = [];
+            items = $(this).children();
+            for (var i = 0; i < items.length; ++i) {
+                task = {id: items.eq(i).attr('data-task-id'), status: items.eq(i).attr('data-task-status')};
+                tasks.push(task);
+            }
+            var arrObj = {};
+            for (var i = 0; i < tasks.length; i++) {
+                arrObj[tasks[i]['status']] = tasks[i];
+            }
+            for (var key in arrObj) {
+                task_id = arrObj[key].id;
+            }
+            $.ajax({
+                url: '/api/tasks/' + task_id,
+                type: 'PATCH',
+                data: {
+                    task: { id: task_id, status: form.attr('data-status') }
+                },
+                dateType: 'json'
+            })
+                .done( function(response) {
+                    if (task_id != null || form.attr('data-status') != null) {
+                        location.reload();
+                    }
+                });
+            $.cookie('done_counter_after', $('#jquery_ui_done').children().length - 1);
+            console.log($.cookie('done_counter'));
+            console.log($.cookie('done_counter_after'));
+            if ($.cookie('done_counter') < $.cookie('done_counter_after')){
+                $.cookie('ayame_face', 'smile');
+            }
+        }
+    });
 
     function taskData(tableId){
-        // var form = $(this).parent('.jquery_ui_status');
         tasks = [];
         items = $(tableId).children();
-        // console.log(items.eq(0).attr('data-task-id'));
         for (var i = 1; i < items.length; ++i) {
             task = {
                 id: '#' + items.eq(i).attr('data-task-id').toString(),
@@ -166,13 +188,6 @@ $(document).on('turbolinks:load', function(){
             tasks.push(task);
         }
         return tasks
-        // var arrObj = {};
-        // for (var i = 0; i < tasks.length; i++) {
-        //     arrObj[tasks[i]['status']] = tasks[i];
-        // }
-        // for (var key in arrObj) {
-        //     task_id = arrObj[key].id;
-        // }
     }
     function searchTasks(tasks, searchText, searchResult, radioSelected){
         for (var i = 0; i < tasks.length; i++) {
@@ -210,7 +225,6 @@ $(document).on('turbolinks:load', function(){
                     }
                     break;
             }
-
         }
         return searchResult;
     }
@@ -241,6 +255,8 @@ $(document).on('turbolinks:load', function(){
                 $('<div>').text(searchResult[i]).appendTo('.search-result__list');
             }
 
+            console.log($.cookie('ayame_position'));
+
             hitNum = '<span>検索結果</span>：' + searchResult.length + '件あったぞ！';
             $('.search-result__hit-num').append(hitNum);
         } else {
@@ -252,7 +268,7 @@ $(document).on('turbolinks:load', function(){
     $('#search-text').on('input', searchWord);
 
     $('.ayame_image').dblclick(function(){
-        $('.arrow_box').css('display', 'block');
+        $('.arrow_box').removeClass('arrow_box_temp');
         // $('p').html("何か用か？");
 
         // var form = $(this).parent('.jquery_ui_status');
@@ -290,10 +306,8 @@ $(document).on('turbolinks:load', function(){
         // }
     });
     $('.arrow_box').dblclick(function(){
-        $('.arrow_box').css('display', 'none')
+        // $('.arrow_box').css('display', 'none')
+        $('.arrow_box').addClass('arrow_box_temp');
     });
-
-
-
 
 });

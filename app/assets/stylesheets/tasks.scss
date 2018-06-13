@@ -235,6 +235,7 @@
 
 .body_style {
   position: relative;
+  height: 720px;
 }
 
 .ayame {
@@ -247,13 +248,17 @@
 }
 
 .ayame_image {
-  //background-image: url("/assets/images/system/sd_ayame.png");
-  //position: absolute;
+}
 
+.display_off{
+  display: none;
+}
+
+.arrow_box_temp {
+visibility: hidden;
 }
 
 .arrow_box {
-  //display: none;
   position: relative;
   background: #f7f5f7;
   border: 4px solid #c6def5;

@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a6ce2ae-9ed8-444b-be1d-af5bb172111b" name="デフォルト" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/system/sd_ayame_nomal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/system/sd_ayame_smile.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/tasks.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/tasks.scss" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/tasks.html.slim" afterPath="$PROJECT_DIR$/app/views/layouts/tasks.html.slim" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -41,8 +45,8 @@
           <file leaf-file-name="tasks.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tasks.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3885">
-                  <caret line="259" column="9" lean-forward="false" selection-start-line="259" selection-start-column="9" selection-end-line="259" selection-end-column="9" />
+                <state relative-caret-position="203">
+                  <caret line="252" column="12" lean-forward="false" selection-start-line="252" selection-start-column="12" selection-end-line="252" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -91,11 +95,11 @@
           <file leaf-file-name="application.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-330">
-                  <caret line="179" column="31" lean-forward="false" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
+                <state relative-caret-position="-151">
+                  <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <marker date="1528853299480" expanded="false" signature="9790:9874" ph="..." />
+                    <marker date="1528870831792" expanded="false" signature="10227:10311" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -145,10 +149,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/index.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
+                <state relative-caret-position="97">
                   <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="54" />
                   <folding />
                 </state>
@@ -168,11 +172,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tasks.html.slim" pinned="false" current-in-tab="false">
+          <file leaf-file-name="tasks.html.slim" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/layouts/tasks.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="32" column="71" lean-forward="false" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="71" />
+                <state relative-caret-position="389">
+                  <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
                   <folding>
                     <element signature="e#371#399#0" expanded="true" />
                   </folding>
@@ -193,7 +197,7 @@
           <file leaf-file-name="_table_tasks_body.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/_table_tasks_body.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
+                <state relative-caret-position="420">
                   <caret line="23" column="150" lean-forward="false" selection-start-line="23" selection-start-column="150" selection-end-line="23" selection-end-column="150" />
                   <folding />
                 </state>
@@ -292,9 +296,9 @@
         <option value="$PROJECT_DIR$/app/controllers/tasks_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/tasks/_show.html.slim" />
         <option value="$PROJECT_DIR$/app/views/tasks/_show.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/tasks/_table_tasks_body.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/tasks.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/tasks.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/tasks/_table_tasks_body.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
       </list>
     </option>
@@ -316,7 +320,7 @@
     <option name="x" value="1440" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -643,19 +647,19 @@
     <property name="SearchEverywhereHistoryKey" value="tas&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/stylesheets/tasks.scss&#10;scss&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/stylesheets/tasks.scss&#10;rou&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;index&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/admin/users/index.html.slim&#10;route&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;routes&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;task&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/tasks_controller.rb&#10;tasks_c&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/tasks_controller.rb&#10;appli&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/application.js&#10;table&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/tasks/_table_tasks_body.html.slim&#10;ge&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;app&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/application.js&#10;applica&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/application.js&#10;gem&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;nav&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/layouts/_navbar_title.html.slim&#10;ta&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/admin/tasks/_table_tasks_body.html.slim&#10;coff&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/group.coffee&#10;sc&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/schema.rb&#10;20180531054355&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/migrate/20180531054355_create_group_tasks.rb&#10;resou&#9;null&#9;null&#10;show&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/users/show.html.slim&#10;user&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/users_controller.rb&#10;new&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/groups/new.html.slim&#10;coffe&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/group.coffee&#10;group_tas&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group_task.rb&#10;group&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group.rb&#10;grou&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group.rb&#10;helper&#9;null&#9;null&#10;inde&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/tasks/index.html.slim&#10;cofee&#9;null&#9;null&#10;for&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/errors/_forbidden.html.slim&#10;kureyon_font&#9;null&#9;null&#10;assets&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/initializers/assets.rb&#10;contro&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/admin/users_controller.rb&#10;users&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/users_controller.rb&#10;task_con&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/tasks_controller.rb&#10;label&#9;null&#9;null&#10;sche&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/schema.rb&#10;tasks_controller&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/admin/tasks_controller.rb&#10;rout&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;produc&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/environments/production.rb&#10;pro&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/environments/production.rb&#10;kamina&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/initializers/kaminari_config.rb&#10;data-con&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.3.0/gems/data-confirm-modal-1.6.2/vendor/assets/javascripts/data-confirm-modal.js&#10;status_id&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/migrate/20180509083704_rename_stat_to_status_id_from_task.rb&#10;priority&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/images/system" />
+      <recent name="$PROJECT_DIR$/app/assets/images" />
+      <recent name="$PROJECT_DIR$/public/assets/js" />
+      <recent name="$PROJECT_DIR$/app/assets/javascripts" />
+      <recent name="$PROJECT_DIR$/app/views/admin/groups" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets/images" />
       <recent name="$PROJECT_DIR$/app/views/layouts" />
       <recent name="$PROJECT_DIR$/app/views/layouts/admin" />
       <recent name="$PROJECT_DIR$/app/views/admin/tasks" />
       <recent name="$PROJECT_DIR$/app/assets/fonts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/assets/images" />
-      <recent name="$PROJECT_DIR$/public/assets/images/system" />
-      <recent name="$PROJECT_DIR$/public/assets/js" />
-      <recent name="$PROJECT_DIR$/app/assets/javascripts" />
-      <recent name="$PROJECT_DIR$/app/views/admin/groups" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -834,15 +838,15 @@
       <workItem from="1528415384946" duration="18825000" />
       <workItem from="1528674942028" duration="18257000" />
       <workItem from="1528761077484" duration="29587000" />
-      <workItem from="1528847389304" duration="5636000" />
+      <workItem from="1528847389304" duration="19940000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="848237000" />
+    <option name="totallyTimeSpent" value="862541000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="1440" y="23" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09583333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -850,11 +854,11 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19781312" sideWeight="0.5609375" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19820717" sideWeight="0.5609375" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3546875" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19781312" sideWeight="0.4390625" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19820717" sideWeight="0.4390625" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1007,6 +1011,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="39" column="6" lean-forward="false" selection-start-line="39" selection-start-column="6" selection-end-line="43" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1160,14 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tasks.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3885">
-          <caret line="259" column="9" lean-forward="false" selection-start-line="259" selection-start-column="9" selection-end-line="259" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/index_group.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
@@ -1192,21 +1189,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/_table_tasks_body.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="150" lean-forward="false" selection-start-line="23" selection-start-column="150" selection-end-line="23" selection-end-column="150" />
+        <state relative-caret-position="97">
+          <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/tasks.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/_table_tasks_body.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="71" lean-forward="false" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="71" />
-          <folding>
-            <element signature="e#371#399#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="23" column="150" lean-forward="false" selection-start-line="23" selection-start-column="150" selection-end-line="23" selection-end-column="150" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1221,21 +1216,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/index.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tasks.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="54" />
+        <state relative-caret-position="203">
+          <caret line="252" column="12" lean-forward="false" selection-start-line="252" selection-start-column="12" selection-end-line="252" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/tasks.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding>
+            <element signature="e#371#399#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="179" column="31" lean-forward="false" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
+        <state relative-caret-position="-151">
+          <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1528853299480" expanded="false" signature="9790:9874" ph="..." />
+            <marker date="1528870831792" expanded="false" signature="10227:10311" ph="..." />
           </folding>
         </state>
       </provider>

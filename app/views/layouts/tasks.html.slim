@@ -20,11 +20,13 @@ html
               h4 class="modal-title" 検索
             div.modal-body
               = render partial: 'form_serch'
-    .ayame
-      .arrow_box style="display: none;"
+    .ayame id="ayame"
+      .arrow_box.arrow_box_temp
         .hukidashi_text
-          p
+          .notice_text
+            label id="notice_text_label"
           .form-serch-task
+            label なんでも検索してやるぞ！
             input.center-block type="text" size="25" maxlength="15" id="search-text" placeholder="入力するのじゃ！"
             div
               label
@@ -39,7 +41,7 @@ html
               div.search-result__hit-num
               div.search-result__list
       .ayame_image
-        img width="250%" src = "/assets/images/system/sd_ayame.png"
+        img width="300%" id="ayame_image" src="/assets/images/system/sd_ayame_nomal.png"
 
     = render 'layouts/taster'
     = yield
