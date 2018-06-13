@@ -157,7 +157,9 @@ $(document).on('turbolinks:load', function(){
         items = $(tableId).children();
         // console.log(items.eq(0).attr('data-task-id'));
         for (var i = 1; i < items.length; ++i) {
-            task = {caption: items.eq(i).attr('data-task-caption'),
+            task = {
+                id: '#' + items.eq(i).attr('data-task-id').toString(),
+                caption: items.eq(i).attr('data-task-caption'),
                 user: items.eq(i).attr('data-task-user'),
                 chargeUser: items.eq(i).attr('data-task-charge-user'),
                 label: items.eq(i).attr('data-task-label')};
@@ -172,18 +174,45 @@ $(document).on('turbolinks:load', function(){
         //     task_id = arrObj[key].id;
         // }
     }
-    function serchTasks(tasks, selectedRadio, searchResult){
+    function searchTasks(tasks, searchText, searchResult, radioSelected){
         for (var i = 0; i < tasks.length; i++) {
-            searchText = $(this).val();
-            // targetText = $(this).text();
-            console.log(serchText);
-
-            // 検索対象となるリストに入力された文字列が存在するかどうかを判断
-            if (tasks[i][selectedRadio].indexOf(searchText) != -1) {
-                // 存在する場合はそのリストのテキストを用意した配列に格納
-                searchResult.push(targetText);
+            switch (radioSelected) {
+                case 'caption':
+                    if (tasks[i].caption.indexOf(searchText) != -1) {
+                        searchResult.push(tasks[i].caption);
+                        $(tasks[i].id).removeClass('hidden');
+                    } else {
+                        $(tasks[i].id).addClass('hidden');
+                    }
+                    break;
+                case 'chargeUser':
+                    if (tasks[i].chargeUser.indexOf(searchText) != -1) {
+                        searchResult.push(tasks[i].caption);
+                        $(tasks[i].id).removeClass('hidden');
+                    } else {
+                        $(tasks[i].id).addClass('hidden');
+                    }
+                    break;
+                case 'user':
+                    if (tasks[i].user.indexOf(searchText) != -1) {
+                        searchResult.push(tasks[i].caption);
+                        $(tasks[i].id).removeClass('hidden');
+                    } else {
+                        $(tasks[i].id).addClass('hidden');
+                    }
+                    break;
+                case 'label':
+                    if (tasks[i].label.indexOf(searchText) != -1) {
+                        searchResult.push(tasks[i].caption);
+                        $(tasks[i].id).removeClass('hidden');
+                    } else {
+                        $(tasks[i].id).addClass('hidden');
+                    }
+                    break;
             }
+
         }
+        return searchResult;
     }
 
 
@@ -193,43 +222,31 @@ $(document).on('turbolinks:load', function(){
         var taskDone = taskData('#jquery_ui_done');
 
         var searchResult,
-            searchText = $(this).val(), // 検索ボックスに入力された値
-            targetText,
+            searchText = $(this).val(),
             hitNum;
 
-        // 検索結果を格納するための配列を用意
         searchResult = [];
 
-        // console.log(searchText);
-
-        // 検索結果エリアの表示を空にする
         $('.search-result__list').empty();
         $('.search-result__hit-num').empty();
 
-        // 検索ボックスに値が入ってる場合
         if (searchText != '') {
             radioSelected = $('input[name=searchTasks]:checked').val();
-            console.log(taskToDo.length);
 
-            for (var i = 0; i < taskToDo.length; i++) {
-                // console.log(searchText);
+            searchResult = searchTasks(taskToDo, searchText, searchResult, radioSelected);
+            searchResult = searchTasks(taskDoing, searchText, searchResult, radioSelected);
+            searchResult = searchTasks(taskDone, searchText, searchResult, radioSelected);
 
-                // 検索対象となるリストに入力された文字列が存在するかどうかを判断
-                if (taskToDo[i].caption.indexOf(searchText) != -1) {
-                    // 存在する場合はそのリストのテキストを用意した配列に格納
-                    searchResult.push(taskToDo[i].caption);
-                }
-            }
-            console.log(searchResult);
-
-            // 検索結果をページに出力
             for (var i = 0; i < searchResult.length; i ++) {
-                $('<span>').text(searchResult[i]).appendTo('.search-result__list');
+                $('<div>').text(searchResult[i]).appendTo('.search-result__list');
             }
 
-            // ヒットの件数をページに出力
             hitNum = '<span>検索結果</span>：' + searchResult.length + '件あったぞ！';
             $('.search-result__hit-num').append(hitNum);
+        } else {
+            $('#jquery_ui_to_do tr').removeClass('hidden');
+            $('#jquery_ui_doing tr').removeClass('hidden');
+            $('#jquery_ui_done tr').removeClass('hidden');
         }
     };
     $('#search-text').on('input', searchWord);
