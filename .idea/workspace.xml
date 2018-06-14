@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/app/views/tasks/edit.html.slim" line="23" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a6ce2ae-9ed8-444b-be1d-af5bb172111b" name="デフォルト" comment="" />
+    <list default="true" id="3a6ce2ae-9ed8-444b-be1d-af5bb172111b" name="デフォルト" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -48,11 +51,10 @@
           <file leaf-file-name="application.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="251">
-                  <caret line="174" column="68" lean-forward="false" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="68" />
+                <state relative-caret-position="316">
+                  <caret line="221" column="33" lean-forward="false" selection-start-line="221" selection-start-column="33" selection-end-line="221" selection-end-column="33" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <marker date="1528951580745" expanded="false" signature="12768:12852" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -72,6 +74,16 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="index_group.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/tasks/index_group.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-676">
+                  <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="47" selection-end-column="94" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="_group_delete_user_modal.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/tasks/_group_delete_user_modal.html.slim">
               <provider selected="true" editor-type-id="text-editor">
@@ -92,6 +104,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="_form_task_new.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/tasks/_form_task_new.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="375">
+                  <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="tasks.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/layouts/tasks.html.slim">
               <provider selected="true" editor-type-id="text-editor">
@@ -102,7 +124,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_ayame.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_ayame.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/layouts/_ayame.html.slim">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="315">
@@ -115,7 +137,7 @@
           <file leaf-file-name="tasks_controller.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/tasks_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="370">
+                <state relative-caret-position="442">
                   <caret line="102" column="2" lean-forward="false" selection-start-line="102" selection-start-column="2" selection-end-line="107" selection-end-column="5" />
                   <folding />
                 </state>
@@ -147,16 +169,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="135">
                   <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -804,10 +816,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="889423000" />
+    <option name="totallyTimeSpent" value="894877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1920" height="1057" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -816,9 +829,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3546875" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25745526" sideWeight="0.5651042" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25745526" sideWeight="0.20572917" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25745526" sideWeight="0.43489584" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25745526" sideWeight="0.7942708" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -908,6 +921,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -915,6 +929,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-192">
           <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -936,6 +951,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -978,6 +994,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -999,6 +1016,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="32" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1020,6 +1038,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="54" column="40" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,17 +1049,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/_form_task_new.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="98" lean-forward="false" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/groups_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="54" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1076,14 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/index_group.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="47" selection-end-column="94" />
           <folding />
         </state>
       </provider>
@@ -1126,14 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tasks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="102" column="2" lean-forward="false" selection-start-line="102" selection-start-column="2" selection-end-line="107" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/index_group.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -1161,14 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_form_group_new.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1204,13 +1193,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_form_group_new.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tasks_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="102" column="2" lean-forward="false" selection-start-line="102" selection-start-column="2" selection-end-line="107" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/index_group.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-676">
+          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="47" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/_form_task_new.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="174" column="68" lean-forward="false" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="68" />
+        <state relative-caret-position="316">
+          <caret line="221" column="33" lean-forward="false" selection-start-line="221" selection-start-column="33" selection-end-line="221" selection-end-column="33" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1528951580745" expanded="false" signature="12768:12852" ph="..." />
           </folding>
         </state>
       </provider>

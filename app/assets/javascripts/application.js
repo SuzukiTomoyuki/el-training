@@ -217,29 +217,36 @@ $(document).on('turbolinks:load', function(){
                 arrObj[tasks[i]['status']] = tasks[i];
             }
             for (var key in arrObj) {
-                task_id = arrObj[key].id;
+                if (arrObj[key].id != null) task_id = arrObj[key].id;
             }
-            $.ajax({
-                url: '/api/tasks/' + task_id,
-                type: 'PATCH',
-                data: {
-                    task: { id: task_id, status: form.attr('data-status') }
-                },
-                dateType: 'json'
-            })
-                .done( function(response) {
-                    if (task_id != null || form.attr('data-status') != null) {
-                        location.reload();
+            console.log(task_id);
+            try {
+                if (task_id != null){
+                    $.ajax({
+                        url: '/api/tasks/' + task_id,
+                        type: 'PATCH',
+                        data: {
+                            task: { id: task_id, status: form.attr('data-status') }
+                        },
+                        dateType: 'json'
+                    })
+                        .done( function(response) {
+                            if (task_id != null || form.attr('data-status') != null) {
+                                location.reload();
+                            }
+                        });
+                    $.cookie('done_counter_after', $('#jquery_ui_done').children().length - 1);
+                    console.log($.cookie('done_counter'));
+                    console.log($.cookie('done_counter_after'));
+                    if ($.cookie('done_counter') < $.cookie('done_counter_after')){
+                        $.cookie('ayame_face', 'smile');
                     }
-                });
-            $.cookie('done_counter_after', $('#jquery_ui_done').children().length - 1);
-            console.log($.cookie('done_counter'));
-            console.log($.cookie('done_counter_after'));
-            if ($.cookie('done_counter') < $.cookie('done_counter_after')){
-                $.cookie('ayame_face', 'smile');
-            }
-            if ($.cookie('done_counter') > $.cookie('done_counter_after')){
-                $.cookie('ayame_face', 'zito');
+                    if ($.cookie('done_counter') > $.cookie('done_counter_after')){
+                        $.cookie('ayame_face', 'zito');
+                    }
+                }
+            } catch (e){
+
             }
         }
     });
@@ -338,41 +345,6 @@ $(document).on('turbolinks:load', function(){
 
     $('.ayame_image').dblclick(function(){
         $('.arrow_box').removeClass('arrow_box_temp');
-        // $('p').html("何か用か？");
-
-        // var form = $(this).parent('.jquery_ui_status');
-        // tasks = [];
-        // items = $(this).children();
-        // // console.log(items.eq(0).attr('data-task-id'));
-        // for (var i = 0; i < items.length; ++i) {
-        //     task = {id: items.eq(i).attr('data-task-id'), status: items.eq(i).attr('data-task-status')};
-        //     tasks.push(task);
-        // }
-        // var arrObj = {};
-        // for (var i = 0; i < tasks.length; i++) {
-        //     arrObj[tasks[i]['status']] = tasks[i];
-        // }
-        // for (var key in arrObj) {
-        //     task_id = arrObj[key].id;
-        // }
-
-        // $('li').append("<a class='btn glyphicon glyphicon-search data-toggle=\"modal\" data-target=\"#serch_task\"'></a>");
-
-        // document.addEventListener("DOMContentLoaded", load, false);
-        // function countDown() {
-        //     $('.arrow_box').css('display', 'none');
-        //     return true;
-        // }
-        // function restartTimer() {
-        //     clearTimeout(timer);
-        //     timer = setTimeout('countDown()', 10000);
-        //     return true;
-        // }
-        // function load() {
-        //     timer=setTimeout('countDown()',10000);
-        //     document.body.addEventListener("mousedown", restartTimer, false);
-        //     document.body.addEventListener("keypress", restartTimer, false);
-        // }
     });
     $('.arrow_box').dblclick(function(){
         // $('.arrow_box').css('display', 'none')
