@@ -23,6 +23,7 @@ class Admin::TasksController < ApplicationController
 
   def index_group
     # task_list -> tasks
+    check_join_group
     @task = Task.new
     @user = User.find(session[:user_id])
     # @tasks = Task.all.order(sort_column + ' ' + sort_direction)
@@ -99,6 +100,13 @@ class Admin::TasksController < ApplicationController
   # before action で　セットタスク?
   def find_task_by_id
     Task.find(params[:id])
+  end
+
+  def check_join_group
+    user = User.find(session[:user_id])
+    if (user.groups.where(id: params[:group_id]).empty?)
+      redirect_to admin_root_path
+    end
   end
 
   def sort_direction

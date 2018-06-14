@@ -24,6 +24,7 @@ class TasksController < ApplicationController
   end
 
   def index_group
+    check_join_group
     @task = Task.new
     @user = User.find(session[:user_id])
     @group = Group.new
@@ -97,6 +98,13 @@ class TasksController < ApplicationController
   # before action で　セットタスク?
   def find_task_by_id
     Task.find(params[:id])
+  end
+
+  def check_join_group
+    user = User.find(session[:user_id])
+    if (user.groups.where(id: params[:group_id]).empty?)
+      redirect_to root_path
+    end
   end
 
   def sort_direction

@@ -25,4 +25,5 @@ class ApplicationController < ActionController::Base
     session[:user_id] = nil
     @current_user = nil
   end
+
 end
