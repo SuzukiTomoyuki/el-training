@@ -247,11 +247,31 @@
   z-index:2;
 }
 
+@keyframes ayame_face_change {
+  0% {
+    transform: translateY(10px);
+  }
+  //50% {
+  //  transform: rotate(0deg);
+  //  background-color: #1b6d85;
+  //}
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
 .ayame_image {
+}
+.ayame_image_animation {
+  animation: ayame_face_change 0.1s ease 0s alternate none;
 }
 
 .display_off{
   display: none;
+}
+
+.hukidashi_hidden {
+  visibility: hidden;
 }
 
 .arrow_box_temp {

@@ -148,6 +148,8 @@ $(document).on('turbolinks:load', function(){
     img[0].src = "/assets/images/system/sd_ayame_nomal.png";
     img[1] = new Image();
     img[1].src = "/assets/images/system/sd_ayame_smile.png";
+    img[2] = new Image();
+    img[2].src = "/assets/images/system/sd_ayame_zito.png";
 
     var $ayameAnim = $.Deferred( function( ayameAnim ){
         ayameAnim.then(anim_01)
@@ -155,30 +157,40 @@ $(document).on('turbolinks:load', function(){
             .then(anim_03)
     });
 
-    if ($.cookie('ayame_face') == 'smile') {
-        document.getElementById("ayame_image").src = img[1].src;
+    function face_update (image_num, text){
+        document.getElementById("ayame_image").src = img[image_num].src;
         $.cookie('ayame_face', 'nomal');
         $('.arrow_box').removeClass('arrow_box_temp');
         $('.notice_text').css('display', 'block');
+        // $('.notice_text').removeClass('hukidashi_hidden');
         $('.form-serch-task').css('display', 'none');
-        $('#notice_text_label').text("おお！タスクを完了したのか！エライぞ！");
+        $('#notice_text_label').text(text);
         setTimeout(function(){
             $('.arrow_box').addClass('arrow_box_temp');
             $('.notice_text').css('display', 'none');
+            // $('.notice_text').addClass('hukidashi_hidden');
             $('.form-serch-task').css('display', 'block');
-            $ayameAnim.resolve();
+            $('#ayame_image_temp').addClass('ayame_image_animation');
+            // $ayameAnim.resolve();
+            document.getElementById("ayame_image").src = img[0].src;
         }, 5000);
-    } else {
+    }
 
+    if ($.cookie('ayame_face') == 'smile') {
+        var text = "おお！タスクを完了したのか！エライぞ！";
+        face_update(1, text);
+    } else if ($.cookie('ayame_face') == 'zito') {
+        var text = "……なんだか完了からタスクが移動したような気がするのじゃが……気のせいか？";
+        face_update(2, text);
     }
 
     function anim_01 (){
-        return $(".ayame_img").delay(100).animate({
+        return $("#ayame_img").delay(100).animate({
             top: "+=100px"
         },100);
     }
     function anim_02 (){
-        return $(".ayame_img").animate({
+        return $("#ayame_img").animate({
             top: "0px"
         },100);
     }
@@ -225,6 +237,9 @@ $(document).on('turbolinks:load', function(){
             console.log($.cookie('done_counter_after'));
             if ($.cookie('done_counter') < $.cookie('done_counter_after')){
                 $.cookie('ayame_face', 'smile');
+            }
+            if ($.cookie('done_counter') > $.cookie('done_counter_after')){
+                $.cookie('ayame_face', 'zito');
             }
         }
     });
