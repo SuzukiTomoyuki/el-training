@@ -13,6 +13,9 @@ Rails.application.routes.draw do
         get '/' => 'tasks#index_group'
       end
     end
+    resources :group_users, only: [:destroy, :update]
+    resources :user do
+    end
   end
 
   namespace :admin do

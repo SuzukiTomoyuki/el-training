@@ -29,6 +29,7 @@ class TasksController < ApplicationController
     @group = Group.new
 
     @group_tasks = Group.find(params[:group_id])
+    # @group_users = GroupUsers.all
 
     @task_status_done_count = Task.all.where(id: @group_tasks.tasks.ids).where(status: 0).size
     time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)

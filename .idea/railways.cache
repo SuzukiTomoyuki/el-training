@@ -1,111 +1,91 @@
-                   Prefix Verb   URI Pattern                                          Controller#Action
-               admin_root GET    /admin(.:format)                                     admin/tasks#index
-          admin_api_tasks GET    /admin/api/tasks(.:format)                           admin/api/tasks#index
-                          POST   /admin/api/tasks(.:format)                           admin/api/tasks#create
-       new_admin_api_task GET    /admin/api/tasks/new(.:format)                       admin/api/tasks#new
-      edit_admin_api_task GET    /admin/api/tasks/:id/edit(.:format)                  admin/api/tasks#edit
-           admin_api_task GET    /admin/api/tasks/:id(.:format)                       admin/api/tasks#show
-                          PATCH  /admin/api/tasks/:id(.:format)                       admin/api/tasks#update
-                          PUT    /admin/api/tasks/:id(.:format)                       admin/api/tasks#update
-                          DELETE /admin/api/tasks/:id(.:format)                       admin/api/tasks#destroy
-              admin_tasks GET    /admin/tasks(.:format)                               admin/tasks#index
-                          POST   /admin/tasks(.:format)                               admin/tasks#create
-           new_admin_task GET    /admin/tasks/new(.:format)                           admin/tasks#new
-          edit_admin_task GET    /admin/tasks/:id/edit(.:format)                      admin/tasks#edit
-               admin_task GET    /admin/tasks/:id(.:format)                           admin/tasks#show
-                          PATCH  /admin/tasks/:id(.:format)                           admin/tasks#update
-                          PUT    /admin/tasks/:id(.:format)                           admin/tasks#update
-                          DELETE /admin/tasks/:id(.:format)                           admin/tasks#destroy
-              admin_users GET    /admin/users(.:format)                               admin/users#index
-                          POST   /admin/users(.:format)                               admin/users#create
-           new_admin_user GET    /admin/users/new(.:format)                           admin/users#new
-          edit_admin_user GET    /admin/users/:id/edit(.:format)                      admin/users#edit
-               admin_user GET    /admin/users/:id(.:format)                           admin/users#show
-                          PATCH  /admin/users/:id(.:format)                           admin/users#update
-                          PUT    /admin/users/:id(.:format)                           admin/users#update
-                          DELETE /admin/users/:id(.:format)                           admin/users#destroy
-             admin_labels GET    /admin/labels(.:format)                              admin/labels#index
-                          POST   /admin/labels(.:format)                              admin/labels#create
-          new_admin_label GET    /admin/labels/new(.:format)                          admin/labels#new
-         edit_admin_label GET    /admin/labels/:id/edit(.:format)                     admin/labels#edit
-              admin_label GET    /admin/labels/:id(.:format)                          admin/labels#show
-                          PATCH  /admin/labels/:id(.:format)                          admin/labels#update
-                          PUT    /admin/labels/:id(.:format)                          admin/labels#update
-                          DELETE /admin/labels/:id(.:format)                          admin/labels#destroy
-        admin_group_tasks GET    /admin/groups/:group_id/tasks(.:format)              admin/tasks#index_group
-                          POST   /admin/groups/:group_id/tasks(.:format)              admin/tasks#create
-     new_admin_group_task GET    /admin/groups/:group_id/tasks/new(.:format)          admin/tasks#new
-    edit_admin_group_task GET    /admin/groups/:group_id/tasks/:id/edit(.:format)     admin/tasks#edit
-         admin_group_task GET    /admin/groups/:group_id/tasks/:id(.:format)          admin/tasks#show
-                          PATCH  /admin/groups/:group_id/tasks/:id(.:format)          admin/tasks#update
-                          PUT    /admin/groups/:group_id/tasks/:id(.:format)          admin/tasks#update
-                          DELETE /admin/groups/:group_id/tasks/:id(.:format)          admin/tasks#destroy
-    admin_group_api_tasks GET    /admin/groups/:group_id/api/tasks(.:format)          admin/api/tasks#index
-                          POST   /admin/groups/:group_id/api/tasks(.:format)          admin/api/tasks#create
- new_admin_group_api_task GET    /admin/groups/:group_id/api/tasks/new(.:format)      admin/api/tasks#new
-edit_admin_group_api_task GET    /admin/groups/:group_id/api/tasks/:id/edit(.:format) admin/api/tasks#edit
-     admin_group_api_task GET    /admin/groups/:group_id/api/tasks/:id(.:format)      admin/api/tasks#show
-                          PATCH  /admin/groups/:group_id/api/tasks/:id(.:format)      admin/api/tasks#update
-                          PUT    /admin/groups/:group_id/api/tasks/:id(.:format)      admin/api/tasks#update
-                          DELETE /admin/groups/:group_id/api/tasks/:id(.:format)      admin/api/tasks#destroy
-             admin_groups GET    /admin/groups(.:format)                              admin/groups#index
-                          POST   /admin/groups(.:format)                              admin/groups#create
-          new_admin_group GET    /admin/groups/new(.:format)                          admin/groups#new
-         edit_admin_group GET    /admin/groups/:id/edit(.:format)                     admin/groups#edit
-              admin_group GET    /admin/groups/:id(.:format)                          admin/groups#show
-                          PATCH  /admin/groups/:id(.:format)                          admin/groups#update
-                          PUT    /admin/groups/:id(.:format)                          admin/groups#update
-                          DELETE /admin/groups/:id(.:format)                          admin/groups#destroy
-                    login GET    /login(.:format)                                     sessions#new
-                          POST   /login(.:format)                                     sessions#create
-         sessions_destroy GET    /sessions/destroy(.:format)                          sessions#destroy
-                users_new GET    /users/new(.:format)                                 users#new
-                     root GET    /                                                    tasks#index
-                    tasks GET    /tasks(.:format)                                     tasks#index
-                          POST   /tasks(.:format)                                     tasks#create
-                 new_task GET    /tasks/new(.:format)                                 tasks#new
-                edit_task GET    /tasks/:id/edit(.:format)                            tasks#edit
-                     task GET    /tasks/:id(.:format)                                 tasks#show
-                          PATCH  /tasks/:id(.:format)                                 tasks#update
-                          PUT    /tasks/:id(.:format)                                 tasks#update
-                          DELETE /tasks/:id(.:format)                                 tasks#destroy
-                    users GET    /users(.:format)                                     users#index
-                          POST   /users(.:format)                                     users#create
-                 new_user GET    /users/new(.:format)                                 users#new
-                edit_user GET    /users/:id/edit(.:format)                            users#edit
-                     user GET    /users/:id(.:format)                                 users#show
-                          PATCH  /users/:id(.:format)                                 users#update
-                          PUT    /users/:id(.:format)                                 users#update
-                          DELETE /users/:id(.:format)                                 users#destroy
-              group_tasks GET    /groups/:group_id/tasks(.:format)                    tasks#index_group
-                          POST   /groups/:group_id/tasks(.:format)                    tasks#create
-           new_group_task GET    /groups/:group_id/tasks/new(.:format)                tasks#new
-          edit_group_task GET    /groups/:group_id/tasks/:id/edit(.:format)           tasks#edit
-               group_task GET    /groups/:group_id/tasks/:id(.:format)                tasks#show
-                          PATCH  /groups/:group_id/tasks/:id(.:format)                tasks#update
-                          PUT    /groups/:group_id/tasks/:id(.:format)                tasks#update
-                          DELETE /groups/:group_id/tasks/:id(.:format)                tasks#destroy
-          group_api_tasks GET    /groups/:group_id/api/tasks(.:format)                api/tasks#index
-                          POST   /groups/:group_id/api/tasks(.:format)                api/tasks#create
-       new_group_api_task GET    /groups/:group_id/api/tasks/new(.:format)            api/tasks#new
-      edit_group_api_task GET    /groups/:group_id/api/tasks/:id/edit(.:format)       api/tasks#edit
-           group_api_task GET    /groups/:group_id/api/tasks/:id(.:format)            api/tasks#show
-                          PATCH  /groups/:group_id/api/tasks/:id(.:format)            api/tasks#update
-                          PUT    /groups/:group_id/api/tasks/:id(.:format)            api/tasks#update
-                          DELETE /groups/:group_id/api/tasks/:id(.:format)            api/tasks#destroy
-                   groups GET    /groups(.:format)                                    groups#index
-                          POST   /groups(.:format)                                    groups#create
-                new_group GET    /groups/new(.:format)                                groups#new
-               edit_group GET    /groups/:id/edit(.:format)                           groups#edit
-                    group GET    /groups/:id(.:format)                                groups#show
-                          PATCH  /groups/:id(.:format)                                groups#update
-                          PUT    /groups/:id(.:format)                                groups#update
-                          DELETE /groups/:id(.:format)                                groups#destroy
-                api_tasks GET    /api/tasks(.:format)                                 api/tasks#index
-                          POST   /api/tasks(.:format)                                 api/tasks#create
-             new_api_task GET    /api/tasks/new(.:format)                             api/tasks#new
-            edit_api_task GET    /api/tasks/:id/edit(.:format)                        api/tasks#edit
-                 api_task GET    /api/tasks/:id(.:format)                             api/tasks#show
-                          PATCH  /api/tasks/:id(.:format)                             api/tasks#update
-                          PUT    /api/tasks/:id(.:format)                             api/tasks#update
-                          DELETE /api/tasks/:id(.:format)                             api/tasks#destroy
+               Prefix Verb   URI Pattern                                      Controller#Action
+                 root GET    /                                                tasks#index
+             api_task PATCH  /api/tasks/:id(.:format)                         api/tasks#update
+                      PUT    /api/tasks/:id(.:format)                         api/tasks#update
+                tasks GET    /tasks(.:format)                                 tasks#index
+                      POST   /tasks(.:format)                                 tasks#create
+             new_task GET    /tasks/new(.:format)                             tasks#new
+            edit_task GET    /tasks/:id/edit(.:format)                        tasks#edit
+                 task GET    /tasks/:id(.:format)                             tasks#show
+                      PATCH  /tasks/:id(.:format)                             tasks#update
+                      PUT    /tasks/:id(.:format)                             tasks#update
+                      DELETE /tasks/:id(.:format)                             tasks#destroy
+                users GET    /users(.:format)                                 users#index
+                      POST   /users(.:format)                                 users#create
+             new_user GET    /users/new(.:format)                             users#new
+            edit_user GET    /users/:id/edit(.:format)                        users#edit
+                 user GET    /users/:id(.:format)                             users#show
+                      PATCH  /users/:id(.:format)                             users#update
+                      PUT    /users/:id(.:format)                             users#update
+                      DELETE /users/:id(.:format)                             users#destroy
+          group_tasks GET    /groups/:group_id/tasks(.:format)                tasks#index_group
+                      POST   /groups/:group_id/tasks(.:format)                tasks#create
+       new_group_task GET    /groups/:group_id/tasks/new(.:format)            tasks#new
+      edit_group_task GET    /groups/:group_id/tasks/:id/edit(.:format)       tasks#edit
+           group_task GET    /groups/:group_id/tasks/:id(.:format)            tasks#show
+                      PATCH  /groups/:group_id/tasks/:id(.:format)            tasks#update
+                      PUT    /groups/:group_id/tasks/:id(.:format)            tasks#update
+                      DELETE /groups/:group_id/tasks/:id(.:format)            tasks#destroy
+     group_group_user PATCH  /groups/:group_id/group_users/:id(.:format)      group_users#update
+                      PUT    /groups/:group_id/group_users/:id(.:format)      group_users#update
+                      DELETE /groups/:group_id/group_users/:id(.:format)      group_users#destroy
+     group_user_index GET    /groups/:group_id/user(.:format)                 user#index
+                      POST   /groups/:group_id/user(.:format)                 user#create
+       new_group_user GET    /groups/:group_id/user/new(.:format)             user#new
+      edit_group_user GET    /groups/:group_id/user/:id/edit(.:format)        user#edit
+           group_user GET    /groups/:group_id/user/:id(.:format)             user#show
+                      PATCH  /groups/:group_id/user/:id(.:format)             user#update
+                      PUT    /groups/:group_id/user/:id(.:format)             user#update
+                      DELETE /groups/:group_id/user/:id(.:format)             user#destroy
+               groups GET    /groups(.:format)                                groups#index
+                      POST   /groups(.:format)                                groups#create
+            new_group GET    /groups/new(.:format)                            groups#new
+           edit_group GET    /groups/:id/edit(.:format)                       groups#edit
+                group GET    /groups/:id(.:format)                            groups#show
+                      PATCH  /groups/:id(.:format)                            groups#update
+                      PUT    /groups/:id(.:format)                            groups#update
+                      DELETE /groups/:id(.:format)                            groups#destroy
+           admin_root GET    /admin(.:format)                                 admin/tasks#index
+          admin_tasks GET    /admin/tasks(.:format)                           admin/tasks#index
+                      POST   /admin/tasks(.:format)                           admin/tasks#create
+       new_admin_task GET    /admin/tasks/new(.:format)                       admin/tasks#new
+      edit_admin_task GET    /admin/tasks/:id/edit(.:format)                  admin/tasks#edit
+           admin_task GET    /admin/tasks/:id(.:format)                       admin/tasks#show
+                      PATCH  /admin/tasks/:id(.:format)                       admin/tasks#update
+                      PUT    /admin/tasks/:id(.:format)                       admin/tasks#update
+                      DELETE /admin/tasks/:id(.:format)                       admin/tasks#destroy
+          admin_users GET    /admin/users(.:format)                           admin/users#index
+                      POST   /admin/users(.:format)                           admin/users#create
+       new_admin_user GET    /admin/users/new(.:format)                       admin/users#new
+      edit_admin_user GET    /admin/users/:id/edit(.:format)                  admin/users#edit
+           admin_user GET    /admin/users/:id(.:format)                       admin/users#show
+                      PATCH  /admin/users/:id(.:format)                       admin/users#update
+                      PUT    /admin/users/:id(.:format)                       admin/users#update
+                      DELETE /admin/users/:id(.:format)                       admin/users#destroy
+         admin_labels GET    /admin/labels(.:format)                          admin/labels#index
+                      POST   /admin/labels(.:format)                          admin/labels#create
+      new_admin_label GET    /admin/labels/new(.:format)                      admin/labels#new
+     edit_admin_label GET    /admin/labels/:id/edit(.:format)                 admin/labels#edit
+          admin_label GET    /admin/labels/:id(.:format)                      admin/labels#show
+                      PATCH  /admin/labels/:id(.:format)                      admin/labels#update
+                      PUT    /admin/labels/:id(.:format)                      admin/labels#update
+                      DELETE /admin/labels/:id(.:format)                      admin/labels#destroy
+    admin_group_tasks GET    /admin/groups/:group_id/tasks(.:format)          admin/tasks#index_group
+                      POST   /admin/groups/:group_id/tasks(.:format)          admin/tasks#create
+ new_admin_group_task GET    /admin/groups/:group_id/tasks/new(.:format)      admin/tasks#new
+edit_admin_group_task GET    /admin/groups/:group_id/tasks/:id/edit(.:format) admin/tasks#edit
+     admin_group_task GET    /admin/groups/:group_id/tasks/:id(.:format)      admin/tasks#show
+                      PATCH  /admin/groups/:group_id/tasks/:id(.:format)      admin/tasks#update
+                      PUT    /admin/groups/:group_id/tasks/:id(.:format)      admin/tasks#update
+                      DELETE /admin/groups/:group_id/tasks/:id(.:format)      admin/tasks#destroy
+         admin_groups GET    /admin/groups(.:format)                          admin/groups#index
+                      POST   /admin/groups(.:format)                          admin/groups#create
+      new_admin_group GET    /admin/groups/new(.:format)                      admin/groups#new
+     edit_admin_group GET    /admin/groups/:id/edit(.:format)                 admin/groups#edit
+          admin_group GET    /admin/groups/:id(.:format)                      admin/groups#show
+                      PATCH  /admin/groups/:id(.:format)                      admin/groups#update
+                      PUT    /admin/groups/:id(.:format)                      admin/groups#update
+                      DELETE /admin/groups/:id(.:format)                      admin/groups#destroy
+                login GET    /login(.:format)                                 sessions#new
+                      POST   /login(.:format)                                 sessions#create
+     sessions_destroy GET    /sessions/destroy(.:format)                      sessions#destroy

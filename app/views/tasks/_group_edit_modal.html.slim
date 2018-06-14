@@ -1,0 +1,14 @@
+div class="modal fade" id="edit_group_member_modal" role="dialog"
+  div.modal-dialog
+    div.modal-content
+      div.modal-header
+        button type="button" class="close" data-dismiss="modal"
+        h4 class="modal-title huchidori_font" メンバーを追加
+      div.modal-body
+        = form_for [group_tasks], html: { class: "data-form-group" }, remote: true do |f|
+        div.form-group
+          = label_tag "メンバー:　 "
+          = select_tag "group[user_ids]", options_from_collection_for_select(User.all.where.not(id: group_tasks.users), :id, :name), include_blank: true, id: "data_selecred_group_user", class: "select2"
+        / = f.collection_select :user_id, class: "form-control"
+        div.form-group
+          div id="submit_button" class="btn btn-primary data-submit-group" メンバーを追加

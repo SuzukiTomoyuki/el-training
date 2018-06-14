@@ -17,7 +17,15 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @user = find_group_by_id
+    @group = find_group_by_id
+    # @group.users = params[:user_ids]
+    # @user = find_user_by_id
+    if @group.update(create_params)
+      flash[:notice] = "グループ情報を編集"
+      redirect_back(fallback_location: root_path)
+    else
+      render json: { messages: @group.error.full_messages }, status: :bad_request
+    end
   end
 
   def show
@@ -27,6 +35,10 @@ class GroupsController < ApplicationController
   private
   def find_group_by_id
     Group.find(params[:id])
+  end
+
+  def find_user_by_id
+    Group.find(params[:user_ids])
   end
 
   def create_params

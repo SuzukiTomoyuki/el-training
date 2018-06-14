@@ -1,0 +1,22 @@
+.ayame id="ayame"
+  .arrow_box.arrow_box_temp
+    .hukidashi_text
+      .notice_text
+        label id="notice_text_label"
+      .form-serch-task
+        label なんでも検索してやるぞ！
+        input.center-block type="text" size="25" maxlength="15" id="search-text" placeholder="入力するのじゃ！"
+        div
+          label
+            input type="radio" name="searchTasks" value="caption" checked="checked" タスク
+          label
+            input type="radio" name="searchTasks" value="chargeUser" 担当者
+          label
+            input type="radio" name="searchTasks" value="user" 作成者
+          label
+            input type="radio" name="searchTasks" value="label" ラベル
+        div.serch-result
+          div.search-result__hit-num
+          div.search-result__list
+  .ayame_image
+    img width="300%" id="ayame_image" src="/assets/images/system/sd_ayame_nomal.png"
