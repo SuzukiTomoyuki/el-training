@@ -13,6 +13,10 @@ thead
     tr
       td.text-center colspan="#{tasks.labels.size}" = tasks.deadline.to_s(:published_on)
     tr
+      td colspan="#{tasks.labels.size}" 担当者
+    tr
+      td.text-center colspan="#{tasks.labels.size}" = tasks.charge_user.name
+    tr
       td colspan="#{tasks.labels.size}" 作成者
     tr
       td.text-center colspan="#{tasks.labels.size}" = tasks.holder.name
@@ -23,4 +27,3 @@ thead
         td.text-center
           div.label_border
             = label.name
-

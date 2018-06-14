@@ -4,6 +4,8 @@ class Task < ApplicationRecord
   has_many :group_tasks, dependent: :destroy
   has_many :groups, through: :group_tasks
   belongs_to :holder, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :user
+  belongs_to :charge_user, class_name: 'User'
   # after_save :create_labels
   before_update :create_labels
   after_create :create_labels

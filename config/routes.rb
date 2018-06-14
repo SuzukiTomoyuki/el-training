@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         get '/' => 'tasks#index_group'
       end
     end
+    resources :group_users, only: [:destroy, :show]
   end
 
   namespace :admin do
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
           get '/' => 'tasks#index_group'
         end
       end
+      resources :group_users, only: [:destroy, :show]
     end
   end
 

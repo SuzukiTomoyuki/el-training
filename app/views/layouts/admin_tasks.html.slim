@@ -2,7 +2,7 @@ doctype html
 html
   head
     = render 'layouts/header'
-  body.background_color
+  body.background_color.body_style
     nav class="navbar header_color_admin"
       div.container
         = render partial: 'layouts/navbar_title'
@@ -27,5 +27,6 @@ html
             div.modal-body
               / = render partial: 'form_task', locals: {task: @task, submit_text: t("task.add")}
               = render partial: 'form_serch'
+    = render partial: 'layouts/ayame'
     = render 'layouts/taster'
     = yield

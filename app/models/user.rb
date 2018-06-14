@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :group_users, dependent: :destroy
   has_many :groups, through: :group_users
+  has_many :charge_users, class_name: :task, foreign_key: :charge_user_id
 
   has_secure_password
   validates :name,

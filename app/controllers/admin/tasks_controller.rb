@@ -9,7 +9,6 @@ class Admin::TasksController < ApplicationController
     @task = Task.new
     @user = User.find(session[:user_id])
     @group = Group.new
-    # @group_tasks = Group.find(params[:group_id])
 
     @task_status_done_count = Task.all.where(user_id: session[:user_id]).where(status: 0).size
     time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
@@ -17,13 +16,14 @@ class Admin::TasksController < ApplicationController
     @task_yellow_count = Task.all.where(user_id: session[:user_id]).where(deadline: (time_now)..(3.days.since)).where.not(status: 0).size
     @task_red_count = Task.all.where(user_id: session[:user_id]).where("deadline < '#{time_now}'").where.not(status: 0).size
 
-    @tasks_to_do = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 2
-    @tasks_doing = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 1
-    @tasks_done = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 0
+    @tasks_to_do = Task.all.where(user_id: session[:user_id]).get_by_status 2
+    @tasks_doing = Task.all.where(user_id: session[:user_id]).get_by_status 1
+    @tasks_done = Task.all.where(user_id: session[:user_id]).get_by_status 0
   end
 
   def index_group
     # task_list -> tasks
+    check_join_group
     @task = Task.new
     @user = User.find(session[:user_id])
     # @tasks = Task.all.order(sort_column + ' ' + sort_direction)
@@ -94,12 +94,19 @@ class Admin::TasksController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id, :group_ids)
+    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id, :charge_user_id, :group_ids)
   end
 
   # before action で　セットタスク?
   def find_task_by_id
     Task.find(params[:id])
+  end
+
+  def check_join_group
+    user = User.find(session[:user_id])
+    if (user.groups.where(id: params[:group_id]).empty?)
+      redirect_to admin_root_path
+    end
   end
 
   def sort_direction

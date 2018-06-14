@@ -24,11 +24,13 @@ class TasksController < ApplicationController
   end
 
   def index_group
+    check_join_group
     @task = Task.new
     @user = User.find(session[:user_id])
     @group = Group.new
 
     @group_tasks = Group.find(params[:group_id])
+    # @group_users = GroupUsers.all
 
     @task_status_done_count = Task.all.where(id: @group_tasks.tasks.ids).where(status: 0).size
     time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
@@ -90,12 +92,19 @@ class TasksController < ApplicationController
 
   private
   def create_params
-    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id, :group_id)
+    params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id, :group_id, :charge_user_id)
   end
 
   # before action で　セットタスク?
   def find_task_by_id
     Task.find(params[:id])
+  end
+
+  def check_join_group
+    user = User.find(session[:user_id])
+    if (user.groups.where(id: params[:group_id]).empty?)
+      redirect_to root_path
+    end
   end
 
   def sort_direction
