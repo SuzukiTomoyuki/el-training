@@ -1,4 +1,4 @@
-class GroupUsersController < ApplicationController
+class Admin::GroupUsersController < ApplicationController
   def show
     @group_user = GroupUser.find_or_create_by(group_id: params[:group_id], user_id: params[:id])
     flash[:notice] = "メンバーを追加しました"

@@ -1,0 +1,14 @@
+div class="modal fade" id="edit_group_delete_member_modal" role="dialog"
+  div.modal-dialog
+    div.modal-content
+      div.modal-header
+        button type="button" class="close" data-dismiss="modal"
+        h4 class="modal-title huchidori_font" メンバーを削除
+      div.modal-body
+        = form_for [group_tasks], html: { class: "data-form-group" }, remote: true do |f|
+        div.form-group
+          = label_tag "メンバー:　 "
+          = select_tag "group[user_ids]", options_from_collection_for_select(User.all.where(id: group_tasks.users), :id, :name), include_blank: true, class: "select2 data_selected_group_user_delete"
+        / = f.collection_select :user_id, class: "form-control"
+        div.form-group
+          div class="btn btn-info data-submit-group-delete" メンバーを削除

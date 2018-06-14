@@ -56,8 +56,8 @@ $(document).on('turbolinks:load', function(){
         // return false;
         console.log(query);
         $.ajax({
-            url: 'group_users/' + $('#data_selecred_group_user').val(),
-            type: 'PATCH',
+            url: 'group_users/' + $('.data_selected_group_user').val(),
+            type: 'GET',
             data: query,
             headers: {
                 'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
@@ -73,20 +73,33 @@ $(document).on('turbolinks:load', function(){
                 toastr.error(messages[i]);
             }
         })
+    })
 
-        // $.ajax({
-        //     url: '/api/tasks/' + task_id,
-        //     type: 'PATCH',
-        //     data: {
-        //         task: { id: task_id, status: form.attr('data-status') }
-        //     },
-        //     dateType: 'json'
-        // })
-        //     .done( function(response) {
-        //         if (task_id != null || form.attr('data-status') != null) {
-        //             location.reload();
-        //         }
-        //     });
+    $('.data-submit-group-delete').on('click', function(){
+        // var $form = $(this).parent('.modal-body').children('.data-from');
+        var $form = $(this).parents('.data-form-group');
+        var query = $form.serialize();
+        // console.log(query);
+        // return false;
+        console.log($('.data_selected_group_user_delete').val());
+        $.ajax({
+            url: 'group_users/' + $('.data_selected_group_user_delete').val(),
+            type: 'DELETE',
+            data: query,
+            headers: {
+                'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
+            },
+        })
+        .done((data) => {
+        location.reload();
+        })
+        .fail((data) => {
+            console.log(data);
+            var messages = data.responseJSON.messages;
+            for(var i=0; i < messages.length; i++) {
+                toastr.error(messages[i]);
+            }
+        })
     })
 });
 
