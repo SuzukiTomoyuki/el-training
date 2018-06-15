@@ -16,7 +16,6 @@ group :production do
   gem 'rails_12factor'
   gem 'mysql2'
 end
-gem 'jquery-ui-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
