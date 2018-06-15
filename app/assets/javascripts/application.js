@@ -20,6 +20,7 @@
 //= require toastr
 // = require data-confirm-modal
 //= require turbolinks
+//= require jquery.ui
 
 $(document).on('turbolinks:load', function(){
     $('.data-submit').on('click', function(){

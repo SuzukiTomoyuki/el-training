@@ -531,6 +531,18 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="jquery-ui-rails (vbundled(6.0.1)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/jquery-ui-rails-6.0.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/jquery-ui-rails-6.0.1/app" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/jquery-ui-rails-6.0.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/jquery-ui-rails-6.0.1/app" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="kaminari (vbundled(1.1.1)) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/kaminari-1.1.1/lib" />
