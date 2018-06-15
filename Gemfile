@@ -14,6 +14,7 @@ group :production do
   # gem 'pg'
   # heroku上でassetsをうまく取り扱うためのものだったはず
   gem 'rails_12factor'
+  gem 'mysql2'
 end
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
