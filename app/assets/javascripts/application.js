@@ -219,9 +219,10 @@ $(document).on('turbolinks:load', function(){
             for (var key in arrObj) {
                 if (arrObj[key].id != null) task_id = arrObj[key].id;
             }
-            console.log(task_id);
             try {
                 if (task_id != null){
+
+                    console.log(form.attr('data-status'));
                     $.ajax({
                         url: '/api/tasks/' + task_id,
                         type: 'PATCH',
@@ -236,8 +237,6 @@ $(document).on('turbolinks:load', function(){
                             }
                         });
                     $.cookie('done_counter_after', $('#jquery_ui_done').children().length - 1);
-                    console.log($.cookie('done_counter'));
-                    console.log($.cookie('done_counter_after'));
                     if ($.cookie('done_counter') < $.cookie('done_counter_after')){
                         $.cookie('ayame_face', 'smile');
                     }
@@ -330,8 +329,6 @@ $(document).on('turbolinks:load', function(){
             for (var i = 0; i < searchResult.length; i ++) {
                 $('<div>').text(searchResult[i]).appendTo('.search-result__list');
             }
-
-            console.log($.cookie('ayame_position'));
 
             hitNum = '<span>検索結果</span>：' + searchResult.length + '件あったぞ！';
             $('.search-result__hit-num').append(hitNum);

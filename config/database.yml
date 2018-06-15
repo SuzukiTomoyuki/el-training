@@ -48,9 +48,19 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-#  adapter: pg
-#  database: db/production.pg
-  adapter: mysql2
-  database: Rails_production
 
+##   MySQL(heroku)
+#production:
+##   postgres用
+##  adapter: pg
+##  database: db/production.pg
+#  adapter: mysql2
+#  database: Rails_production
+
+#MySQL(aws)
+production:
+  <<: *default
+  database: cheerfull
+  username: <%= ENV['DATABASE_USER_NAME_PRODUCTION'] %>
+  password: <%= ENV['DATABASE_PASSWORD_PRODUCTION'] %>
+  host: <%= ENV['DATABASE_HOST_PRODUCTION'] %>
