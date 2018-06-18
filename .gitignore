@@ -11,6 +11,7 @@
 /log/*
 /tmp/*
 !/tmp/sockets/
+!/tmp/logs/
 !/tmp/pids/
 !/log/.keep
 !/tmp/.keep
