@@ -1,0 +1,12 @@
+=== puma startup: 2018-06-18 09:38:04 +0900 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2018-06-18 09:38:27 +0900 ===
+- Goodbye!
+=== puma startup: 2018-06-18 09:39:59 +0900 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2018-06-18 09:40:33 +0900 ===
+- Goodbye!
+=== puma startup: 2018-06-18 10:21:33 +0900 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2018-06-18 10:21:40 +0900 ===
+- Goodbye!
