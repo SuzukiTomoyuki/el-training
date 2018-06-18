@@ -60,7 +60,7 @@ test:
 #   MySQL(aws)
 production:
   <<: *default
-  database: cheerfull
+  database: el-training
   username: <%= ENV['DATABASE_USER_NAME_PRODUCTION'] %>
   password: <%= ENV['DATABASE_PASSWORD_PRODUCTION'] %>
   host: <%= ENV['DATABASE_HOST_PRODUCTION'] %>
