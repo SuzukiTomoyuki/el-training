@@ -13,6 +13,8 @@
 !/tmp/sockets/
 !/tmp/logs/
 !/tmp/pids/
+tmp/pids/server.pid
+tmp/pids/puma.state
 !/log/.keep
 !/tmp/.keep
 
