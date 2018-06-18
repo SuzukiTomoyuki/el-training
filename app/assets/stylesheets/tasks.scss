@@ -35,7 +35,7 @@
   //height: 50px;
   //left: 10px;
   //top: 10px;
-  background: url("/assets/images/title_bord.png");
+  background: url("/assets/images/system/title_bord.png");
   background-size: 100% 100%;
 }
 
@@ -52,7 +52,7 @@
   margin: 10px;
 }
 .waku_image{
-  background-image:  url("/assets/images/table_image2.png");
+  background-image:  url("/assets/images/system/table_image2.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -62,7 +62,7 @@
 }
 
 .waku_image_user{
-  background-image:  url("/assets/images/Chalkboard-background.jpg");
+  background-image:  url("/assets/images/system/Chalkboard-background.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -72,14 +72,14 @@
 }
 
 .waku_image_task {
-  background-image:  url("/assets/images/table_image1.png");
+  background-image:  url("/assets/images/system/table_image1.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 .task_caption_width {
   width: 60%;
-  background-image: url("/assets/images/postit_blue.png");
+  background-image: url("/assets/images/system/postit_blue.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -88,7 +88,7 @@
 
 .task_caption_width_yellow {
   width: 60%;
-  background-image: url("/assets/images/postit_yellow.png");
+  background-image: url("/assets/images/system/postit_yellow.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -97,7 +97,7 @@
 
 .task_caption_width_red {
   width: 60%;
-  background-image: url("/assets/images/postit_red.png");
+  background-image: url("/assets/images/system/postit_red.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -106,7 +106,7 @@
 
 .task_caption_width_green {
   width: 60%;
-  background-image: url("/assets/images/postit_green.png");
+  background-image: url("/assets/images/system/postit_green.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -136,7 +136,7 @@
 }
 
 .group_title {
-  background-image: url("/assets/images/group_title.png");
+  background-image: url("/assets/images/system/group_title.png");
   background-size: 100% 100%;
   font-size: 25px;
   color: #fff;

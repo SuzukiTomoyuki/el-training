@@ -72,7 +72,9 @@ class UsersController < ApplicationController
     elsif img_object.size > 4.megabyte
       result = 'ファイルサイズは4MBまでです。'
     else
-      File.open("public/assets/images/#{image_name.toutf8}", 'wb') { |f| f.write(img_object.read) }
+      path = "public/assets/images/users/#{params[:id]}/"
+      FileUtils.mkdir_p(path) unless FileTest.exist?(path)
+      File.open(path + "#{image_name.toutf8}", 'wb') { |f| f.write(img_object.read) }
       result = "success"
     end
     return result
