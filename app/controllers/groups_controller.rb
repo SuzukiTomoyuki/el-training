@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(create_params)
+    # GroupUser.find_or_create_by(group_id: params[:id], user_id: params[:user_id])
     if @group.save
       flash[:notice] = "グループを作成しました"
       redirect_to group_tasks_path(@group.id)

@@ -11,7 +11,7 @@ div class="modal fade" id="new_group_modal" role="dialog"
             = text_field_tag "group[name]", params[:name], class: "form-control"
           div.form-group
             = label_tag "メンバー:　 "
-            = select_tag "group[user_ids]", options_from_collection_for_select(User.all, :id, :name)  , class: "select2", multiple: true, include_blank: true
+            = select_tag "group[user_ids]", options_from_collection_for_select(User.all, :id, :name, { selected: User.find(session[:user_id]).id })  , class: "select2", multiple: true, include_blank: true
           / = f.collection_select :user_id, class: "form-control"
           div.form-group
             = submit_tag "グループを追加"

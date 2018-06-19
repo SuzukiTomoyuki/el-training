@@ -10,17 +10,17 @@ class TasksController < ApplicationController
     @user = User.find(session[:user_id])
     @group = Group.new
 
+    tasks = Task.all.where(user_id: session[:user_id]).where.not(status: 0)
     @task_status_done_count = Task.all.where(user_id: session[:user_id]).where(status: 0).size
     time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
-    @task_blue_count = Task.all.where(user_id: session[:user_id]).where("deadline > '#{time_now + 3.day}'").where.not(status: 0).size
-    @task_yellow_count = Task.all.where(user_id: session[:user_id]).where(deadline: (time_now)..(4.days.since)).where.not(status: 0).size
-    @task_red_count = Task.all.where(user_id: session[:user_id]).where("deadline < '#{time_now}'").where.not(status: 0).size
+    @task_blue_count = tasks.where("deadline > '#{time_now + 3.day}'").size
+    @task_yellow_count = tasks.where(deadline: (time_now)..(3.days.since)).size
+    @task_red_count = tasks.where("deadline < '#{time_now}'").size
 
-    pp Task.all.select("caption").where(user_id: session[:user_id]).where("deadline < '#{time_now}'").where.not(status: 0)
-
-    @tasks_to_do = Task.all.where(charge_user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 2
-    @tasks_doing = Task.all.where(charge_user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 1
-    @tasks_done = Task.all.where(charge_user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 0
+    tasks = Task.all.where(charge_user_id: session[:user_id])
+    @tasks_to_do = tasks.get_by_status 2
+    @tasks_doing = tasks.get_by_status 1
+    @tasks_done = tasks.get_by_status 0
   end
 
   def index_group
@@ -30,17 +30,18 @@ class TasksController < ApplicationController
     @group = Group.new
 
     @group_tasks = Group.find(params[:group_id])
-    # @group_users = GroupUsers.all
 
+    tasks = Task.all.where(id: @group_tasks.tasks.ids).where.not(status: 0)
     @task_status_done_count = Task.all.where(id: @group_tasks.tasks.ids).where(status: 0).size
     time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
-    @task_blue_count = Task.all.where(id: @group_tasks.tasks.ids).where("deadline > '#{time_now + 3.day}'").where.not(status: 0).size
-    @task_yellow_count = Task.all.where(id: @group_tasks.tasks.ids).where(deadline: (time_now)..(3.days.since)).where.not(status: 0).size
-    @task_red_count = Task.all.where(id: @group_tasks.tasks.ids).where("deadline < '#{time_now}'").where.not(status: 0).size
+    @task_blue_count = tasks.where("deadline > '#{time_now + 3.day}'").size
+    @task_yellow_count = tasks.where(deadline: (time_now)..(3.days.since)).size
+    @task_red_count = tasks.where("deadline < '#{time_now}'").size
 
-    @tasks_to_do = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 2
-    @tasks_doing = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 1
-    @tasks_done = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction).get_by_status 0
+    tasks = Task.all.where(id: @group_tasks.tasks.ids).order(sort_column + ' ' + sort_direction)
+    @tasks_to_do = tasks.get_by_status 2
+    @tasks_doing = tasks.get_by_status 1
+    @tasks_done = tasks.get_by_status 0
   end
 
   def new
@@ -56,7 +57,6 @@ class TasksController < ApplicationController
     if @task.save!
       group.group_tasks.create(task: @task)
       flash[:notice] = "タスクが追加されました"
-      # redirect_back(fallback_location: root_path)
     else
       render json: { messages: @task.errors.full_messages }, status: :bad_request
     end
@@ -70,7 +70,6 @@ class TasksController < ApplicationController
     @task = find_task_by_id
     if @task.update(create_params)
       flash[:notice] = "タスクを更新"
-      # redirect_to tasks_path
     else
       render json: { messages: @task.errors.full_messages }, status: :bad_request
     end
@@ -78,7 +77,6 @@ class TasksController < ApplicationController
 
   def show
     @task = find_task_by_id
-    # @id =  123
   end
 
   def destroy
@@ -89,13 +87,11 @@ class TasksController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-
   private
   def create_params
     params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id, :group_id, :charge_user_id)
   end
 
-  # before action で　セットタスク?
   def find_task_by_id
     Task.find(params[:id])
   end
@@ -114,5 +110,4 @@ class TasksController < ApplicationController
   def sort_column
     Task.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
   end
-
 end
