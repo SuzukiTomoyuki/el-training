@@ -8,16 +8,16 @@ html
       div.col-xs-5.col-sm-offset-4
         h5
           span.text-muted
-            img.user_icon width="30px" src = "/assets/images/postit_blue.png" まだ大丈夫：
+            img.user_icon width="30px" src = "/assets/images/system/postit_blue.png" まだ大丈夫：
             = @task_blue_count
           span.text-muted
-            img.user_icon width="30px" src = "/assets/images/postit_yellow.png" 期限三日以内：
+            img.user_icon width="30px" src = "/assets/images/system/postit_yellow.png" 期限三日以内：
             = @task_yellow_count
           span.text-muted
-            img.user_icon width="30px" src = "/assets/images/postit_red.png" 期限切れ：
+            img.user_icon width="30px" src = "/assets/images/system/postit_red.png" 期限切れ：
             = @task_red_count
           span.text-muted
-            img.user_icon width="30px" src = "/assets/images/postit_green.png" 完了：
+            img.user_icon width="30px" src = "/assets/images/system/postit_green.png" 完了：
             = @task_status_done_count
 
     .tasks id="jquery-ui-draggable-connectToSortable"
