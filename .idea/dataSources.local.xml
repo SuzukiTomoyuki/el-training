@@ -11,5 +11,10 @@
       <first-sync>true</first-sync>
       <user-name>tomoyuki</user-name>
     </data-source>
+    <data-source name="Rails el-training: production" uuid="2fa897f6-d31e-4c77-8e8b-3c8edccea603">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>&lt;%= ENV['DATABASE_USER_NAME_PRODUCTION'] %&gt;</user-name>
+    </data-source>
   </component>
 </project>

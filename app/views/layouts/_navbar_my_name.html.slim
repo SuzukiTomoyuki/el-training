@@ -1,7 +1,11 @@
 ul class="nav navbar-nav navbar-right"
   li
     a data-toggle="dropdown"
-      img.user_icon width="30px" src = "/assets/images/#{@user.image_name}"
+      - if @user.image_name == "default_user.png"
+        img.user_icon width="30px" src = "/assets/images/users/#{@user.image_name}"
+      - else
+        img.user_icon width="30px" src = "/assets/images/users/#{@user.id}/#{@user.image_name}"
+      |  ▽
     span class="create"
     ul.dropdown-menu role="menu"
       - if @user.admin?

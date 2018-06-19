@@ -18,9 +18,9 @@ class TasksController < ApplicationController
 
     pp Task.all.select("caption").where(user_id: session[:user_id]).where("deadline < '#{time_now}'").where.not(status: 0)
 
-    @tasks_to_do = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 2
-    @tasks_doing = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 1
-    @tasks_done = Task.all.where(user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 0
+    @tasks_to_do = Task.all.where(charge_user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 2
+    @tasks_doing = Task.all.where(charge_user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 1
+    @tasks_done = Task.all.where(charge_user_id: session[:user_id]).order(sort_column + ' ' + sort_direction).get_by_status 0
   end
 
   def index_group
