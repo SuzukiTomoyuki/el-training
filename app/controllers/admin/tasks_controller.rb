@@ -42,6 +42,7 @@ class Admin::TasksController < ApplicationController
     @tasks_to_do = tasks.get_by_status 2
     @tasks_doing = tasks.get_by_status 1
     @tasks_done = tasks.get_by_status 0
+    # pp Date.new(tasks.first.deadline.year, tasks.first.deadline.month, tasks.first.deadline.day) - Date.today
   end
 
 

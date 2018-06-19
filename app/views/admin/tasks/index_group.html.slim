@@ -32,8 +32,8 @@ html
                 td.text-center
                   a.btn.glyphicon.glyphicon-trash style="font-size:20pt;" id="delete_group_member_modal" data-toggle="modal" data-target="#edit_group_delete_member_modal"
 
-    = render partial: 'tasks/group_edit_modal', locals: { group_tasks: @group_tasks }
-    = render partial: 'tasks/group_delete_user_modal', locals: { group_tasks: @group_tasks }
+    = render partial: 'admin/tasks/group_edit_modal', locals: { group_tasks: @group_tasks }
+    = render partial: 'admin/tasks/group_delete_user_modal', locals: { group_tasks: @group_tasks }
 
     .tasks id="jquery-ui-draggable-connectToSortable"
       div.jquery-ui-draggable-drop
@@ -47,7 +47,7 @@ html
             tr
               th.text-center
               th.text-center
-            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_to_do }
+            = render partial: 'admin/tasks/table_tasks_body', locals: { tasks: @tasks_to_do }
         table class="task waku_image_task jquery_ui_status" data-status="doing"
           thead
             tr
@@ -58,7 +58,7 @@ html
             tr
               th.text-center
               th.text-center
-            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_doing }
+            = render partial: 'admin/tasks/table_tasks_body', locals: { tasks: @tasks_doing }
         table class="task waku_image_task jquery_ui_status" data-status="done"
           thead
             tr
@@ -69,7 +69,7 @@ html
             tr
               th.text-center
               th.text-center
-            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_done }
+            = render partial: 'admin/tasks/table_tasks_body', locals: { tasks: @tasks_done }
 
       table align="right" padding= "10px" class="task_animation kureyon_font waku_image detail_task_font" id="show_task_detail"
 

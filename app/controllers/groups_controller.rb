@@ -8,7 +8,6 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(create_params)
-    # GroupUser.find_or_create_by(group_id: params[:id], user_id: params[:user_id])
     if @group.save
       flash[:notice] = "グループを作成しました"
       redirect_to group_tasks_path(@group.id)
@@ -19,8 +18,6 @@ class GroupsController < ApplicationController
 
   def update
     @group = find_group_by_id
-    # @group.users = params[:user_ids]
-    # @user = find_user_by_id
     if @group.update(create_params)
       flash[:notice] = "グループ情報を編集"
       redirect_back(fallback_location: root_path)
