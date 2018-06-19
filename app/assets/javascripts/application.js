@@ -22,6 +22,7 @@
 //= require turbolinks
 //= require jquery.cookie.min
 //= require jquery-ui.min
+//= require jquery.tzSelect
 
 $(document).on('turbolinks:load', function(){
     $('.data-submit').on('click', function(){
@@ -133,6 +134,17 @@ $(document).on('turbolinks:load', function(){
             $("#new_task_status").val('done');
         }
     );
+
+    $(".user_select").change(function(){
+        console.log($(".user_select").val());
+        // console.log(jselect("select image_name from users where id = " + $(".user_select").val()));
+        var form = $(".group_users").children();
+        for (var i = 0; i < form.length; ++i){
+            console.log(form.eq(i).attr('data-user-imageName'));
+        }
+
+        $(".modal_user_icon").html()
+    });
 });
 
 $(document).on('turbolinks:load', function(){
@@ -363,3 +375,4 @@ $(document).on('turbolinks:load', function(){
     });
 
 });
+

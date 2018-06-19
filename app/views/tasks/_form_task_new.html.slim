@@ -10,7 +10,8 @@
     = f.date_select :deadline, {}, class: "form-control"
   div.form-group
     = f.label :"担当者:　 ", class: "control-label huchidori_font"
-    = f.select :charge_user_id, options_from_collection_for_select(@group_tasks.users, :id, :name, {selected: @group_tasks.users.find(session[:user_id]).id})
+    = f.select :charge_user_id, options_from_collection_for_select(@group_tasks.users, :id, :name, {selected: @group_tasks.users.find(session[:user_id]).id}), {}, { class: "user_select selectpicker "}
+    img.modal_user_icon width="80px" src = "/assets/images/users/9/sakuko04.png"
   div.form-group
     = f.label :"付箋: ", class: "control-label huchidori_font"
     = f.text_field :label, class: "form-control"

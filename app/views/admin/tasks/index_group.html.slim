@@ -17,9 +17,9 @@ html
               tr
                 th.text-center
             tbody
-              tr
+              tr.group_users
                 - @group_tasks.users.each do |user|
-                  td.text-center
+                  td.text-center data-user-id="#{user.id}" data-user-imageName="#{user.image_name}"
                     - if user.image_name == "default_user.png"
                       img.user_icon2 width="80px" src = "/assets/images/users/#{user.image_name}"
                     - else
