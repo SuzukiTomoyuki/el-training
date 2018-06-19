@@ -355,6 +355,28 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="debase (vbundled(0.2.2)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/debase-0.2.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/debase-0.2.2/ext" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/debase-0.2.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/debase-0.2.2/ext" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="debase-ruby_core_source (vbundled(0.10.3)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/debase-ruby_core_source-0.10.3/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/debase-ruby_core_source-0.10.3/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="diff-lcs (vbundled(1.3)) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/diff-lcs-1.3/autotest" />
@@ -803,6 +825,40 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="rails_12factor (vbundled(0.0.3)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_12factor-0.0.3/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_12factor-0.0.3/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rails_serve_static_assets (vbundled(0.0.5)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_serve_static_assets-0.0.5/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_serve_static_assets-0.0.5/gemfiles" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_serve_static_assets-0.0.5/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_serve_static_assets-0.0.5/gemfiles" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rails_stdout_logging (vbundled(0.0.5)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_stdout_logging-0.0.5/gemfiles" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_stdout_logging-0.0.5/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_stdout_logging-0.0.5/gemfiles" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rails_stdout_logging-0.0.5/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="railties (vbundled(5.1.6)) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/railties-5.1.6/lib" />
@@ -901,6 +957,20 @@
         </CLASSES>
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/rspec-support-3.7.1/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ruby-debug-ide (vbundled(0.6.1)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/ruby-debug-ide-0.6.1/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/ruby-debug-ide-0.6.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/ruby-debug-ide-0.6.1/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/ruby-debug-ide-0.6.1/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/ruby-debug-ide-0.6.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/ruby-debug-ide-0.6.1/lib" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.6'
 # Use mysql as the database for Active Record
 gem 'mysql2', group: [:development, :test]
 group :production do
-  gem 'pg'
+  # gem 'pg'
   # heroku上でassetsをうまく取り扱うためのものだったはず
   gem 'rails_12factor'
   gem 'mysql2'
@@ -71,6 +71,9 @@ gem 'html2slim'
 
 gem "jquery-turbolinks"
 gem 'select2-rails'
+
+gem 'ruby-debug-ide'
+gem 'debase'
 
 
 group :development, :test do

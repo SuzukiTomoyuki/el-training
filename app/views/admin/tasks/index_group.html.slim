@@ -7,18 +7,7 @@ html
           th.text-center.group_title = @group_tasks.name
       div.col-xs-5.col-sm-offset-4
         h5
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_blue.png" まだ大丈夫：
-            = @task_blue_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_yellow.png" 期限三日以内：
-            = @task_yellow_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_red.png" 期限切れ：
-            = @task_red_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_green.png" 完了：
-            = @task_status_done_count
+          = render partial: 'admin/tasks/tasks_status'
     .members
       div.container.hidden_box
         label id="member_label_text" for="member_label" メンバーを表示 ▽
@@ -35,6 +24,10 @@ html
                       img.user_icon2 width="80px" src = "/assets/images/users/#{user.image_name}"
                     - else
                       img.user_icon2 width="80px" src = "/assets/images/users/#{user.id}/#{user.image_name}"
+                    div.user_text
+                      p 着手待ち: #{GroupTask.group_user_tasks(params[:group_id], user.id, 2).size}
+                      p 着手中: #{GroupTask.group_user_tasks(params[:group_id], user.id, 1).size}
+                      p 完了: #{GroupTask.group_user_tasks(params[:group_id], user.id, 0).size}
                 td
                   a.btn.glyphicon.glyphicon-plus style="font-size:20pt;" id="edit_group_modal" data-toggle="modal" data-target="#edit_group_member_modal"
               tr
@@ -43,8 +36,8 @@ html
                 td.text-center
                   a.btn.glyphicon.glyphicon-trash style="font-size:20pt;" id="delete_group_member_modal" data-toggle="modal" data-target="#edit_group_delete_member_modal"
 
-    = render partial: 'tasks/group_edit_modal', locals: { group_tasks: @group_tasks }
-    = render partial: 'tasks/group_delete_user_modal', locals: { group_tasks: @group_tasks }
+    = render partial: 'admin/tasks/group_edit_modal', locals: { group_tasks: @group_tasks }
+    = render partial: 'admin/tasks/group_delete_user_modal', locals: { group_tasks: @group_tasks }
 
     .tasks id="jquery-ui-draggable-connectToSortable"
       div.jquery-ui-draggable-drop
@@ -58,7 +51,7 @@ html
             tr
               th.text-center
               th.text-center
-            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_to_do }
+            = render partial: 'admin/tasks/table_tasks_body', locals: { tasks: @tasks_to_do }
         table class="task waku_image_task jquery_ui_status" data-status="doing"
           thead
             tr
@@ -69,7 +62,7 @@ html
             tr
               th.text-center
               th.text-center
-            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_doing }
+            = render partial: 'admin/tasks/table_tasks_body', locals: { tasks: @tasks_doing }
         table class="task waku_image_task jquery_ui_status" data-status="done"
           thead
             tr
@@ -80,7 +73,7 @@ html
             tr
               th.text-center
               th.text-center
-            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_done }
+            = render partial: 'admin/tasks/table_tasks_body', locals: { tasks: @tasks_done }
 
       table align="right" padding= "10px" class="task_animation kureyon_font waku_image detail_task_font" id="show_task_detail"
 
@@ -99,17 +92,3 @@ html
       - if flash[:notice]
         javascript:
             toastr.success('#{flash[:notice]}');
-  javascript:
-      // $("#new_task_status").val('to_do');
-      $("#status_to_do").click(function () {
-              $("#new_task_status").val('to_do');
-          }
-      );
-      $("#status_donig").click(function () {
-              $("#new_task_status").val('doing');
-          }
-      );
-      $("#status_done").click(function () {
-              $("#new_task_status").val('done');
-          }
-      );

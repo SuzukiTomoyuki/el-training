@@ -18,8 +18,6 @@ class GroupsController < ApplicationController
 
   def update
     @group = find_group_by_id
-    # @group.users = params[:user_ids]
-    # @user = find_user_by_id
     if @group.update(create_params)
       flash[:notice] = "グループ情報を編集"
       redirect_back(fallback_location: root_path)

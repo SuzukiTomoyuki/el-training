@@ -7,18 +7,7 @@ html
           th.text-center.group_title = @group_tasks.name
       div.col-xs-5.col-sm-offset-4
         h5
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_blue.png" まだ大丈夫：
-            = @task_blue_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_yellow.png" 期限三日以内：
-            = @task_yellow_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_red.png" 期限切れ：
-            = @task_red_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_green.png" 完了：
-            = @task_status_done_count
+          = render partial: 'tasks/tasks_status'
 
     .members
       div.container.hidden_box
@@ -29,15 +18,17 @@ html
               tr
                 th.text-center
             tbody
-              / tr
-              /   - @group_tasks.users.each do |user|
               tr
                 - @group_tasks.users.each do |user|
                   td.text-center
-                    - if task.charge_user.image_name == "default_user.png"
+                    - if user.image_name == "default_user.png"
                       img.user_icon2 width="80px" src = "/assets/images/users/#{user.image_name}"
                     - else
                       img.user_icon2 width="80px" src = "/assets/images/users/#{user.id}/#{user.image_name}"
+                    div.user_text
+                      p 着手待ち: #{GroupTask.group_user_tasks(params[:group_id], user.id, 2).size}
+                      p 着手中: #{GroupTask.group_user_tasks(params[:group_id], user.id, 1).size}
+                      p 完了: #{GroupTask.group_user_tasks(params[:group_id], user.id, 0).size}
                 td
                   a.btn.glyphicon.glyphicon-plus style="font-size:20pt;" id="edit_group_modal" data-toggle="modal" data-target="#edit_group_member_modal"
               tr
@@ -45,24 +36,9 @@ html
                   td.text-center = user.name
                 td.text-center
                   a.btn.glyphicon.glyphicon-trash style="font-size:20pt;" id="delete_group_member_modal" data-toggle="modal" data-target="#edit_group_delete_member_modal"
-                  / = link_to '', task_path(task.id), class: 'btn delete-task-btn glyphicon glyphicon-trash', method: :delete, id: "delete_button", data: {title: t("confirm.title"), confirm: t("confirm.confirm"), cancel: t("confirm.cancel"), commit: t("confirm.commit")}
 
       = render partial: 'tasks/group_edit_modal', locals: { group_tasks: @group_tasks }
       = render partial: 'tasks/group_delete_user_modal', locals: { group_tasks: @group_tasks }
-      / div class="modal fade" id="edit_group_member_modal" role="dialog"
-      /   div.modal-dialog
-      /     div.modal-content
-      /       div.modal-header
-      /         button type="button" class="close" data-dismiss="modal"
-      /         h4 class="modal-title huchidori_font" メンバーを追加
-      /       div.modal-body
-      /         = form_for(@group_tasks), remote: true do |f|
-      /           div.form-group
-      /             = label_tag "メンバー:　 "
-      /             = select_tag "group[user_ids]", options_from_collection_for_select(User.all.where.not(id: @group_tasks.users), :id, :name), class: "select2", include_blank: true
-      /           / = f.collection_select :user_id, class: "form-control"
-      /           div.form-group
-      /             = submit_tag "メンバーを追加", class: "btn"
 
     .tasks id="jquery-ui-draggable-connectToSortable"
       div.jquery-ui-draggable-drop
@@ -117,17 +93,3 @@ html
       - if flash[:notice]
         javascript:
             toastr.success('#{flash[:notice]}');
-  javascript:
-      // $("#new_task_status").val('to_do');
-      $("#status_to_do").click(function () {
-              $("#new_task_status").val('to_do');
-          }
-      );
-      $("#status_donig").click(function () {
-              $("#new_task_status").val('doing');
-          }
-      );
-      $("#status_done").click(function () {
-              $("#new_task_status").val('done');
-          }
-      );

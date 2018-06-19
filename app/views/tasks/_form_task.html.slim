@@ -8,17 +8,12 @@
   div.form-group
     = f.label :"締め切り: ", class: "control-label huchidori_font"
     = f.date_select :deadline, {}, class: "form-control"
-  div.form-group
-    = f.label :"状態: ", class: "control-label huchidori_font"
-    = f.select :status, Task.statuses.map { |k, _v| [t("status.#{k}"), k] },{}, class: "form-control"
   - if controller.action_name.include?("group")
     div.form-group
       = f.label :"担当者:　 ", class: "control-label huchidori_font"
-      = f.select :charge_user_id, options_from_collection_for_select(@group_tasks.users, :id, :name)
+      = f.select :charge_user_id, options_from_collection_for_select(@group_tasks.users, :id, :name, { selected: @group_tasks.users.find(task.charge_user.id).id })
   div.form-group
     = f.label :"付箋: ", class: "control-label huchidori_font"
     = f.text_field :label, class: "form-control"
   div.form-group
     div id="submit_button" class="btn btn-primary data-submit" #{submit_text}
-
-

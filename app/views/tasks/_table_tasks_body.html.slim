@@ -6,9 +6,9 @@
           img.user_icon width="80%" src = "/assets/images/users/#{task.charge_user.image_name}"
         - else
           img.user_icon width="80%" src = "/assets/images/users/#{task.charge_user.id}/#{task.charge_user.image_name}"
-      - if task.deadline - (Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)) < 0.day
+      - if Date.new(task.deadline.year, task.deadline.month, task.deadline.day)  < Date.today
         td.text-center class="task_caption_width_red task_caption_font" = link_to task.caption, task_path(task), remote: true
-      - elsif task.deadline - (Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)) < 3.day
+      - elsif Date.new(task.deadline.year, task.deadline.month, task.deadline.day)  < Date.today + 3.day
         td.text-center class="task_caption_width_yellow task_caption_font" = link_to task.caption, task_path(task), remote: true
       - else
         td.text-center class="task_caption_width task_caption_font" = link_to task.caption, task_path(task), remote: true
