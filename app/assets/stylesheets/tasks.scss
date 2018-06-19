@@ -121,11 +121,59 @@
 }
 
 .user_icon2 {
+  position: relative;
   background-color: #f7ecb5;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   margin: 5px 20px;
+}
+
+.user_icon2:hover + .user_text {
+  display: block;
+}
+
+.user_text {
+  display: none;
+  position: absolute;
+  top: 10%;
+  margin: 1.5em 0;
+  padding: 10px 10px;
+  min-width: 80px;
+  max-width: 100%;
+  color: #555;
+  font-size: 13px;
+  border: solid 2px #2e6da4;
+  background: #e0edff;
+  box-sizing: border-box;
+}
+
+.user_text:before{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 12px solid transparent;
+  border-top: 12px solid #e0edff;
+  z-index: 2;
+}
+
+.user_text:after{
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-top: 14px solid #555;
+  z-index: 1;
+}
+
+.user_text p {
+  align-items: left;
+  margin: -10px;
+  padding: 0;
 }
 
 .label_border {

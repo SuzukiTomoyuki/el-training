@@ -1,0 +1,7 @@
+current directory: /Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.5.0/gems/ruby-debug-ide-0.6.1/ext
+/usr/local/opt/ruby/bin/ruby mkrf_conf.rb
+Installing base gem
+Building native extensions. This could take a while...
+
+current directory: /Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.5.0/gems/ruby-debug-ide-0.6.1/ext
+/usr/local/opt/ruby/bin/ruby -rrubygems /Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.5.0/gems/rake-12.3.1/exe/rake RUBYARCHDIR=/Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.5.0/extensions/x86_64-darwin-17/2.5.0/ruby-debug-ide-0.6.1 RUBYLIBDIR=/Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.5.0/extensions/x86_64-darwin-17/2.5.0/ruby-debug-ide-0.6.1
