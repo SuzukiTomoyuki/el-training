@@ -88,17 +88,3 @@ html
       - if flash[:notice]
         javascript:
             toastr.success('#{flash[:notice]}');
-  javascript:
-      // $("#new_task_status").val('to_do');
-      $("#status_to_do").click(function () {
-              $("#new_task_status").val('to_do');
-          }
-      );
-      $("#status_donig").click(function () {
-              $("#new_task_status").val('doing');
-          }
-      );
-      $("#status_done").click(function () {
-              $("#new_task_status").val('done');
-          }
-      );

@@ -120,7 +120,19 @@ $(document).on('turbolinks:load', function(){
            $("#member_label_text").text("メンバーを表示 ▽");
            flg = "close"
        }
-   })
+   });
+    $("#status_to_do").click(function () {
+            $("#new_task_status").val('to_do');
+        }
+    );
+    $("#status_donig").click(function () {
+            $("#new_task_status").val('doing');
+        }
+    );
+    $("#status_done").click(function () {
+            $("#new_task_status").val('done');
+        }
+    );
 });
 
 $(document).on('turbolinks:load', function(){
