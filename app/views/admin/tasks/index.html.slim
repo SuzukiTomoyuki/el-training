@@ -7,18 +7,7 @@ html
           th.text-center.group_title 自分のタスク
       div.col-xs-5.col-sm-offset-4
         h5
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_blue.png" まだ大丈夫：
-            = @task_blue_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_yellow.png" 期限三日以内：
-            = @task_yellow_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_red.png" 期限切れ：
-            = @task_red_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_green.png" 完了：
-            = @task_status_done_count
+          = render partial: 'admin/tasks/tasks_status'
 
     .tasks id="jquery-ui-draggable-connectToSortable"
       div.jquery-ui-draggable-drop

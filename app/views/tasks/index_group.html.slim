@@ -7,18 +7,7 @@ html
           th.text-center.group_title = @group_tasks.name
       div.col-xs-5.col-sm-offset-4
         h5
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_blue.png" まだ大丈夫：
-            = @task_blue_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_yellow.png" 期限三日以内：
-            = @task_yellow_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_red.png" 期限切れ：
-            = @task_red_count
-          span.text-muted
-            img.user_icon width="30px" src = "/assets/images/system/postit_green.png" 完了：
-            = @task_status_done_count
+          = render partial: 'tasks/tasks_status'
 
     .members
       div.container.hidden_box
@@ -34,7 +23,7 @@ html
               tr
                 - @group_tasks.users.each do |user|
                   td.text-center
-                    - if task.charge_user.image_name == "default_user.png"
+                    - if user.image_name == "default_user.png"
                       img.user_icon2 width="80px" src = "/assets/images/users/#{user.image_name}"
                     - else
                       img.user_icon2 width="80px" src = "/assets/images/users/#{user.id}/#{user.image_name}"
