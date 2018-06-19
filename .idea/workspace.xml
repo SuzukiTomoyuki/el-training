@@ -80,7 +80,7 @@
           <file leaf-file-name="_table_tasks_body.html.slim" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/_table_tasks_body.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
+                <state relative-caret-position="59">
                   <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="62" />
                   <folding />
                 </state>
@@ -666,12 +666,12 @@
       <workItem from="1529019630790" duration="22599000" />
       <workItem from="1529279815750" duration="17216000" />
       <workItem from="1529316187718" duration="38000" />
-      <workItem from="1529316229444" duration="4720000" />
+      <workItem from="1529316229444" duration="4898000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="947144000" />
+    <option name="totallyTimeSpent" value="947322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1920" height="1057" extended-state="6" />
@@ -1030,7 +1030,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/_table_tasks_body.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="59">
           <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="62" />
           <folding />
         </state>
