@@ -15,8 +15,9 @@ group :production do
   # heroku上でassetsをうまく取り扱うためのものだったはず
   gem 'rails_12factor'
   gem 'mysql2'
-  gem 'capistrano', '~> 3.0.1'
+  gem 'capistrano', '~> 3.7.0'
   gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
 end
 # Use Puma as the app server
