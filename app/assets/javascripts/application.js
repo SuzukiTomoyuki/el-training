@@ -196,14 +196,15 @@ $(document).on('turbolinks:load', function(){
             var tmpString = tmp[i].toString();
             if (tmpString.match("user_select_edit_")){
                 var taskIdForm = tmpString.split('_')[3];
-                showSelectUserIcon2("img.modal_user_icon_edit", taskIdForm);
+                // showSelectUserIcon2("img.modal_user_icon_edit", taskIdForm);
+                showSelectUserIcon2("#jquery_change_user_icon_" + taskIdForm, taskIdForm);
             }
         }
     }
     for (var i = 0; i < taskIds.length; i++){
         var taskId = taskIds[i];
         $(".user_select_edit_" + taskId).ready(function(){
-            // initShowSelectUserIcon($("#task_charge_user_id").attr('class').split(" "));
+            initShowSelectUserIcon($(".user_select_edit_" + taskId).attr('class').split(" "));
             // console.log($("#task_charge_user_id"))
         });
         $(".user_select_edit_" + taskId).change(function(){
