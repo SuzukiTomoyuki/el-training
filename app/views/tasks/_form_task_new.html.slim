@@ -11,12 +11,10 @@
   div.form-group
     = f.label :"担当者:　 ", class: "control-label huchidori_font"
     = f.select :charge_user_id, options_from_collection_for_select(@group_tasks.users, :id, :name, {selected: @group_tasks.users.find(session[:user_id]).id}), {}, { class: "user_select selectpicker "}
-    img.modal_user_icon width="80px" src = "/assets/images/users/9/sakuko04.png"
+    img.modal_user_icon.user_icon3 height="80px" src = ""
   div.form-group
     = f.label :"付箋: ", class: "control-label huchidori_font"
     = f.text_field :label, class: "form-control"
   div.form-group
     div id="submit_button" class="btn btn-primary data-submit" #{submit_text}
     / input type="submit" id="submit_button" class="btn btn-primary data-submit"  #{submit_text}
-
-

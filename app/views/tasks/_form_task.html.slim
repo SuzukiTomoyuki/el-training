@@ -11,7 +11,8 @@
   - if controller.action_name.include?("group")
     div.form-group
       = f.label :"担当者:　 ", class: "control-label huchidori_font"
-      = f.select :charge_user_id, options_from_collection_for_select(@group_tasks.users, :id, :name, { selected: @group_tasks.users.find(task.charge_user.id).id })
+      = f.select :charge_user_id, options_from_collection_for_select(@group_tasks.users, :id, :name, { selected: @group_tasks.users.find(task.charge_user.id).id }), {}, { class: "user_select_edit_#{task.id} selectpicker "}
+      img.modal_user_icon_edit.user_icon3 height="80px" src = ""
   div.form-group
     = f.label :"付箋: ", class: "control-label huchidori_font"
     = f.text_field :label, class: "form-control"

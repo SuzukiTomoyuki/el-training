@@ -135,16 +135,81 @@ $(document).on('turbolinks:load', function(){
         }
     );
 
-    $(".user_select").change(function(){
-        console.log($(".user_select").val());
-        // console.log(jselect("select image_name from users where id = " + $(".user_select").val()));
-        var form = $(".group_users").children();
-        for (var i = 0; i < form.length; ++i){
-            console.log(form.eq(i).attr('data-user-imageName'));
+    function taskDataIds(tableId){
+        taskIds = [];
+        items = $(tableId).children();
+        for (var i = 1; i < items.length; ++i) {
+            taskIds.push(items.eq(i).attr('data-task-id').toString());
         }
+        return taskIds
+    }
 
-        $(".modal_user_icon").html()
+    function showSelectUserIcon(form) {
+        var user;
+        var users = [];
+        var usersTable = $(".group_users").children();
+        for (var i = 0; i < usersTable.length - 1; ++i){
+            user = {id: usersTable.eq(i).attr('data-user-id') , imageName: usersTable.eq(i).attr('data-user-imageName')};
+            users.push(user);
+        }
+        for (var i = 0; i < users.length; i++){
+            // console.log("/assets/images/users/" + users[i].id + '/' + users[i].imageName);
+            if ($(".user_select").val() == users[i].id) {
+                if (users[i].imageName == "default_user.png"){
+                    $(form).attr("src" , "/assets/images/users/" + users[i].imageName);
+                } else{
+                    $(form).attr("src" , "/assets/images/users/" + users[i].id + '/' + users[i].imageName);
+                }
+            }
+        }
+    }
+    function showSelectUserIcon2(form, taskId) {
+        var user;
+        var users = [];
+        var usersTable = $(".group_users").children();
+        for (var i = 0; i < usersTable.length - 1; ++i){
+            user = {id: usersTable.eq(i).attr('data-user-id') , imageName: usersTable.eq(i).attr('data-user-imageName')};
+            users.push(user);
+        }
+        for (var i = 0; i < users.length; i++){
+            console.log(".user_select_edit_" + taskId);
+            if ($(".user_select_edit_" + taskId).val() == users[i].id) {
+                if (users[i].imageName == "default_user.png"){
+                    $(form).attr("src" , "/assets/images/users/" + users[i].imageName);
+                } else{
+                    console.log("/assets/images/users/" + users[i].id + '/' + users[i].imageName);
+                    $(form).attr("src" , "/assets/images/users/" + users[i].id + '/' + users[i].imageName);
+                }
+            }
+        }
+    }
+    $(".user_select").ready(function(){
+        showSelectUserIcon("img.modal_user_icon");
     });
+    $(".user_select").change(function(){
+        showSelectUserIcon("img.modal_user_icon");
+    });
+
+    var taskIds = taskDataIds('#jquery_ui_to_do').concat(taskDataIds('#jquery_ui_doing')).concat(taskDataIds('#jquery_ui_done'));
+    function initShowSelectUserIcon(tmp){
+        for (var i = 0; i < tmp.length; i++){
+            var tmpString = tmp[i].toString();
+            if (tmpString.match("user_select_edit_")){
+                var taskIdForm = tmpString.split('_')[3];
+                showSelectUserIcon2("img.modal_user_icon_edit", taskIdForm);
+            }
+        }
+    }
+    for (var i = 0; i < taskIds.length; i++){
+        var taskId = taskIds[i];
+        $(".user_select_edit_" + taskId).ready(function(){
+            // initShowSelectUserIcon($("#task_charge_user_id").attr('class').split(" "));
+            // console.log($("#task_charge_user_id"))
+        });
+        $(".user_select_edit_" + taskId).change(function(){
+            initShowSelectUserIcon($(this).attr('class').split(" "));
+        });
+    }
 });
 
 $(document).on('turbolinks:load', function(){
@@ -232,8 +297,8 @@ $(document).on('turbolinks:load', function(){
         revert: true,
         receive: function(event,ui){
             var form = $(this).parent('.jquery_ui_status');
-            tasks = [];
-            items = $(this).children();
+            var tasks = [];
+            var items = $(this).children();
             for (var i = 0; i < items.length; ++i) {
                 task = {id: items.eq(i).attr('data-task-id'), status: items.eq(i).attr('data-task-status')};
                 tasks.push(task);
