@@ -87,6 +87,12 @@ class TasksController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def calendar
+    @task = Task.new
+    @user = User.find(session[:user_id])
+    @group = Group.new
+  end
+
   private
   def create_params
     params.require(:task).permit(:id, :caption, :priority, :deadline, :status, :label, :created_at, :user_id, :group_id, :charge_user_id)

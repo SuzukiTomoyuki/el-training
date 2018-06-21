@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :tasks, :users
+  get '/calendar' => 'tasks#calendar'
   resources :groups do
     resources :tasks, except: [:index] do
       collection do
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'tasks#index'
+    get '/calendar' => 'tasks#calendar'
     resources :tasks, :users, :labels
     resources :groups do
       resources :tasks, except: [:index] do

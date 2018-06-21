@@ -18,6 +18,7 @@
                        PATCH  /users/:id(.:format)                              users#update
                        PUT    /users/:id(.:format)                              users#update
                        DELETE /users/:id(.:format)                              users#destroy
+              calendar GET    /calendar(.:format)                               tasks#calendar
            group_tasks GET    /groups/:group_id/tasks(.:format)                 tasks#index_group
                        POST   /groups/:group_id/tasks(.:format)                 tasks#create
         new_group_task GET    /groups/:group_id/tasks/new(.:format)             tasks#new
@@ -37,6 +38,7 @@
                        PUT    /groups/:id(.:format)                             groups#update
                        DELETE /groups/:id(.:format)                             groups#destroy
             admin_root GET    /admin(.:format)                                  admin/tasks#index
+        admin_calendar GET    /admin/calendar(.:format)                         admin/tasks#calendar
            admin_tasks GET    /admin/tasks(.:format)                            admin/tasks#index
                        POST   /admin/tasks(.:format)                            admin/tasks#create
         new_admin_task GET    /admin/tasks/new(.:format)                        admin/tasks#new

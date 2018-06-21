@@ -1,0 +1,35 @@
+/* カレンダーナビのスタイル */
+#calendar-nav {
+  text-align: center;
+}
+
+#calendar-nav span {
+  display: inline-block;
+  width: 200px;
+}
+
+#calendar-nav i:hover {
+  cursor: pointer;
+}
+
+/* カレンダーのスタイル */
+.table th, td{
+  text-align: center;
+}
+
+#calendar th:first-child {
+  background-color: #FEEEFF;
+}
+#calendar td:first-child {
+  background-color: #FEEEFF;
+}
+#calendar th:nth-child(7) {
+  background-color: #DFFFFF
+}
+#calendar td:nth-child(7) {
+  background-color: #DFFFFF
+}
+
+#calendar td:hover {
+  opacity: 0.6;
+}

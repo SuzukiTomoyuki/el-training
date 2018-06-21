@@ -23,6 +23,7 @@
 //= require jquery.cookie.min
 //= require jquery-ui.min
 //= require jquery.tzSelect
+//= require vue_script
 
 $(document).on('turbolinks:load', function(){
     $('.data-submit').on('click', function(){
