@@ -204,6 +204,7 @@ $(document).on('turbolinks:load', function(){
     for (var i = 0; i < taskIds.length; i++){
         var taskId = taskIds[i];
         $(".user_select_edit_" + taskId).ready(function(){
+            if ($(".user_select_edit_" + taskId).attr('class') != null)
             initShowSelectUserIcon($(".user_select_edit_" + taskId).attr('class').split(" "));
             // console.log($("#task_charge_user_id"))
         });
