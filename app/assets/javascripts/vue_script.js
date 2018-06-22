@@ -1,9 +1,12 @@
+// import axios from 'axios';
+
 $(document).on('turbolinks:load', function(){
     new Vue({
         el: '#app',
         data: {
-            weeks: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-            calData: {year: 0, month: 0}
+            weeks: ['日', '月', '火', '水', '木', '金', '土'],
+            calData: {year: 0, month: 0},
+            query: []
         },
         created: function (){
             var date = new Date();
@@ -12,7 +15,7 @@ $(document).on('turbolinks:load', function(){
         },
         methods: {
             getMonthName: function(month) {
-                var monthName = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                var monthName = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
                 return monthName[month - 1];
             },
             moveLastMonth: function() {
@@ -32,15 +35,20 @@ $(document).on('turbolinks:load', function(){
                 else {
                     this.calData.month++;
                 }
+                var params = new URLSearchParams();
+                params.append('year', this.calData.year);
+                params.append('month', this.calData.month);
+                params.append('day', this.calData.day);
+                axios.get('api/tasks/calendar.json', params)
+                    .then(res => {
+                   this.query = res.data
+                });
             }
         },
         computed: {
             calendar: function () {
-                // 1日の曜日
                 var firstDay = new Date(this.calData.year, this.calData.month - 1, 1).getDay();
-                // 晦日の日にち
                 var lastDate = new Date(this.calData.year, this.calData.month, 0).getDate();
-                // 日にちのカウント
                 var dayIdx = 1;
 
                 var calendar = [];
@@ -49,7 +57,6 @@ $(document).on('turbolinks:load', function(){
 
                     // 空白行をなくすため
                     if (lastDate < dayIdx) {break;}
-
                     for (var d = 0; d < 7; d++) {
                         if (w == 0 && d < firstDay) {
                             week[d] = {day: ''};

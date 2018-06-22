@@ -85,6 +85,7 @@ $(document).on('turbolinks:load', function(){
         var query = $form.serialize();
         // console.log(query);
         // return false;
+        // delete update で共通化
         console.log($('.data_selected_group_user_delete').val());
         $.ajax({
             url: 'group_users/' + $('.data_selected_group_user_delete').val(),
@@ -438,9 +439,7 @@ $(document).on('turbolinks:load', function(){
         $('.arrow_box').removeClass('arrow_box_temp');
     });
     $('.arrow_box').dblclick(function(){
-        // $('.arrow_box').css('display', 'none')
         $('.arrow_box').addClass('arrow_box_temp');
     });
-
 });
 

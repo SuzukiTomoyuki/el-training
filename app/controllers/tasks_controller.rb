@@ -5,14 +5,18 @@ class TasksController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
+  # method 化
   def index
     @task = Task.new
     @user = User.find(session[:user_id])
     @group = Group.new
 
+    # current Userで　　無駄処理も消す statusをscope化
     tasks = Task.all.where(user_id: session[:user_id]).where.not(status: 0)
     @task_status_done_count = Task.all.where(user_id: session[:user_id]).where(status: 0).size
+    # prace インジェクションのそうくつ
     time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
+    # 意味合いを持たせる変数名
     @task_blue_count = tasks.where("deadline > '#{time_now + 3.day}'").size
     @task_yellow_count = tasks.where(deadline: (time_now)..(3.days.since)).size
     @task_red_count = tasks.where("deadline < '#{time_now}'").size
@@ -82,15 +86,28 @@ class TasksController < ApplicationController
   def destroy
     @task = find_task_by_id
     @task.destroy
-    flash[:notice] = "悲しみ"
+    flash[:notice] = "タスクを削除しました"
     # redirect_to tasks_path
     redirect_back(fallback_location: root_path)
   end
 
   def calendar
-    @task = Task.new
+    # @task = Task.new
     @user = User.find(session[:user_id])
     @group = Group.new
+    group_tasks = Group.select("id").find(@user.groups.ids)
+    @tasks = []
+    @task_blue = []
+    @task_red = []
+    @task_green = []
+    group_tasks.each{ |group_task|
+      @tasks << (Task.all.where(id: group_task.tasks.ids).where.not(status: 0))
+      # time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
+      # @task_blue.push([tasks.where("deadline > '#{time_now + 3.day}'")])
+      # @task_yellow.push([tasks.where(deadline: (time_now)..(3.days.since))])
+      # @task_red.push([tasks.where("deadline < '#{time_now}'")])
+    }
+
   end
 
   private

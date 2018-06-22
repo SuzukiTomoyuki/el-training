@@ -7,7 +7,7 @@ class Task < ApplicationRecord
   belongs_to :user
   belongs_to :charge_user, class_name: 'User'
   # after_save :create_labels
-  before_update :create_labels
+  # before_update :create_labels
   after_create :create_labels
 
   validate :validate_caption_error, :check_caption_empty
@@ -24,15 +24,14 @@ class Task < ApplicationRecord
       to_do: 2
   }
 
-  scope :get_by_caption, ->(caption) {
-    where("caption like ?", "%#{caption}%")
-  }
+  # scope :get_by_caption, ->(caption) {
+  #   where("caption like ?", "%#{caption}%")
+  # }
 
+  # 三種類全部作っとく
   scope :get_by_status, ->(status) {
     where(status: status)
   }
-
-  # searchを作る
 
   def validate_caption_error
     if caption.length > 100

@@ -1,4 +1,4 @@
-div id="app"
+div.col-md-6 id="app"
   div id="calendar-nav"
     i.glyphicon.glyphicon-menu-left @click="moveLastMonth"
     span
@@ -12,3 +12,6 @@ div id="app"
     tbody
       tr v-for="week in calendar"
         td v-for="day in week" {{day.day}}
+        / - @tasks.each do |tasks|
+        /   - tasks.each do |task|
+        /     - if task.deadline == Date.new({{calData.year}}, {{getMonthName(calData.month)}}, {{day.day}})

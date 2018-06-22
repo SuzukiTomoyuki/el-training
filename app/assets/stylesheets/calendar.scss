@@ -1,4 +1,6 @@
 /* カレンダーナビのスタイル */
+
+
 #calendar-nav {
   text-align: center;
 }
@@ -14,6 +16,7 @@
 
 /* カレンダーのスタイル */
 .table th, td{
+  height: 60px;
   text-align: center;
 }
 

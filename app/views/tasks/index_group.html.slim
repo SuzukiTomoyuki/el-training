@@ -26,6 +26,7 @@ html
                     - else
                       img.user_icon2 width="80px" src = "/assets/images/users/#{user.id}/#{user.image_name}"
                     div.user_text
+                      /  課題感をもつ
                       p 着手待ち: #{GroupTask.group_user_tasks(params[:group_id], user.id, 2).size}
                       p 着手中: #{GroupTask.group_user_tasks(params[:group_id], user.id, 1).size}
                       p 完了: #{GroupTask.group_user_tasks(params[:group_id], user.id, 0).size}

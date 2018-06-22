@@ -2,6 +2,7 @@
                   root GET    /                                                 tasks#index
               api_task PATCH  /api/tasks/:id(.:format)                          api/tasks#update
                        PUT    /api/tasks/:id(.:format)                          api/tasks#update
+    api_tasks_calendar GET    /api/tasks/calendar(.:format)                     api/tasks#calendar
                  tasks GET    /tasks(.:format)                                  tasks#index
                        POST   /tasks(.:format)                                  tasks#create
               new_task GET    /tasks/new(.:format)                              tasks#new

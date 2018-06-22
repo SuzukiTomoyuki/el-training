@@ -1,5 +1,7 @@
 {
   "name": "el-training",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }
