@@ -35,14 +35,7 @@ $(document).on('turbolinks:load', function(){
                 else {
                     this.calData.month++;
                 }
-                var params = new URLSearchParams();
-                params.append('year', this.calData.year);
-                params.append('month', this.calData.month);
-                params.append('day', this.calData.day);
-                axios.get('api/tasks/calendar.json', params)
-                    .then(res => {
-                   this.query = res.data
-                });
+
             }
         },
         computed: {
@@ -73,6 +66,18 @@ $(document).on('turbolinks:load', function(){
                     }
                     calendar.push(week);
                 }
+
+                $.ajax({
+                    url: 'api/tasks/calendar.json',
+                    type: 'GET',
+                    data: {
+                        calendar: { year: this.calData.year, month: this.calData.month }
+                    },
+                    dataType: 'json'
+                }).done(function(dataResult, textStatus, jqXHR) {
+                    console.log(dataResult);
+                });
+
                 return calendar;
             }
         }

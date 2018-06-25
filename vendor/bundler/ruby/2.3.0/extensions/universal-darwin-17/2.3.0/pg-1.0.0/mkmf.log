@@ -75,7 +75,7 @@ ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app
 ld: warning: ignoring file /usr/local/lib/libpq.dylib, file was built for x86_64 which is not the architecture being linked (i386): /usr/local/lib/libpq.dylib
 Undefined symbols for architecture i386:
   "_PQconnectdb", referenced from:
-      _t in conftest-f0f269.o
+      _t in conftest-8ab176.o
 ld: symbol(s) not found for architecture i386
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
