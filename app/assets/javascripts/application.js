@@ -346,8 +346,8 @@ $(document).on('turbolinks:load', function(){
     });
 
     function taskData(tableId){
-        tasks = [];
-        items = $(tableId).children();
+        var tasks = [];
+        var items = $(tableId).children();
         for (var i = 1; i < items.length; ++i) {
             task = {
                 id: '#' + items.eq(i).attr('data-task-id').toString(),
