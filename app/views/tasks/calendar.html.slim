@@ -19,9 +19,8 @@ div.col-md-12 id="app"
             template v-else=true
               | {{day.day}}<sup>{{dayCounts[day.day]}}</sup>
   .col-md-6
-    p.text-center.deadline_task_p
-      tempalte v-if="taskDates.length != 0"
-        | {{dateDay}}日に期限が切れるタスク
+    div.text-center.deadline_task_p v-if="taskDates.length != 0"
+      | {{dateDay}}日に期限が切れるタスク
     table.calendar_task.col-md-4 height="340px" v-for="task in taskDates"
       thead
       tbody
@@ -34,7 +33,7 @@ div.col-md-12 id="app"
             .vue_caption_img
               .vue_caption_mask
                 span.vue_caption_text
-                  string
+                  strong
                     | {{task.caption}}
         tr
           td.text-center
