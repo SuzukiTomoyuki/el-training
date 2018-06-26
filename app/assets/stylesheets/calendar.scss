@@ -1,8 +1,11 @@
 /* カレンダーナビのスタイル */
+.calendar {
 
+}
 
 #calendar-nav {
   text-align: center;
+  font-size: 20px;
 }
 
 #calendar-nav span {
@@ -15,9 +18,30 @@
 }
 
 /* カレンダーのスタイル */
-.table th, td{
-  height: 60px;
-  text-align: center;
+.table {
+  th, td{
+    width: 60px;
+    text-align: center;
+    font-size: 35px;
+    sup {
+      background-color: red;
+      color: white;
+      border-radius: 40%;
+      font-size: 25px;
+    }
+  }
+}
+
+
+#calendar {
+  //background-image:  url("/assets/images/system/calendar.png");
+  //background-size: 100% 100%;
+  background-color: floralwhite;
+  border: 3px solid lightpink;
+  tbody {
+    //font-family: 'digital';
+    //font-size: 70px;
+  }
 }
 
 #calendar th:first-child {
@@ -35,4 +59,53 @@
 
 #calendar td:hover {
   opacity: 0.6;
+}
+
+//.table_caption_cel {
+//  padding: 4px;
+//}
+.vue_caption_img {
+  background-image:  url("/assets/images/system/captionBackground.png");
+  background-size: 100% 100%;
+  transform: rotate(2deg);
+}
+.vue_caption_mask {
+  height: 100%;
+  background-image: rgba(255,255,255,0.5);
+  //opacity: 0.5;
+}
+.vue_caption_text {
+  display: inline-block;
+  font-family: 'RiiTN_R';
+  font-size: 20px;
+  //opacity: 1.0  !important;
+}
+
+.calendar_task {
+  //margin: 5px;
+  background-image:  url("/assets/images/system/messageBox.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  td {
+    border-collapse: collapse;
+    text-align: center;
+    padding: 0;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+.vue_group_title {
+  background: linear-gradient(transparent 60%, #ffff66 60%);
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #555, -1px 1px 1px #555, 1px -1px 1px #555, -1px -1px 1px #555, 1px 1px 1px #555, -1px 1px 1px #555, 1px -1px 1px #555, -1px -1px 1px #555, 5px 5px #9ccc65;
+}
+
+.deadline_task_p {
+  background: linear-gradient(transparent 60%, #e382a2 60%);
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #555, -1px 1px 1px #555, 1px -1px 1px #555, -1px -1px 1px #555, 1px 1px 1px #555, -1px 1px 1px #555, 1px -1px 1px #555, -1px -1px 1px #555, 5px 5px #9ccc65;
 }

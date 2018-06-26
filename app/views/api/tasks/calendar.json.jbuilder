@@ -3,4 +3,5 @@ json.array! @tasks do |task|
   json.caption task[:caption]
   json.chargeUser task[:charge_user]
   json.deadline task[:deadline]
+  json.userImage task[:user_image]
 end

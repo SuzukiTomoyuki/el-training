@@ -1,26 +1,23 @@
-html
-  head
-  body
-    div.container.tab-pane
-      table class="waku_image_user"
-        thead
-          tr
-            th.text-center 名前
-            th.text-center e-mail
-            th.text-center 権限
-            th.text-center 登録日
-            th.text-center タスク数
-            th.text-center colspan="2" 編集
-        tbody
-          - @users.each do |user|
-            tr
-              td.text-center = user.name
-              td.text-center = user.email
-              td.text-center = t("role.#{user.admin}")
-              td.text-center = user.created_at.to_s(:published_on)
-              td.text-center = user.tasks.size
-              td.text-center
-                div id="edit_button_user" type="button" class="btn glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_user#{user.id}"
-                = render partial: 'edit_user_modal', locals: {user: user}
-              td
-                = link_to '', admin_user_path(user.id), class: 'btn delete-user-btn glyphicon glyphicon-trash' ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm_admin") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
+div.container.tab-pane
+  table class="waku_image_user"
+    thead
+      tr
+        th.text-center 名前
+        th.text-center e-mail
+        th.text-center 権限
+        th.text-center 登録日
+        th.text-center タスク数
+        th.text-center colspan="2" 編集
+    tbody
+      - @users.each do |user|
+        tr
+          td.text-center = user.name
+          td.text-center = user.email
+          td.text-center = t("role.#{user.admin}")
+          td.text-center = user.created_at.to_s(:published_on)
+          td.text-center = user.tasks.size
+          td.text-center
+            div id="edit_button_user" type="button" class="btn glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_user#{user.id}"
+            = render partial: 'edit_user_modal', locals: {user: user}
+          td
+            = link_to '', admin_user_path(user.id), class: 'btn delete-user-btn glyphicon glyphicon-trash' ,method: :delete, id: "delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm_admin") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}

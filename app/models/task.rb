@@ -33,6 +33,22 @@ class Task < ApplicationRecord
     where(status: status)
   }
 
+  scope :status_to_do, -> {
+    where(status: to_do)
+  }
+
+  scope :status_doing, -> {
+    where(status: doing)
+  }
+
+  scope :status_done, -> {
+    where(status: done)
+  }
+
+  scope :not_status_done, -> {
+    where.not(status: done)
+  }
+
   def validate_caption_error
     if caption.length > 100
       errors.add(:caption, "が100文字を超えている")

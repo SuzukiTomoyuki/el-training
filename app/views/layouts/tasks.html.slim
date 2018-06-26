@@ -10,6 +10,7 @@ html
           = render partial: 'layouts/navbar_my_name'
           ul class="nav navbar-nav"
             li = link_to t("description.index_tasks"), tasks_path
+            li = link_to "カレンダー", calendar_path
 
 
       div class="modal fade" id="serch_task" role="dialog"

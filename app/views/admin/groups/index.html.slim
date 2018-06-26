@@ -1,22 +1,19 @@
-html
-  head
-  body
-    div.container.tab-pane
-      table class="waku_image_user"
-        thead
-          tr
-            th.text-center 名前
-            th.text-center 登録者数
-            th.text-center タスク数
-            th.text-center colspan="2" 編集
-        tbody
-          - @groups.each do |group|
-            tr
-              td.text-center = group.name
-              td.text-center = group.users.size
-              td.text-center = group.tasks.size
-              td.text-center
-                div id="edit_button_group" type="button" class="btn glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_group#{group.id}"
-                = render partial: 'edit_group_modal', locals: {group: group}
-              td
-                = link_to '', admin_group_path(group.id), class: 'btn delete-user-btn glyphicon glyphicon-trash', method: :delete, id:"delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm_admin") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}
+div.container.tab-pane
+  table class="waku_image_user"
+    thead
+      tr
+        th.text-center 名前
+        th.text-center 登録者数
+        th.text-center タスク数
+        th.text-center colspan="2" 編集
+    tbody
+      - @groups.each do |group|
+        tr
+          td.text-center = group.name
+          td.text-center = group.users.size
+          td.text-center = group.tasks.size
+          td.text-center
+            div id="edit_button_group" type="button" class="btn glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit_button_group#{group.id}"
+            = render partial: 'edit_group_modal', locals: {group: group}
+          td
+            = link_to '', admin_group_path(group.id), class: 'btn delete-user-btn glyphicon glyphicon-trash', method: :delete, id:"delete_button", data: { title: t("confirm.title"), confirm: t("confirm.confirm_admin") , cancel: t("confirm.cancel"), commit: t("confirm.commit")}

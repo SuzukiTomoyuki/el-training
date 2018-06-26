@@ -1,52 +1,49 @@
-html
-  head
-  body
-    .tasks_summary.col-xs-12
-      table.col-xs-3
-        tbody
-          th.text-center.group_title 自分のタスク
-      div.col-xs-5.col-sm-offset-4
-        h5
-          = render partial: 'admin/tasks/tasks_status'
+.tasks_summary.col-xs-12
+  table.col-xs-3
+    tbody
+      th.text-center.group_title 自分のタスク
+  div.col-xs-5.col-sm-offset-4
+    h5
+      = render partial: 'admin/tasks/tasks_status'
 
-    .tasks id="jquery-ui-draggable-connectToSortable"
-      div.jquery-ui-draggable-drop
-        table class="task waku_image_task jquery_ui_status" data-status="to_do"
-          thead
-            tr
-              th.text-center class="task_bord_title table_title_font" colspan="2" 着手待ち
-              th.text-left class="table_title"
-          tbody.jquery-ui-sortable id="jquery_ui_to_do"
-            tr
-              th.text-center
-              th.text-center
-            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_to_do }
-        table class="task waku_image_task jquery_ui_status" data-status="doing"
-          thead
-            tr
-              th.text-center class="task_bord_title table_title_font" colspan="2" 着手中
-              th.text-left class="table_title"
-          tbody.jquery-ui-sortable id="jquery_ui_doing"
-            tr
-              th.text-center
-              th.text-center
-            = render partial: 'tasks/table_tasks_body', locals: {tasks: @tasks_doing}
-        table class="task waku_image_task jquery_ui_status" data-status="done"
-          thead
-            tr
-              th.text-center class="task_bord_title table_title_font" colspan="2" 完了
-              th.text-left class="table_title"
-          tbody.jquery-ui-sortable id="jquery_ui_done"
-            tr
-              th.text-center
-              th.text-center
-            = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_done }
+.tasks id="jquery-ui-draggable-connectToSortable"
+  div.jquery-ui-draggable-drop
+    table class="task waku_image_task jquery_ui_status" data-status="to_do"
+      thead
+        tr
+          th.text-center class="task_bord_title table_title_font" colspan="2" 着手待ち
+          th.text-left class="table_title"
+      tbody.jquery-ui-sortable id="jquery_ui_to_do"
+        tr
+          th.text-center
+          th.text-center
+        = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_to_do }
+    table class="task waku_image_task jquery_ui_status" data-status="doing"
+      thead
+        tr
+          th.text-center class="task_bord_title table_title_font" colspan="2" 着手中
+          th.text-left class="table_title"
+      tbody.jquery-ui-sortable id="jquery_ui_doing"
+        tr
+          th.text-center
+          th.text-center
+        = render partial: 'tasks/table_tasks_body', locals: {tasks: @tasks_doing}
+    table class="task waku_image_task jquery_ui_status" data-status="done"
+      thead
+        tr
+          th.text-center class="task_bord_title table_title_font" colspan="2" 完了
+          th.text-left class="table_title"
+      tbody.jquery-ui-sortable id="jquery_ui_done"
+        tr
+          th.text-center
+          th.text-center
+        = render partial: 'tasks/table_tasks_body', locals: { tasks: @tasks_done }
 
-      table align="right" padding= "10px" class="task_animation kureyon_font waku_image detail_task_font" id="show_task_detail"
+  table align="right" padding= "10px" class="task_animation kureyon_font waku_image detail_task_font" id="show_task_detail"
 
 
-    div.container
+div.container
 
-      - if flash[:notice]
-        javascript:
-            toastr.success('#{flash[:notice]}');
+  - if flash[:notice]
+    javascript:
+        toastr.success('#{flash[:notice]}');

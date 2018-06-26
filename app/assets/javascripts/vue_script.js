@@ -7,7 +7,10 @@ $(document).on('turbolinks:load', function(){
             weeks: ['日', '月', '火', '水', '木', '金', '土'],
             calData: {year: 0, month: 0},
             deadlineTasksDays: [],
-            dayCounts: []
+            dayCounts: [],
+            tasks: [],
+            taskDates: [],
+            dateDay: 0
         },
         created: function (){
             var date = new Date();
@@ -36,7 +39,30 @@ $(document).on('turbolinks:load', function(){
                 else {
                     this.calData.month++;
                 }
+            },
+            showTask: function(day) {
+                this.dateDay = day;
+                this.taskDates = [];
 
+                // console.log(new Date().getDate());
+                for (var i = 0; i < this.tasks.length; i++) {
+                    if (this.tasks[i]['day'] == day) {
+                        var today = new Date();
+                        var redTask = false;
+                        var taskDeadline = new Date(this.calData.year, this.calData.month - 1, day);
+                        // console.log(today.setDate(today.getDate() + 3));
+                        // day = new Date($.format.date(day, "yyyy/M/d"));
+                        today = today.setDate(today.getDate() + 3);
+                        today = new Date( today  );
+                        // console.log(today);
+                        if (taskDeadline <= today) {
+                            redTask = true;
+                        }else{
+                            redTask = false;
+                        }
+                        this.taskDates.push({ caption: this.tasks[i]['caption'], group: this.tasks[i]['group'], chargeUser: this.tasks[i]['chargeUser'], userImage: this.tasks[i]['userImage'], redTask: redTask });
+                    }
+                }
             }
         },
         computed: {
@@ -46,15 +72,11 @@ $(document).on('turbolinks:load', function(){
                 var dayIdx = 1;
                 var responceData;
 
-                function thisMonth (responceData) {
-
-                    // console.log(counts['6']);
-
+                function thisMonth () {
                     var calendar = [];
                     for (var w = 0; w < 6; w++) {
                         var week = [];
 
-                        // 空白行をなくすため
                         if (lastDate < dayIdx) {break;}
                         for (var d = 0; d < 7; d++) {
                             if (w == 0 && d < firstDay) {
@@ -85,11 +107,9 @@ $(document).on('turbolinks:load', function(){
                     cache: false,
                     async: false,
                     success: function( data ) {
-                        // console.log(data);
                         responceData = data;
                     }
                 }).done(function(dataResult, textStatus, jqXHR) {
-                    // console.log(dataResult);
                     responceData = dataResult;
                 });
                 setTimeout(function(){
@@ -104,28 +124,27 @@ $(document).on('turbolinks:load', function(){
                 var tasks = [];
                 for (var i = 0; i < responceData.length; i++) {
                     var task = {
-                        day: new Date(responceData[i].deadline).getDay(),
+                        day: new Date(responceData[i].deadline).getDate(),
                         group: responceData[i].group,
                         caption: responceData[i].caption,
-                        chargeUser: responceData[i].chargeUser
+                        chargeUser: responceData[i].chargeUser,
+                        userImage: responceData[i].userImage
                     };
                     tasks.push(task);
                 }
-                console.log(tasks);
+                this.tasks = JSON.parse(JSON.stringify(tasks));
                 var haveTaskDays = [];
                 var counts = {};
                 for (var i = 0; i < tasks.length; i++) {
                     haveTaskDays.push(tasks[i]['day']);
                 }
                 this.deadlineTasksDays = JSON.parse(JSON.stringify(haveTaskDays));
-                console.log(this.deadlineTasksDays);
                 for (var i = 0; i < haveTaskDays.length; i++) {
                     var key = haveTaskDays[i];
                     counts[key] = (counts[key])? counts[key] + 1 : 1;
                 }
                 this.dayCounts = JSON.parse(JSON.stringify(counts));
-                return thisMonth(responceData);
-
+                return thisMonth();
             }
         }
     });
