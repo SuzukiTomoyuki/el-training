@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
 
-  root 'tasks#index'
-
   namespace :api, { format: 'json' }   do
     resources :tasks, only: [:update]
     get 'tasks/calendar' => 'tasks#calendar'
   end
-# except 調べる
-  resources :tasks, :users
+
+  root 'tasks#index'
+  resources :tasks, except: [:index]
+  get '/my_tasks' => 'tasks#index'
+  resources :users, except: [:index, :destroy]
   get '/calendar' => 'tasks#calendar'
-  resources :groups do
+  resources :groups, except: [:index, :destroy] do
     resources :tasks, except: [:index] do
       collection do
         get '/' => 'tasks#index_group'
@@ -21,7 +22,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'tasks#index'
     get '/calendar' => 'tasks#calendar'
-    resources :tasks, :users, :labels
+    resources :tasks, except: [:index]
+    get '/my_tasks' => 'tasks#index'
+    resources :users, :labels
     resources :groups do
       resources :tasks, except: [:index] do
         collection do

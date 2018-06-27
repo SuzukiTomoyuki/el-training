@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   # method 化
   def index
     @task = Task.new
-    @user = User.find(session[:user_id])
+    @user = current_user
     @group = Group.new
 
     # current Userで　　無駄処理も消す statusをscope化
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
   def index_group
     check_join_group
     @task = Task.new
-    @user = User.find(session[:user_id])
+    @user = current_user
     @group = Group.new
 
     @group_tasks = Group.find(params[:group_id])
@@ -54,10 +54,10 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(create_params)
-    @user = User.find(session[:user_id])
+    @user = current_user
     group = Group.find(params[:group_id])
     pp group
-    @task.user_id = User.find(session[:user_id]).id
+    @task.user_id = current_user.id
     if @task.save!
       group.group_tasks.create(task: @task)
       flash[:notice] = "タスクが追加されました"
@@ -92,8 +92,7 @@ class TasksController < ApplicationController
   end
 
   def calendar
-    # @task = Task.new
-    @user = User.find(session[:user_id])
+    @user = current_user
     @group = Group.new
     group_tasks = Group.select("id").find(@user.groups.ids)
     @tasks = []
@@ -120,14 +119,14 @@ class TasksController < ApplicationController
   end
 
   def check_join_group
-    user = User.find(session[:user_id])
-    if (user.groups.where(id: params[:group_id]).empty?)
+    user = current_user
+    if (user.groups.where(id: params[:group_id]).empty? or !current_user.admin)
       redirect_to root_path
     end
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
   def sort_column

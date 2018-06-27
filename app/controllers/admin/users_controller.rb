@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
 
   def index
     @users = User.all
-    @user = User.find(session[:user_id])
+    @user = current_user
     @group = Group.new
   end
 

@@ -1,24 +1,22 @@
                 Prefix Verb   URI Pattern                                       Controller#Action
                   root GET    /                                                 tasks#index
-              api_task PATCH  /api/tasks/:id(.:format)                          api/tasks#update
-                       PUT    /api/tasks/:id(.:format)                          api/tasks#update
-    api_tasks_calendar GET    /api/tasks/calendar(.:format)                     api/tasks#calendar
-                 tasks GET    /tasks(.:format)                                  tasks#index
-                       POST   /tasks(.:format)                                  tasks#create
+              api_task PATCH  /api/tasks/:id(.:format)                          api/tasks#update {:format=>/json/}
+                       PUT    /api/tasks/:id(.:format)                          api/tasks#update {:format=>/json/}
+    api_tasks_calendar GET    /api/tasks/calendar(.:format)                     api/tasks#calendar {:format=>/json/}
+                 tasks POST   /tasks(.:format)                                  tasks#create
               new_task GET    /tasks/new(.:format)                              tasks#new
              edit_task GET    /tasks/:id/edit(.:format)                         tasks#edit
                   task GET    /tasks/:id(.:format)                              tasks#show
                        PATCH  /tasks/:id(.:format)                              tasks#update
                        PUT    /tasks/:id(.:format)                              tasks#update
                        DELETE /tasks/:id(.:format)                              tasks#destroy
-                 users GET    /users(.:format)                                  users#index
-                       POST   /users(.:format)                                  users#create
+              my_tasks GET    /my_tasks(.:format)                               tasks#index
+                 users POST   /users(.:format)                                  users#create
               new_user GET    /users/new(.:format)                              users#new
              edit_user GET    /users/:id/edit(.:format)                         users#edit
                   user GET    /users/:id(.:format)                              users#show
                        PATCH  /users/:id(.:format)                              users#update
                        PUT    /users/:id(.:format)                              users#update
-                       DELETE /users/:id(.:format)                              users#destroy
               calendar GET    /calendar(.:format)                               tasks#calendar
            group_tasks GET    /groups/:group_id/tasks(.:format)                 tasks#index_group
                        POST   /groups/:group_id/tasks(.:format)                 tasks#create
@@ -30,24 +28,22 @@
                        DELETE /groups/:group_id/tasks/:id(.:format)             tasks#destroy
       group_group_user GET    /groups/:group_id/group_users/:id(.:format)       group_users#show
                        DELETE /groups/:group_id/group_users/:id(.:format)       group_users#destroy
-                groups GET    /groups(.:format)                                 groups#index
-                       POST   /groups(.:format)                                 groups#create
+                groups POST   /groups(.:format)                                 groups#create
              new_group GET    /groups/new(.:format)                             groups#new
             edit_group GET    /groups/:id/edit(.:format)                        groups#edit
                  group GET    /groups/:id(.:format)                             groups#show
                        PATCH  /groups/:id(.:format)                             groups#update
                        PUT    /groups/:id(.:format)                             groups#update
-                       DELETE /groups/:id(.:format)                             groups#destroy
             admin_root GET    /admin(.:format)                                  admin/tasks#index
         admin_calendar GET    /admin/calendar(.:format)                         admin/tasks#calendar
-           admin_tasks GET    /admin/tasks(.:format)                            admin/tasks#index
-                       POST   /admin/tasks(.:format)                            admin/tasks#create
+           admin_tasks POST   /admin/tasks(.:format)                            admin/tasks#create
         new_admin_task GET    /admin/tasks/new(.:format)                        admin/tasks#new
        edit_admin_task GET    /admin/tasks/:id/edit(.:format)                   admin/tasks#edit
             admin_task GET    /admin/tasks/:id(.:format)                        admin/tasks#show
                        PATCH  /admin/tasks/:id(.:format)                        admin/tasks#update
                        PUT    /admin/tasks/:id(.:format)                        admin/tasks#update
                        DELETE /admin/tasks/:id(.:format)                        admin/tasks#destroy
+        admin_my_tasks GET    /admin/my_tasks(.:format)                         admin/tasks#index
            admin_users GET    /admin/users(.:format)                            admin/users#index
                        POST   /admin/users(.:format)                            admin/users#create
         new_admin_user GET    /admin/users/new(.:format)                        admin/users#new

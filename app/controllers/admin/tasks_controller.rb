@@ -7,7 +7,7 @@ class Admin::TasksController < ApplicationController
 
   def index
     @task = Task.new
-    @user = User.find(session[:user_id])
+    @user = current_user
     @group = Group.new
 
     tasks = Task.all.where(user_id: session[:user_id]).where.not(status: 0)
@@ -26,7 +26,7 @@ class Admin::TasksController < ApplicationController
   def index_group
     check_join_group
     @task = Task.new
-    @user = User.find(session[:user_id])
+    @user = current_user
     @group = Group.new
 
     @group_tasks = Group.find(params[:group_id])
@@ -52,9 +52,9 @@ class Admin::TasksController < ApplicationController
 
   def create
     @task = Task.new(create_params)
-    @user = User.find(session[:user_id])
+    @user = current_user
     group = Group.find(params[:group_id])
-    @task.user_id = User.find(session[:user_id]).id
+    @task.user_id = current_user.id
     if @task.save
       group.group_tasks.create(task: @task)
       flash[:notice] = "タスクが追加されました"
@@ -97,8 +97,8 @@ class Admin::TasksController < ApplicationController
   end
 
   def check_join_group
-    user = User.find(session[:user_id])
-    if (user.groups.where(id: params[:group_id]).empty?)
+    user = current_user
+    if (user.groups.where(id: params[:group_id]).empty? or !current_user.admin)
       redirect_to admin_root_path
     end
   end

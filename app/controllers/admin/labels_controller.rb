@@ -9,7 +9,7 @@ class Admin::LabelsController < ApplicationController
     @labels.each do |label|
       @label_ids.push(Label.select("id").find_by(name: label[0]))
     end
-    @user = User.find(session[:user_id])
+    @user = current_user
   end
 
   def destroy

@@ -5,27 +5,12 @@ class Admin::GroupsController < ApplicationController
   def index
     @group = Group.new
     @groups = Group.all
-    @user = User.find(session[:user_id])
+    @user = current_user
   end
-
-  # def new
-  #   @group = Group.new
-  #   @user = User.find(session[:user_id])
-  # end
-  #
-  # def create
-  #   @group = Group.new(create_params)
-  #   if @group.save
-  #     flash[:notice] = "グループを作成しました"
-  #     redirect_to group_tasks_path(@group.id)
-  #   else
-  #     render json: { messages: @task.errors.full_messages }, status: :bad_request
-  #   end
-  # end
 
   def update
     @group = find_group_by_id
-    @user = find_user_by_id
+    @user = current_user
     if @group.update(create_params)
       flash[:notice] = "グループ情報を編集"
     else
@@ -42,10 +27,6 @@ class Admin::GroupsController < ApplicationController
   private
   def find_group_by_id
     Group.find(params[:id])
-  end
-
-  def find_user_by_id
-    User.find(session[:user_id])
   end
 
   def create_params

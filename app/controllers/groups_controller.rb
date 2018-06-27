@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @user = User.find(session[:user_id])
+    @user = current_user
   end
 
   def create

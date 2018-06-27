@@ -10,7 +10,6 @@ class Api::TasksController < ApplicationController
     to   = from + 1.month
     group_tasks.each do |group_task|
       tasks = group_task.tasks.where.not(status: "done")
-      pp tasks
       tasks.where(deadline: from...to).order(deadline: :desc).each do |task|
         # pp task.charge_user.image_name
         user_image = "/assets/images/users"
