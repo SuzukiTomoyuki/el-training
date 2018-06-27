@@ -98,7 +98,7 @@ $(document).on('turbolinks:load', function(){
                 }
 
                 $.ajax({
-                    url: 'api/tasks/calendar.json',
+                    url: '/api/tasks/calendar.json',
                     type: 'GET',
                     data: {
                         calendar: { year: this.calData.year, month: this.calData.month }

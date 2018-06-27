@@ -1,8 +1,8 @@
                 Prefix Verb   URI Pattern                                       Controller#Action
-                  root GET    /                                                 tasks#index
               api_task PATCH  /api/tasks/:id(.:format)                          api/tasks#update {:format=>/json/}
                        PUT    /api/tasks/:id(.:format)                          api/tasks#update {:format=>/json/}
     api_tasks_calendar GET    /api/tasks/calendar(.:format)                     api/tasks#calendar {:format=>/json/}
+                  root GET    /                                                 tasks#index
                  tasks POST   /tasks(.:format)                                  tasks#create
               new_task GET    /tasks/new(.:format)                              tasks#new
              edit_task GET    /tasks/:id/edit(.:format)                         tasks#edit

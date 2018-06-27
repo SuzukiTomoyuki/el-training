@@ -34,19 +34,19 @@ class Task < ApplicationRecord
   }
 
   scope :status_to_do, -> {
-    where(status: to_do)
+    where(status: 2)
   }
 
   scope :status_doing, -> {
-    where(status: doing)
+    where(status: 1)
   }
 
   scope :status_done, -> {
-    where(status: done)
+    where(status: 0)
   }
 
   scope :not_status_done, -> {
-    where.not(status: done)
+    where.not(status: 0)
   }
 
   def validate_caption_error

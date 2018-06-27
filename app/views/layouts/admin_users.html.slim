@@ -13,9 +13,11 @@ html
           ul class="nav navbar-nav"
             li = link_to t("description.index_users"), admin_users_path
           ul class="nav navbar-nav"
-            li = link_to t("description.index_tasks"), admin_tasks_path
-          ul class="nav navbar-nav"
             li = link_to t("description.index_labels"), admin_labels_path
+          ul class="nav navbar-nav"
+            li = link_to t("description.index_tasks"), admin_my_tasks_path
+          ul class="nav navbar-nav"
+            li = link_to "カレンダー", admin_calendar_path
 
     = render 'layouts/taster'
     = yield

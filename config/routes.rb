@@ -21,8 +21,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'tasks#index'
-    get '/calendar' => 'tasks#calendar'
     resources :tasks, except: [:index]
+    get '/calendar' => 'tasks#calendar'
     get '/my_tasks' => 'tasks#index'
     resources :users, :labels
     resources :groups do

@@ -9,7 +9,8 @@ div.container.tab-pane
     tbody
       - @groups.each do |group|
         tr
-          td.text-center = group.name
+          td.text-center
+            = link_to group.name, admin_group_tasks_path(group.id)
           td.text-center = group.users.size
           td.text-center = group.tasks.size
           td.text-center

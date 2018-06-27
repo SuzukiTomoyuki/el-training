@@ -1,0 +1,47 @@
+div.col-md-12 id="app"
+  div id="calendar-nav"
+    i.glyphicon.glyphicon-menu-left @click="moveLastMonth"
+    span
+      |
+        {{calData.year}} - {{getMonthName(calData.month)}}
+    i.glyphicon.glyphicon-menu-right @click="moveNextMonth"
+  .col-md-6.calendar
+
+    table.table id="calendar"
+      thead
+        tr
+          th v-for="week in weeks" {{week}}
+      tbody
+        tr v-for="week in calendar"
+          td v-for="day in week" v-on:click="showTask(day.day)"
+            template v-if="deadlineTasksDays.indexOf(day.day) == -1"
+              | {{day.day}}
+            template v-else=true
+              | {{day.day}}<sup>{{dayCounts[day.day]}}</sup>
+  .col-md-6
+    div.text-center.deadline_task_p v-if="taskDates.length != 0"
+      | {{dateDay}}日に期限が切れるタスク
+    table.calendar_task.col-md-4 height="340px" v-for="task in taskDates"
+      thead
+      tbody
+        tr
+          td
+            span.vue_group_title
+              | {{task.group}}
+        tr
+          td
+            .vue_caption_img
+              .vue_caption_mask
+                span.vue_caption_text
+                  strong
+                    | {{task.caption}}
+        tr
+          td.text-center
+            img.user_icon height="70px" v-bind:src="task.userImage"
+        tr
+          td.text-center
+            | {{task.chargeUser}}
+        tr
+          td.text-center
+            template v-if="task.redTask"
+              div.btn.btn-info 怒ってもらう
