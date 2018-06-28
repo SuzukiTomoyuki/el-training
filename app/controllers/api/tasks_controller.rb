@@ -27,6 +27,8 @@ class Api::TasksController < ApplicationController
   def mail
     user = current_user
     sender = User.find(params[:mail][:user_id])
+    sender.oko = true
+    sender.save
     task = Task.find(params[:mail][:task_id])
     RelationshipMailer.oko_notification(user, sender, task).deliver
   end

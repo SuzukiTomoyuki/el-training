@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612024054) do
+ActiveRecord::Schema.define(version: 20180628093345) do
 
   create_table "group_tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "group_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20180612024054) do
     t.string "remember_token"
     t.boolean "admin", default: false, null: false
     t.string "image_name", default: "default_user.png"
+    t.boolean "oko", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name", "email"], name: "index_users_on_name_and_email", unique: true
   end
