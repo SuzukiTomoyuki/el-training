@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api, { format: 'json' }   do
     resources :tasks, only: [:update]
     get 'tasks/calendar' => 'tasks#calendar'
+    get 'tasks/mail' => 'tasks#mail'
   end
 
   root 'tasks#index'

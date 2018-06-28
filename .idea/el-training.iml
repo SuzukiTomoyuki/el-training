@@ -527,6 +527,20 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="figaro (vbundled(1.1.1)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/figaro-1.1.1/gemfiles" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/figaro-1.1.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/figaro-1.1.1/bin" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/figaro-1.1.1/gemfiles" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/figaro-1.1.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/figaro-1.1.1/bin" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="globalid (vbundled(0.4.1)) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/bundler/ruby/2.3.0/gems/globalid-0.4.1/lib" />

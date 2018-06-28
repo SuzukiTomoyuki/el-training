@@ -2,6 +2,7 @@
               api_task PATCH  /api/tasks/:id(.:format)                          api/tasks#update {:format=>/json/}
                        PUT    /api/tasks/:id(.:format)                          api/tasks#update {:format=>/json/}
     api_tasks_calendar GET    /api/tasks/calendar(.:format)                     api/tasks#calendar {:format=>/json/}
+                       GET    /api/tasks/calendar(.:format)                     api/tasks#mail {:format=>/json/}
                   root GET    /                                                 tasks#index
                  tasks POST   /tasks(.:format)                                  tasks#create
               new_task GET    /tasks/new(.:format)                              tasks#new
@@ -35,7 +36,6 @@
                        PATCH  /groups/:id(.:format)                             groups#update
                        PUT    /groups/:id(.:format)                             groups#update
             admin_root GET    /admin(.:format)                                  admin/tasks#index
-        admin_calendar GET    /admin/calendar(.:format)                         admin/tasks#calendar
            admin_tasks POST   /admin/tasks(.:format)                            admin/tasks#create
         new_admin_task GET    /admin/tasks/new(.:format)                        admin/tasks#new
        edit_admin_task GET    /admin/tasks/:id/edit(.:format)                   admin/tasks#edit
@@ -43,6 +43,7 @@
                        PATCH  /admin/tasks/:id(.:format)                        admin/tasks#update
                        PUT    /admin/tasks/:id(.:format)                        admin/tasks#update
                        DELETE /admin/tasks/:id(.:format)                        admin/tasks#destroy
+        admin_calendar GET    /admin/calendar(.:format)                         admin/tasks#calendar
         admin_my_tasks GET    /admin/my_tasks(.:format)                         admin/tasks#index
            admin_users GET    /admin/users(.:format)                            admin/users#index
                        POST   /admin/users(.:format)                            admin/users#create

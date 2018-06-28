@@ -44,4 +44,5 @@ div.col-md-12 id="app"
         tr
           td.text-center
             template v-if="task.redTask"
-              div.btn.btn-info 怒ってもらう
+              div.btn v-on:click="mailNotification(task.chargeUserId, task.taskId)"
+                img.oko_icon height="50px" src="/assets/images/system/sd_ayame_oko_icon.png"

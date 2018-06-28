@@ -60,9 +60,32 @@ $(document).on('turbolinks:load', function(){
                         }else{
                             redTask = false;
                         }
-                        this.taskDates.push({ caption: this.tasks[i]['caption'], group: this.tasks[i]['group'], chargeUser: this.tasks[i]['chargeUser'], userImage: this.tasks[i]['userImage'], redTask: redTask });
+                        this.taskDates.push({
+                            taskId: this.tasks[i].taskId,
+                            caption: this.tasks[i]['caption'],
+                            group: this.tasks[i]['group'],
+                            chargeUserId: this.tasks[i].chargeUserId,
+                            chargeUser: this.tasks[i]['chargeUser'],
+                            userImage: this.tasks[i]['userImage'],
+                            redTask: redTask });
                     }
                 }
+            },
+            mailNotification: function(chargeUserId, taskId) {
+                $.ajax({
+                    url: '/api/tasks/mail',
+                    type: 'GET',
+                    data: {
+                        mail: { user_id: chargeUserId, task_id: taskId }
+                    },
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
+                    },
+                    success: function( data ) {
+                    }
+                }).done(function(dataResult, textStatus, jqXHR) {
+                });
             }
         },
         computed: {
@@ -128,7 +151,9 @@ $(document).on('turbolinks:load', function(){
                         group: responceData[i].group,
                         caption: responceData[i].caption,
                         chargeUser: responceData[i].chargeUser,
-                        userImage: responceData[i].userImage
+                        userImage: responceData[i].userImage,
+                        chargeUserId: responceData[i].chargeUserId,
+                        taskId: responceData[i].taskId
                     };
                     tasks.push(task);
                 }

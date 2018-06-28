@@ -3,7 +3,7 @@ class Api::TasksController < ApplicationController
   end
 
   def calendar
-    @user = User.find(session[:user_id])
+    @user = current_user
     group_tasks = Group.find(@user.groups.ids)
     @tasks = []
     from = Time.local(params[:calendar][:year], params[:calendar][:month])
@@ -18,10 +18,17 @@ class Api::TasksController < ApplicationController
         else
           user_image = "#{user_image}/#{task.charge_user.id}/#{task.charge_user.image_name}"
         end
-        @tasks.push(group:group_task.name, caption: task.caption, charge_user: task.charge_user.name, deadline: task.deadline, user_image: user_image)
+        @tasks.push(group:group_task.name, caption: task.caption, charge_user: task.charge_user.name, deadline: task.deadline, user_image: user_image, charge_user_id: task.charge_user.id, task_id: task.id)
       end
     end
     render 'calendar', formats: 'json', handlers: 'jbuilder'
+  end
+
+  def mail
+    user = current_user
+    sender = User.find(params[:mail][:user_id])
+    task = Task.find(params[:mail][:task_id])
+    RelationshipMailer.oko_notification(user, sender, task).deliver
   end
 
   def show

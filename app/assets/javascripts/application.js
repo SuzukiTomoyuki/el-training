@@ -245,6 +245,8 @@ $(document).on('turbolinks:load', function(){
     img[1].src = "/assets/images/system/sd_ayame_smile.png";
     img[2] = new Image();
     img[2].src = "/assets/images/system/sd_ayame_zito.png";
+    img[3] = new Image();
+    img[3].src = "/assets/images/system/sd_ayame_oko.png";
 
     var $ayameAnim = $.Deferred( function( ayameAnim ){
         ayameAnim.then(anim_01)
