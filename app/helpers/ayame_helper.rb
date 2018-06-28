@@ -1,0 +1,2 @@
+module AyameHelper
+end

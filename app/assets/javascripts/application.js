@@ -24,7 +24,8 @@
 //= require jquery-ui.min
 //= require jquery.tzSelect
 //= require vue_script
-//= require enchant.js
+//= require enchant
+//= require enchant_ayame
 
 $(document).on('turbolinks:load', function(){
     $('.data-submit').on('click', function(){
