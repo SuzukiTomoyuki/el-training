@@ -25,6 +25,7 @@
 //= require jquery.tzSelect
 //= require vue_script
 //= require enchant
+//= require novel.enchant
 //= require enchant_ayame
 
 $(document).on('turbolinks:load', function(){
