@@ -10,7 +10,7 @@ html
           tbody
             tr
               td.text-center rowspan="2"
-                img.user_icon2 width="80px" src = "/assets/images/#{@user.image_name}"
+                img.user_icon2 width="80px" src = "/assets/images/#{@user.id}/#{@user.image_name}"
               td.text-center 着手待ち
               / td.text-center = @tasks_to_do
             tr

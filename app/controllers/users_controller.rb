@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     if @user.update(create_params)
       pp params[:image]
       flash[:notice] = "ユーザ情報を更新"
-      redirect_to tasks_path
+      redirect_to my_tasks_path
     else
       render json: { messages: @user.errors.full_messages }, status: :bad_request
     end

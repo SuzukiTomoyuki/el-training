@@ -1,6 +1,6 @@
 div.container
   = form_for @user do |f|
-    img.center-block.user_icon width="100px" src = "/assets/images/#{@user.image_name}"
+    img.center-block.user_icon width="100px" src = "/assets/images/users/#{@user.id}/#{@user.image_name}"
     div.form-group
       = f.label :"プロフィール画像", class: "control-label"
       = f.file_field :image, class: "form-control"

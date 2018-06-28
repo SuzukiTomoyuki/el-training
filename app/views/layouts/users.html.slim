@@ -9,7 +9,7 @@ html
         div class="collapse navbar-collapse" id="navbarIndex"
           = render partial: 'layouts/navbar_my_name'
           ul class="nav navbar-nav"
-            li = link_to t("description.index_tasks"), tasks_path
+            li = link_to t("description.index_tasks"), my_tasks_path
 
     = render 'layouts/taster'
     = yield
