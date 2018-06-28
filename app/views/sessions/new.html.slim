@@ -1,16 +1,15 @@
 html
   head
   body
-    div.container
-      fieldset
-        legend ログイン
+    div.login
+      div.login-triangle
+      h2.login-header ログイン
+      div.login-container
         = form_tag do
-          div
-            = label_tag :email, 'メールアドレス'
-            = text_field_tag :email, params[:email]
-          div
-            = label_tag :password, 'パスワード'
-            = password_field_tag :password, params[:password]
-          div
-            = submit_tag "ログイン"
-      li = link_to 'アカウントを持っていない方はこちら', new_user_path
+          p
+            = text_field_tag :email, params[:email], placeholder: "email", class: "top form-control"
+          p
+            = password_field_tag :password, params[:password], placeholder: "Password", class: "bottom form-control"
+          p
+            = submit_tag "ログイン", class: ""
+        li = link_to 'アカウントを持っていない方はこちら', new_user_path
