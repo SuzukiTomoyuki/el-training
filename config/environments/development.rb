@@ -73,4 +73,6 @@ Rails.application.configure do
       enable_starttls_auto: true
   }
 
+  config.assets.precompile += %w( enchant_ayame.js )
+
 end

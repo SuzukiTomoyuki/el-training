@@ -14,7 +14,7 @@
 //= require jquery.turbolinks
 //= require rails-ujs
 //= require select2
-//= require_tree .
+// require_tree .
 // Bootstrap Sass
 //= require bootstrap-sprockets
 //= require toastr
@@ -26,7 +26,7 @@
 //= require vue_script
 //= require enchant
 //= require novel.enchant
-//= require enchant_ayame
+// require enchant_ayame
 
 $(document).on('turbolinks:load', function(){
     $('.data-submit').on('click', function(){
