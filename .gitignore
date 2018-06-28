@@ -18,6 +18,8 @@ tmp/pids/puma.state
 !/log/.keep
 !/tmp/.keep
 
+/config/application.yml
+
 /node_modules
 /yarn-error.log
 
