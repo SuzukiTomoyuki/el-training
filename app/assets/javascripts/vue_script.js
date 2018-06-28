@@ -1,6 +1,37 @@
 // import axios from 'axios';
 
 $(document).on('turbolinks:load', function(){
+    var img = new Array();
+    img[0] = new Image();
+    img[0].src = "/assets/images/system/sd_ayame_nomal.png";
+    img[1] = new Image();
+    img[1].src = "/assets/images/system/sd_ayame_smile.png";
+    img[2] = new Image();
+    img[2].src = "/assets/images/system/sd_ayame_zito.png";
+    img[3] = new Image();
+    img[3].src = "/assets/images/system/sd_ayame_oko.png";
+    function face_update (image_num, text){
+        document.getElementById("ayame_image").src = img[image_num].src;
+        $.cookie('ayame_face', 'nomal');
+        $('#ayame_image_temp').addClass('ayame_image_animation');
+        $('.arrow_box').removeClass('arrow_box_temp');
+        $('.notice_text').css('display', 'block');
+        $('.form-calendar').css('display', 'none');
+        $('#notice_text_label').text(text);
+        setTimeout(function(){
+            $('#ayame_image_temp').removeClass('ayame_image_animation');
+        }, 2000);
+        setTimeout(function(){
+            $('.arrow_box').addClass('arrow_box_temp');
+            $('.notice_text').css('display', 'none');
+            $('.form-calendar').css('display', 'block');
+            $('#ayame_image_temp').addClass('ayame_image_animation');
+            document.getElementById("ayame_image").src = img[0].src;
+        }, 5000);
+        setTimeout(function(){
+            $('#ayame_image_temp').removeClass('ayame_image_animation');
+        }, 5100);
+    }
     new Vue({
         el: '#app',
         data: {
@@ -86,6 +117,8 @@ $(document).on('turbolinks:load', function(){
                     }
                 }).done(function(dataResult, textStatus, jqXHR) {
                 });
+                var text = "こやつを叱るのか？任せとけ！奴のことはキッチリと絞ってやるからの！";
+                face_update(1, text);
             }
         },
         computed: {
