@@ -1,3 +1,15 @@
-h1
-  | こらぁぁぁぁ！！！！"#{@user.name}！！！"
-p
+.mail_message
+  h1
+    | こらぁぁぁぁ！！！！
+    font color="red" #{@user.name}
+    font color="black" ！！！
+  p
+    | お主、まだ
+    font color="blue"「#{@task.caption}」
+    font color="black" をまだやっとらんじゃろ？
+  p
+    font color="red" #{@sender.name}
+    font color="black"からタスクの催促がきとったぞ！
+  p 期限が#{@sub_time_day}日も過ぎとるぞ！全く弛んでおる！
+.mail_image
+  = image_tag "/assets/images/system/sd_ayame_oko.png"

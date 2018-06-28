@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', function(){
                         var taskDeadline = new Date(this.calData.year, this.calData.month - 1, day);
                         // console.log(today.setDate(today.getDate() + 3));
                         // day = new Date($.format.date(day, "yyyy/M/d"));
-                        today = today.setDate(today.getDate() + 3);
+                        today = today.setDate(today.getDate());
                         today = new Date( today  );
                         // console.log(today);
                         if (taskDeadline <= today) {

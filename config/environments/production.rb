@@ -80,11 +80,32 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  # mailerに画像を載せる設定
+  config.action_controller.asset_host = 'http://yourhostname.com'
+  config.action_mailer.asset_host = config.action_controller.asset_host
+  config.action_mailer.default_url_options = { host: 'yourhostname.com' }
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  # gmail config
+  mail = ENV["MY_EMAIL_NAME"]
+  pass = ENV["MY_EMAIL_PASS"]
+  config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default charset: 'utf-8'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      port:                 587,
+      address:              'smtp.gmail.com',
+      domain:               'gmail.com',
+      user_name:            mail,
+      password:             pass,
+      authentication:       'plain',
+      enable_starttls_auto: true
+  }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
