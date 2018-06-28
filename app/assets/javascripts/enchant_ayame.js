@@ -1,14 +1,20 @@
 $(document).on('turbolinks:load', function(){
+    // var sW,sH,s;
+	// sW = window.innerWidth;
+    // sH = window.innerHeight;
+    // window.resizeTo(sW, sH);
     enchant();
 
     window.onload = function(){
+        //背景素材
+        var back_win_url ='/assets/images/system/haikei.jpg';
         //枠素材
-        var mess_win_url ='/assets/images/system/messageBox.png';
+        var mess_win_url ='/assets/images/system/hukidashi.png';
 
         //基本設定
-        var game = new Game(960,540);
-        game.fps = 24;
-        game.preload(mess_win_url);
+        var game = new Core(960,540);
+        game.fps = 20;
+        game.preload(mess_win_url, back_win_url);
 
 
 
@@ -16,21 +22,33 @@ $(document).on('turbolinks:load', function(){
 
         //本体
         game.onload = function(){
+            //　背景
+            var haikei = new Sprite(800, 600);
+            haikei.image = game.assets[back_win_url];
+            haikei.x = 70
+            game.rootScene.addChild(haikei);
+            // //セリフ枠作成
+            var window = new Sprite(508,215);
+            window.image = game.assets[mess_win_url];
+            window.x = 200;
+            window.y = -20;
+            window.scaleY = 0.8;
+            window.scaleX = 0.9;
+            game.rootScene.addChild(window);
+
             // novel.enchant.js のインスタンス生成.
-            var novel = new Novel( 0, 0, 960, 540 );
+            // var novel = new Novel( 160, 380, 620, 100 );
+            var novel = new Novel(  240, 0, 420, 100 );
+            // novel.x = 160;
+            // novel.y = 380;
             novel.setFontSize( 24 );
             novel.setLineHeight( 20 );
-            novel.setPadding( 12, 12, 12, 12 );
+            novel.setPadding( 15, 12, 12, 12 );
             novel.setFontFamily( "PixelMplus12" );
+            // novel.x = 160;
+            // novel.y = 380;
             game.rootScene.addChild( novel );
-            // //セリフ枠作成
-            var window = new Sprite(640,190);
-            window.image = game.assets[mess_win_url];
-            window.x = 150;
-            window.y = 350;
-
-            //台詞枠表示
-            game.rootScene.addChild(window);
+            
 
 
             game.selectChoice = function( id, select ) {
