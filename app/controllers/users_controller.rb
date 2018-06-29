@@ -55,6 +55,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def done_osekkyo
+    user = User.find(params[:id])
+    user.oko = false
+    user.save
+    redirect_to my_tasks_path
+  end
+
   private
   def create_params
     params.require(:user).permit(:id, :name, :email, :password, :password_confirmation, :image)

@@ -8,6 +8,10 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
+      if user.oko
+        redirect_to ayame_path
+        return
+      end
       flash[:success] = "ログインしました"
       redirect_to my_tasks_path
     else

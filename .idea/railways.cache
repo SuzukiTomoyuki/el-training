@@ -2,7 +2,7 @@
               api_task PATCH  /api/tasks/:id(.:format)                          api/tasks#update {:format=>/json/}
                        PUT    /api/tasks/:id(.:format)                          api/tasks#update {:format=>/json/}
     api_tasks_calendar GET    /api/tasks/calendar(.:format)                     api/tasks#calendar {:format=>/json/}
-                       GET    /api/tasks/calendar(.:format)                     api/tasks#mail {:format=>/json/}
+        api_tasks_mail GET    /api/tasks/mail(.:format)                         api/tasks#mail {:format=>/json/}
                   root GET    /                                                 tasks#index
                  tasks POST   /tasks(.:format)                                  tasks#create
               new_task GET    /tasks/new(.:format)                              tasks#new
@@ -18,6 +18,8 @@
                   user GET    /users/:id(.:format)                              users#show
                        PATCH  /users/:id(.:format)                              users#update
                        PUT    /users/:id(.:format)                              users#update
+                       PUT    /users/done_osekkyo/:id(.:format)                 users#done_osekkyo
+                       PATCH  /users/done_osekkyo/:id(.:format)                 users#done_osekkyo
               calendar GET    /calendar(.:format)                               tasks#calendar
            group_tasks GET    /groups/:group_id/tasks(.:format)                 tasks#index_group
                        POST   /groups/:group_id/tasks(.:format)                 tasks#create
@@ -82,3 +84,4 @@ admin_group_group_user GET    /admin/groups/:group_id/group_users/:id(.:format) 
                  login GET    /login(.:format)                                  sessions#new
                        POST   /login(.:format)                                  sessions#create
       sessions_destroy GET    /sessions/destroy(.:format)                       sessions#destroy
+                 ayame GET    /ayame(.:format)                                  ayame#index
