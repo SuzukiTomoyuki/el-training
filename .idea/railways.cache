@@ -20,6 +20,7 @@
                        PUT    /users/:id(.:format)                              users#update
                        PUT    /users/done_osekkyo/:id(.:format)                 users#done_osekkyo
                        PATCH  /users/done_osekkyo/:id(.:format)                 users#done_osekkyo
+       users_check_oko GET    /users/check_oko(.:format)                        users#check_oko
               calendar GET    /calendar(.:format)                               tasks#calendar
            group_tasks GET    /groups/:group_id/tasks(.:format)                 tasks#index_group
                        POST   /groups/:group_id/tasks(.:format)                 tasks#create

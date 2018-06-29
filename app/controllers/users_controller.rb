@@ -55,6 +55,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def check_oko
+    @user = User.find(params[:id])
+    # render 'users/check_oko', formats: 'json', handlers: 'jbuilder'
+  end
+
   def done_osekkyo
     user = User.find(params[:id])
     user.oko = false

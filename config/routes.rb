@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index, :destroy]
   put '/users/done_osekkyo/:id' => 'users#done_osekkyo'
   patch '/users/done_osekkyo/:id' => 'users#done_osekkyo'
+  get '/users/:id/check_oko' => 'users#check_oko'
   get '/calendar' => 'tasks#calendar'
   resources :groups, except: [:index, :destroy] do
     resources :tasks, except: [:index] do

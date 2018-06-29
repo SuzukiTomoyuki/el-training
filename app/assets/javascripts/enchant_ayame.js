@@ -51,19 +51,12 @@ $(document).on('turbolinks:load', function(){
             game.rootScene.addChild(window);
 
             // novel.enchant.js のインスタンス生成.
-            // var novel = new Novel( 160, 380, 620, 100 );
             var novel = new Novel(  240, 0, 420, 100 );
-            // novel.x = 160;
-            // novel.y = 380;
             novel.setFontSize( 24 );
             novel.setLineHeight( 20 );
             novel.setPadding( 15, 12, 12, 12 );
             novel.setFontFamily( "PixelMplus12" );
-            // novel.x = 160;
-            // novel.y = 380;
             game.rootScene.addChild( novel );
-            
-
 
             game.selectChoice = function( id, select ) {
                 switch ( id ) {
@@ -101,54 +94,97 @@ $(document).on('turbolinks:load', function(){
                         break;
                 }
             };
-            novel.setText( "ようし、そこに直れ！" );
-            var checkFirstEvent = true;
-            game.rootScene.addEventListener('touchstart', function(event) {
-                ayame.tl.moveTo(300, 200, 2);
-                if (checkFirstEvent) ayame.frame = 1;
-                ayame.tl.moveTo(300, 180, 2);
-                checkFirstEvent = false;
+            var responceData;
+            $.ajax({
+                url: '/users/' + $('.enchant-ayame').attr('data-user') + '/check_oko.json',
+                type: 'GET',
+                dataType: 'json',
+                cache: false,
+                async: false,
+                success: function( data ) {
+                    console.log(data);
+                    responceData = data;
+                }
             });
-            novel.setPageBreak();
-            novel.setText( "妾が言いたいことはわかるな？" );
-            novel.setPageBreak();
-            novel.setText( "わかるじゃろ？" );
-            novel.setPageBreak();
-            novel.setText("ん？");
-            novel.setPageBreak();
-            novel.setText("なんか言いたいことはあるか？");
-            novel.setPageBreak();
-            novel.setChoice( 1,
-                "言い訳しない。",
-                "言い訳させない。",
-                "",
-                "",
-                game.selectChoice );
-            novel.setPageBreak();
-            novel.setText("阿呆が。");
-            novel.setText("お主に言い訳などさせんわ。");
-            novel.setPageBreak();
-            novel.setText( "言い訳したり人に迷惑かけたりするのは" );
-            novel.setText("あれじゃぞ？");
-            novel.setText("最低じゃぞ？");
-            novel.setPageBreak();
-            novel.setText( "もちろん妾もあんまり好かん。" );
-            novel.setText( "普段の態度露骨に変えるぞ。" );
-            novel.setPageBreak();
-            novel.setChoice( 1,
-                "わかった",
-                "わかるマン",
-                "",
-                "",
-                game.selectChoice2 );
-            novel.setPageBreak();
-            novel.setText("うむ、良い子じゃ！");
-            novel.setPageBreak();
-            novel.setText("ほれ、");
-            novel.setText("わかったらとっとと此処から往ね");
-            novel.setPageBreak();
-            novel.setText("もうこっちに戻って来るで無いぞ〜");
-            novel.setPageBreak();
+            // $('.enchant-ayame').attr('oko', true);
+            console.log(responceData.oko);
+            if (responceData.oko){
+                novel.setText( "ようし、そこに直れ！" );
+                var checkFirstEvent = true;
+                game.rootScene.addEventListener('touchstart', function(event) {
+                    ayame.tl.moveTo(300, 200, 2);
+                    if (checkFirstEvent) ayame.frame = 1;
+                    ayame.tl.moveTo(300, 180, 2);
+                    checkFirstEvent = false;
+                });
+                novel.setPageBreak();
+                novel.setText( "妾が言いたいことはわかるな？" );
+                novel.setPageBreak();
+                novel.setText( "わかるじゃろ？" );
+                novel.setPageBreak();
+                novel.setText("ん？");
+                novel.setPageBreak();
+                novel.setText("なんか言いたいことはあるか？");
+                novel.setPageBreak();
+                novel.setChoice( 1,
+                    "言い訳しない。",
+                    "言い訳させない。",
+                    "",
+                    "",
+                    game.selectChoice );
+                novel.setPageBreak();
+                novel.setText("阿呆が。");
+                novel.setText("お主に言い訳などさせんわ。");
+                novel.setPageBreak();
+                novel.setText( "言い訳したり人に迷惑かけたりするのは" );
+                novel.setText("あれじゃぞ？");
+                novel.setText("最低じゃぞ？");
+                novel.setPageBreak();
+                novel.setText( "もちろん妾もあんまり好かん。" );
+                novel.setText( "普段の態度露骨に変えるぞ。" );
+                novel.setPageBreak();
+                novel.setChoice( 1,
+                    "わかった",
+                    "はい",
+                    "",
+                    "",
+                    game.selectChoice2 );
+                novel.setPageBreak();
+                novel.setText("うむ、良い子じゃ！");
+                novel.setPageBreak();
+                novel.setText("ほれ、");
+                novel.setText("わかったらとっとと此処から往ね");
+                novel.setPageBreak();
+                novel.setText("もうこっちに戻って来るで無いぞ〜");
+                novel.setPageBreak();
+            } else{
+                novel.setText("......");
+                novel.setText("およ？");
+                novel.setPageBreak();
+                var checkFirstEvent = true;
+                game.rootScene.addEventListener('touchstart', function(event) {
+                    ayame.tl.moveTo(300, 200, 2);
+                    if (checkFirstEvent) ayame.frame = 1;
+                    ayame.tl.moveTo(300, 180, 2);
+                    checkFirstEvent = false;
+                });
+                novel.setText("妾に会いに来たのか？");
+                novel.setPageBreak();
+                novel.setText("歓迎するぞ...");
+                novel.setText("と言いたいところじゃが");
+                novel.setPageBreak();
+                novel.setChoice( 1, "？", "", "", "", game.selectChoice);
+                novel.setPageBreak();
+                novel.setText("此処は説教部屋であるが故");
+                novel.setText("お主のようなものが来る所では無い。");
+                novel.setPageBreak();
+                novel.setChoice( 1, "...", "", "", "", game.selectChoice2);
+                novel.setPageBreak();
+                novel.setText("ふむ、わかったならそれで良い");
+                novel.setPageBreak();
+                novel.setText("さっさと往ね");
+            }
+
 
             // 画面タッチで次へ.
             game.rootScene.ontouchstart = function() {
@@ -156,15 +192,20 @@ $(document).on('turbolinks:load', function(){
                     novel.next();
                 } catch ( e ){
                     // console.log($('.enchant-ayame').attr('data-user'));
-                    $.ajax({
-                        url: '/users/done_osekkyo/' + $('.enchant-ayame').attr('data-user'),
-                        type: 'PATCH'
-                    })
+                    console.log(Boolean($('.enchant-ayame').attr('data-oko')));
+                    ayame.tl.fadeOut(20);
+                    haikei.tl.fadeOut(20);
+                    window.tl.fadeOut(20);
+                    setTimeout( function() {
+                        $.ajax({
+                            url: '/users/done_osekkyo/' + $('.enchant-ayame').attr('data-user'),
+                            type: 'PATCH'
+                        })
+                    }, 1500);
+
                 }
             }
         };
-
-
         game.start();
 
     };
