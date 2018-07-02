@@ -2,8 +2,7 @@ div.col-md-12 id="app"
   div id="calendar-nav"
     i.glyphicon.glyphicon-menu-left @click="moveLastMonth"
     span
-      |
-        {{calData.year}} - {{getMonthName(calData.month)}}
+      | {{calData.year}} - {{getMonthName(calData.month)}}
     i.glyphicon.glyphicon-menu-right @click="moveNextMonth"
   .col-md-6.calendar
 

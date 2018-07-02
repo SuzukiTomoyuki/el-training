@@ -170,7 +170,7 @@ $(document).on('turbolinks:load', function(){
                 });
                 novel.setText("妾に会いに来たのか？");
                 novel.setPageBreak();
-                novel.setText("歓迎するぞ...");
+                novel.setText("歓迎するぞ！！");
                 novel.setText("と言いたいところじゃが");
                 novel.setPageBreak();
                 novel.setChoice( 1, "？", "", "", "", game.selectChoice);

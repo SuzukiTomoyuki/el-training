@@ -41,7 +41,7 @@ var Novel = enchant.Class.create( enchant.Group, {
 		/**
 		 * 選択肢に付与する項番.
 		 */
-		this.CHOICE_SIGN = [ "Ａ：", "Ｂ：", "Ｃ：", "Ｄ：" ];
+		this.CHOICE_SIGN = [ "・", "・", "・", "・" ];
 		
 		/**
 		 * 選択肢に関する情報.
