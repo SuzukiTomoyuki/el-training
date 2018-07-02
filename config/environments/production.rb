@@ -81,9 +81,9 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   # mailerに画像を載せる設定
-  config.action_controller.asset_host = 'http://yourhostname.com'
+  config.action_controller.asset_host = 'https://watashino-yorokobi-tanoshiina.herokuapp.com/'
   config.action_mailer.asset_host = config.action_controller.asset_host
-  config.action_mailer.default_url_options = { host: 'yourhostname.com' }
+  config.action_mailer.default_url_options = { host: 'watashino-yorokobi-tanoshiina.herokuapp.com' }
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
