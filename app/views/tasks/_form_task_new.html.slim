@@ -9,7 +9,8 @@
     = f.label :"締め切り: ", class: "control-label huchidori_font"
     = f.date_select :deadline, {}, class: "form-control"
   div.from-group
-    = f.hidden_field :status, id: "new_task_status"
+    = f.label :"状態: ", class: "control-label huchidori_font"
+    = f.select :status, Task.statuses.map {|k, _v| [t("status.#{k}"), k]}, {}, class: "form-control", id: "new_task_status", disabled: true
   div.form-group
     = f.label :"担当者:　 ", class: "control-label huchidori_font"
     = f.select :charge_user_id, options_from_collection_for_select(@group_tasks.users, :id, :name, {selected: @group_tasks.users.find(session[:user_id]).id}), {}, { class: "user_select selectpicker "}
