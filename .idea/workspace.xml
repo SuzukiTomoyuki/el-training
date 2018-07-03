@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a6ce2ae-9ed8-444b-be1d-af5bb172111b" name="デフォルト" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/vendor/bundler/ruby/2.3.0/bundler/gems/webpacker-dbe257eca022" afterPath="$PROJECT_DIR$/vendor/bundler/ruby/2.3.0/bundler/gems/webpacker-dbe257eca022" />
       <change beforePath="$PROJECT_DIR$/vendor/bundler/ruby/2.5.0/bundler/gems/webpacker-dbe257eca022" afterPath="$PROJECT_DIR$/vendor/bundler/ruby/2.5.0/bundler/gems/webpacker-dbe257eca022" />
     </list>
@@ -31,7 +30,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.42647058">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="_form_task_new.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_form_task_new.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/tasks/_form_task_new.html.slim">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="480">
@@ -64,8 +63,8 @@
           <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="186">
-                  <caret line="83" column="93" lean-forward="false" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="93" />
+                <state relative-caret-position="269">
+                  <caret line="90" column="25" lean-forward="false" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -101,11 +100,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="development.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="development.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="159">
-                  <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+                <state relative-caret-position="171">
+                  <caret line="55" column="37" lean-forward="false" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -816,12 +815,12 @@
       <workItem from="1529279815750" duration="17216000" />
       <workItem from="1529316187718" duration="38000" />
       <workItem from="1529316229444" duration="60893000" />
-      <workItem from="1529633405028" duration="149370000" />
+      <workItem from="1529633405028" duration="149613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1170944000" />
+    <option name="totallyTimeSpent" value="1171187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -1122,22 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="83" column="93" lean-forward="false" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/check_oko.json.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1216,6 +1199,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="75" column="15" lean-forward="false" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="90" column="25" lean-forward="false" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="55" column="37" lean-forward="false" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="37" />
           <folding />
         </state>
       </provider>
