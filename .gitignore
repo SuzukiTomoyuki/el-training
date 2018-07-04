@@ -20,6 +20,8 @@ tmp/pids/puma.state
 
 /config/application.yml
 
+/script/*
+
 /node_modules
 /yarn-error.log
 
