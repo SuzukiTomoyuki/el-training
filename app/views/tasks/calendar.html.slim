@@ -10,7 +10,7 @@ div.col-md-12 id="app"
     table.table id="calendar"
       thead
         tr
-          th v-for="week in weeks" {{week}}
+          th v-for="week in weekDays" {{week}}
       tbody
         tr v-for="week in calendar"
           td v-for="day in week" v-on:click="showTask(day.day)"

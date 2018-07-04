@@ -1,5 +1,5 @@
 current directory: /Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.3.0/gems/pg-1.0.0/ext
-/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -r ./siteconf20180625-20957-1e5glib.rb extconf.rb
+/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -r ./siteconf20180704-87565-1akguba.rb extconf.rb
 checking for pg_config... yes
 Using config values from /usr/local/bin/pg_config
 checking for libpq-fe.h... yes

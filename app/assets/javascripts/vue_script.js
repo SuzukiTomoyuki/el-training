@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', function(){
     new Vue({
         el: '#app',
         data: {
-            weeks: ['日', '月', '火', '水', '木', '金', '土'],
+            weekDays: ['日', '月', '火', '水', '木', '金', '土'],
             calData: {year: 0, month: 0},
             deadlineTasksDays: [],
             dayCounts: [],
@@ -121,6 +121,7 @@ $(document).on('turbolinks:load', function(){
                 face_update(1, text);
             }
         },
+        // methods の中でも良い？
         computed: {
             calendar: function () {
                 var firstDay = new Date(this.calData.year, this.calData.month - 1, 1).getDay();

@@ -9,7 +9,7 @@ class Admin::TasksController < ApplicationController
     @task = Task.new
     @user = current_user
     @group = Group.new
-    tasks(current_user.id, "my_tasks")
+    tasks_by_status(current_user.id, "my_tasks")
   end
 
   def index_group
@@ -18,7 +18,7 @@ class Admin::TasksController < ApplicationController
     @user = current_user
     @group = Group.new
     @group_tasks = Group.find(params[:group_id])
-    tasks(@group_tasks.tasks.ids, "group")
+    tasks_by_status(@group_tasks.tasks.ids, "group")
   end
 
 
@@ -74,22 +74,24 @@ class Admin::TasksController < ApplicationController
   end
 
   private
-  def tasks(task_ids, index_name)
+  # task_ids?, tasksを引数として渡す
+  def tasks_by_status(task_ids, index_name)
     if index_name == "my_tasks"
-      tasks = Task.all.where(user_id: task_ids).not_status_done
-      @task_status_done_count = Task.all.where(user_id: task_ids).status_done.size
+      # tasks決定が重複しているのはNG
+      tasks = Task.where(user_id: task_ids).not_status_done
+      @task_status_done_count = Task.where(user_id: task_ids).status_done.size
     else
-      tasks = Task.all.where(id: task_ids).not_status_done
-      @task_status_done_count = Task.all.where(id: task_ids).status_done.size
+      tasks = Task.where(id: task_ids).not_status_done
+      @task_status_done_count = Task.where(id: task_ids).status_done.size
     end
     time_now = Time.now - (Time.now.hour * 60 * 60 + Time.now.min * 60 + Time.now.sec)
     @task_blue_count = tasks.where("deadline > '#{time_now + 3.day}'").size
     @task_yellow_count = tasks.where(deadline: (time_now)..(3.days.since)).size
     @task_red_count = tasks.where("deadline < '#{time_now}'").size
     if index_name == "group"
-      tasks = Task.all.where(id: task_ids).order(sort_column + ' ' + sort_direction)
+      tasks = Task.where(id: task_ids).order(sort_column + ' ' + sort_direction)
     else
-      tasks = Task.all.where(charge_user_id: task_ids)
+      tasks = Task.where(charge_user_id: task_ids)
     end
     @tasks_to_do = tasks.status_to_do
     @tasks_doing = tasks.status_doing

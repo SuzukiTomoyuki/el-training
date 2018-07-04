@@ -12,10 +12,10 @@ class UsersController < ApplicationController
 
   def show
     @user = find_user_by_id
-    task = Task.all.where(user_id: session[:user_id])
-    @tasks_to_do = task.get_by_status 2
-    @tasks_doing = task.get_by_status 1
-    @tasks_done = task.get_by_status 0
+    task = Task.all.where(user_id: current_user.id)
+    @tasks_to_do = task.status_to_do
+    @tasks_doing = task.status_doing
+    @tasks_done = task.status_done
     @group = Group.new
     @groups = Group.all
   end

@@ -9,9 +9,8 @@ class Api::TasksController < ApplicationController
     from = Time.local(params[:calendar][:year], params[:calendar][:month])
     to   = from + 1.month
     group_tasks.each do |group_task|
-      tasks = group_task.tasks.where.not(status: "done")
+      tasks = group_task.tasks.not_status_done
       tasks.where(deadline: from...to).order(deadline: :desc).each do |task|
-        # pp task.charge_user.image_name
         user_image = "/assets/images/users"
         if task.charge_user.image_name == "default_user.png"
           user_image = "#{user_image}/#{task.charge_user.image_name}"

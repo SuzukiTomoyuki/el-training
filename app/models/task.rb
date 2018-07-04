@@ -33,6 +33,7 @@ class Task < ApplicationRecord
     where(status: status)
   }
 
+  # enum の gem　がある
   scope :status_to_do, -> {
     where(status: 2)
   }
