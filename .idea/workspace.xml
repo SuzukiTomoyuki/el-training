@@ -8,12 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3a6ce2ae-9ed8-444b-be1d-af5bb172111b" name="デフォルト" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/groups_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/groups_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/group.rb" afterPath="$PROJECT_DIR$/app/models/group.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/tasks/calendar.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/tasks/calendar.html.slim" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_form_group_new.html.slim" afterPath="$PROJECT_DIR$/app/views/layouts/_form_group_new.html.slim" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/tasks.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/tasks.scss" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/_navbar_my_name.html.slim" afterPath="$PROJECT_DIR$/app/views/layouts/_navbar_my_name.html.slim" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/_navbar_title.html.slim" afterPath="$PROJECT_DIR$/app/views/layouts/_navbar_title.html.slim" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/admin_tasks.html.slim" afterPath="$PROJECT_DIR$/app/views/layouts/admin_tasks.html.slim" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/admin_users.html.slim" afterPath="$PROJECT_DIR$/app/views/layouts/admin_users.html.slim" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/tasks.html.slim" afterPath="$PROJECT_DIR$/app/views/layouts/tasks.html.slim" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/users.html.slim" afterPath="$PROJECT_DIR$/app/views/layouts/users.html.slim" />
       <change beforePath="$PROJECT_DIR$/vendor/bundler/ruby/2.3.0/bundler/gems/webpacker-dbe257eca022" afterPath="$PROJECT_DIR$/vendor/bundler/ruby/2.3.0/bundler/gems/webpacker-dbe257eca022" />
       <change beforePath="$PROJECT_DIR$/vendor/bundler/ruby/2.5.0/bundler/gems/webpacker-dbe257eca022" afterPath="$PROJECT_DIR$/vendor/bundler/ruby/2.5.0/bundler/gems/webpacker-dbe257eca022" />
     </list>
@@ -37,22 +39,44 @@
     <splitter split-orientation="horizontal" split-proportion="0.42647058">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+          <file leaf-file-name="_navbar_title.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar_title.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+                <state relative-caret-position="165">
+                  <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_navbar_title.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar_title.html.slim">
+          <file leaf-file-name="users.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/users.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="59" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="jp.yml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/locales/jp.yml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="27">
+                  <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tasks.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/tasks.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#399#427#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -62,26 +86,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="225">
                   <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="application.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-10">
-                  <caret line="69" column="12" lean-forward="false" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="relationship_mailer.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/mailers/relationship_mailer.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
                   <folding />
                 </state>
               </provider>
@@ -97,11 +101,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="calendar.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="calendar.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/calendar.html.slim">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="705">
-                  <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+                  <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -110,18 +114,18 @@
           <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="80" column="20" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+                <state relative-caret-position="56">
+                  <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_navbar_my_name.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar_my_name.html.slim">
+          <file leaf-file-name="tasks.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tasks.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+                <state relative-caret-position="916">
+                  <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -131,21 +135,55 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <file leaf-file-name="admin_tasks.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/admin_tasks.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+                <state relative-caret-position="210">
+                  <caret line="14" column="74" lean-forward="false" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+                  <folding>
+                    <element signature="e#479#507#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_navbar_my_name.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar_my_name.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="calendar.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="application.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="470">
+                  <caret line="138" column="16" lean-forward="false" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin_users.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/admin_users.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="47" />
+                  <folding>
+                    <element signature="e#394#423#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="calendar.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/tasks/calendar.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="117">
-                  <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="36" />
+                <state relative-caret-position="-3">
+                  <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -181,16 +219,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/admin/users_controller.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-164">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="tasks_controller.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/api/tasks_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
@@ -211,16 +239,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tasks_controller.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/admin/tasks_controller.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="299">
-                  <caret line="81" column="78" lean-forward="false" selection-start-line="81" selection-start-column="78" selection-end-line="81" selection-end-column="78" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-second>
     </splitter>
@@ -234,7 +252,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ser</find>
       <find>sea</find>
       <find>rotation</find>
       <find>rotation2</find>
@@ -264,6 +281,7 @@
       <find>google</find>
       <find>searchable</find>
       <find>errors</find>
+      <find>navbar-nav</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/spec/support</dir>
@@ -280,12 +298,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/login.js" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/login.scss" />
-        <option value="$PROJECT_DIR$/app/views/sessions/new.html.slim" />
-        <option value="$PROJECT_DIR$/db/migrate/20180628093345_add_column_oko_for_user.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/ayame.js" />
-        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/ayame_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/check_oko.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/enchant_ayame.js" />
@@ -321,16 +333,22 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/config/initializers/carrierwave.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/app/mailers/relationship_mailer.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/tasks_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/relationship_mailer/oko_notification.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_navbar_my_name.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_navbar_title.html.slim" />
         <option value="$PROJECT_DIR$/app/views/layouts/_form_group_new.html.slim" />
         <option value="$PROJECT_DIR$/app/controllers/groups_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/group.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/tasks/calendar.html.slim" />
+        <option value="$PROJECT_DIR$/config/locales/jp.yml" />
+        <option value="$PROJECT_DIR$/app/views/layouts/users.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/layouts/admin_users.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/layouts/admin_tasks.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/layouts/tasks.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_navbar_title.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/tasks.scss" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_navbar_my_name.html.slim" />
       </list>
     </option>
   </component>
@@ -352,7 +370,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1400" />
-    <option name="y" value="67" />
+    <option name="y" value="196" />
     <option name="width" value="1440" />
     <option name="height" value="807" />
   </component>
@@ -520,6 +538,12 @@
             <path>
               <item name="el-training" type="b2602c69:ProjectViewProjectNode" />
               <item name="el-training" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="el-training" type="b2602c69:ProjectViewProjectNode" />
+              <item name="el-training" type="462c0819:PsiDirectoryNode" />
               <item name="script" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -555,7 +579,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="ToolWindow実行.ShowToolbar" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="coffee&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/group.coffee&#10;gemfi&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;ca&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/tasks/calendar.html.slim&#10;task_cont&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/admin/tasks_controller.rb&#10;rout&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;gem&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;route&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;user&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/users_controller.rb&#10;tas&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/api/tasks_controller.rb&#10;a&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/application.yml&#10;mailer&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/mailers/relationship_mailer.rb&#10;bu&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/api/tasks/calendar.json.jbuilder&#10;routes&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;usersc&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/users_controller.rb&#10;task&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/task.rb&#10;puma&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/puma.rb&#10;grouptas&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group_task.rb&#10;rou&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;tasm&#9;null&#9;null&#10;deplo&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/deploy.rb&#10;capfile&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.3.0/gems/capistrano-3.0.1/lib/Capfile&#10;sche&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/schema.rb&#10;app&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/stylesheets/application.scss&#10;group&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group_task.rb&#10;mkmf&#9;FILE&#9;file:///System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/2.3.0/mkmf.rb&#10;s&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/schema.rb&#10;users_co&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/users_controller.rb&#10;users&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/group_users_controller.rb&#10;data&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/database.yml&#10;ge&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;database&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/database.yml&#10;scss&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/stylesheets/tasks.scss&#10;index&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/admin/users/index.html.slim&#10;tasks_c&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/tasks_controller.rb&#10;appli&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/application.js&#10;table&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/tasks/_table_tasks_body.html.slim&#10;applica&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/application.js&#10;nav&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/layouts/_navbar_title.html.slim&#10;ta&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/admin/tasks/_table_tasks_body.html.slim&#10;coff&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/group.coffee&#10;sc&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/schema.rb&#10;20180531054355&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/migrate/20180531054355_create_group_tasks.rb&#10;resou&#9;null&#9;null&#10;show&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/users/show.html.slim&#10;new&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/groups/new.html.slim&#10;coffe&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/group.coffee&#10;group_tas&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group_task.rb&#10;grou&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group.rb&#10;helper&#9;null&#9;null&#10;inde&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/tasks/index.html.slim" />
+    <property name="SearchEverywhereHistoryKey" value="jp&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/locales/jp.yml&#10;coffee&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/group.coffee&#10;gemfi&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;ca&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/tasks/calendar.html.slim&#10;task_cont&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/admin/tasks_controller.rb&#10;rout&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;gem&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;route&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;user&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/users_controller.rb&#10;tas&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/api/tasks_controller.rb&#10;a&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/application.yml&#10;mailer&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/mailers/relationship_mailer.rb&#10;bu&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/api/tasks/calendar.json.jbuilder&#10;routes&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;usersc&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/users_controller.rb&#10;task&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/task.rb&#10;puma&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/puma.rb&#10;grouptas&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group_task.rb&#10;rou&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/routes.rb&#10;tasm&#9;null&#9;null&#10;deplo&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/deploy.rb&#10;capfile&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/vendor/bundler/ruby/2.3.0/gems/capistrano-3.0.1/lib/Capfile&#10;sche&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/schema.rb&#10;app&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/stylesheets/application.scss&#10;group&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group_task.rb&#10;mkmf&#9;FILE&#9;file:///System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/2.3.0/mkmf.rb&#10;s&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/schema.rb&#10;users_co&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/users_controller.rb&#10;users&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/group_users_controller.rb&#10;data&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/database.yml&#10;ge&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/Gemfile&#10;database&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/config/database.yml&#10;scss&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/stylesheets/tasks.scss&#10;index&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/admin/users/index.html.slim&#10;tasks_c&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/controllers/tasks_controller.rb&#10;appli&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/application.js&#10;table&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/tasks/_table_tasks_body.html.slim&#10;applica&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/application.js&#10;nav&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/layouts/_navbar_title.html.slim&#10;ta&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/admin/tasks/_table_tasks_body.html.slim&#10;coff&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/group.coffee&#10;sc&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/schema.rb&#10;20180531054355&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/db/migrate/20180531054355_create_group_tasks.rb&#10;resou&#9;null&#9;null&#10;show&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/users/show.html.slim&#10;new&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/views/groups/new.html.slim&#10;coffe&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/assets/javascripts/group.coffee&#10;group_tas&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group_task.rb&#10;grou&#9;FILE&#9;file:///Users/suzukitoshiyuki/dev/rails/el-training/el-training/app/models/group.rb&#10;helper&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -756,22 +780,23 @@
       <workItem from="1529316187718" duration="38000" />
       <workItem from="1529316229444" duration="60893000" />
       <workItem from="1529633405028" duration="156283000" />
-      <workItem from="1530674121987" duration="43000000" />
+      <workItem from="1530674121987" duration="48960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1220857000" />
+    <option name="totallyTimeSpent" value="1226817000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="1441" y="23" width="1920" height="1057" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2909461" sideWeight="0.5296875" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30416667" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2909461" sideWeight="0.4703125" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2909461" sideWeight="0.4703125" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -804,54 +829,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="69" lean-forward="false" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environment.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/application_controller_renderer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ayame_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1073,14 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tasks.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <caret line="256" column="13" lean-forward="false" selection-start-line="256" selection-start-column="13" selection-end-line="256" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/tasks_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1113,42 +1082,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar_title.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="59" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="69" column="12" lean-forward="false" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/mailers/relationship_mailer.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar_my_name.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="80" column="20" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1169,14 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/group.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/groups_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -1193,18 +1122,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/calendar.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/calendar.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="705">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/tasks/calendar.html.slim">
+    <entry file="file://$PROJECT_DIR$/config/locales/jp.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="27">
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/group.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/login.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/calendar.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/admin_users.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="47" />
+          <folding>
+            <element signature="e#394#423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="138" column="16" lean-forward="false" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/tasks.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#399#427#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/users.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/admin_tasks.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="74" lean-forward="false" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+          <folding>
+            <element signature="e#479#507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tasks.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="916">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar_title.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar_my_name.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="28" />
           <folding />
         </state>
       </provider>

@@ -3,20 +3,16 @@ html
   head
     = render 'layouts/header'
   body.background_color
-    nav class="navbar header_color_admin"
+    nav class="navbar header_color_admin navbar-default"
       div.container
         = render partial: 'layouts/navbar_title'
         div class="collapse navbar-collapse" id="navbarIndex"
           = render partial: 'layouts/navbar_my_name'
-          ul class="nav navbar-nav"
+          ul class="nav nav-justified customNav"
             li = link_to t("description.index_groups"), admin_groups_path
-          ul class="nav navbar-nav"
             li = link_to t("description.index_users"), admin_users_path
-          ul class="nav navbar-nav"
             li = link_to t("description.index_labels"), admin_labels_path
-          ul class="nav navbar-nav"
             li = link_to t("description.index_tasks"), admin_my_tasks_path
-          ul class="nav navbar-nav"
             li = link_to "カレンダー", admin_calendar_path
 
     = render 'layouts/taster'

@@ -2,9 +2,9 @@ ul class="nav navbar-nav navbar-right"
   li
     a data-toggle="dropdown"
       - if @user.image_name == "default_user.png"
-        img.user_icon width="30px" src = "/assets/images/users/#{@user.image_name}"
+        img.user_icon4 height="25px" src = "/assets/images/users/#{@user.image_name}"
       - else
-        img.user_icon width="30px" src = "/assets/images/users/#{@user.id}/#{@user.image_name}"
+        img.user_icon4 height="25px" src = "/assets/images/users/#{@user.id}/#{@user.image_name}"
       |  ▽
     span class="create"
     ul.dropdown-menu role="menu"
