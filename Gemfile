@@ -68,7 +68,8 @@ gem 'data-confirm-modal'
 gem 'bcrypt', '~> 3.1.7'
 
 # 画像アップロード
-# gem 'carrierwave'
+gem 'carrierwave'
+gem 'fog'
 
 # erbをスリムに変換
 gem 'html2slim'
@@ -83,8 +84,13 @@ gem 'debase'
 gem 'figaro'
 
 # google drive
-# gem 'google-api-client', '0.11'
 gem 'google_drive'
+#dropbox
+gem 'dropbox-sdk'
+gem 'omniauth-dropbox-oauth2'
+gem 'dotenv-rails'
+gem 'dropbox_api'
+gem 'dropbox-sdk-v2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
