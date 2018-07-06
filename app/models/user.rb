@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  # mount_uploader :image_name, PictureUploader
   attr_accessor :image
+  # mount_uploader :image, UserIconUploader
   has_many :tasks, dependent: :destroy
   has_many :group_users, dependent: :destroy
   has_many :groups, through: :group_users

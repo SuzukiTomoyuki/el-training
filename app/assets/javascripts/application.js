@@ -16,6 +16,7 @@
 //= require select2
 // require_tree .
 // Bootstrap Sass
+//= require group
 //= require bootstrap-sprockets
 //= require toastr
 // = require data-confirm-modal

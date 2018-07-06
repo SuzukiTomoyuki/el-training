@@ -94,3 +94,15 @@ body{
   font-family: 'Magic';
   font-size: 200%;
 }
+
+.dropdown-menu {
+  background-image: url("/assets/images/system/mokume.png");
+  text-shadow: 2px 1px 0 #f7ecb5;
+}
+
+.dropdown-menu.left {
+  left:0;
+  right:80%;
+  &::before {right:auto !important; left:9px;}
+  &::after {right:auto !important; left:10px;}
+}

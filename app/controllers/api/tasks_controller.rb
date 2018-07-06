@@ -24,12 +24,12 @@ class Api::TasksController < ApplicationController
   end
 
   def mail
-    user = current_user
-    sender = User.find(params[:mail][:user_id])
-    sender.oko = true
-    sender.save
+    from_user = current_user
+    to_user = User.find(params[:mail][:user_id])
+    to_user.oko = true
+    to_user.save
     task = Task.find(params[:mail][:task_id])
-    RelationshipMailer.oko_notification(user, sender, task).deliver
+    RelationshipMailer.oko_notification(from_user, to_user, task).deliver
   end
 
   def show
