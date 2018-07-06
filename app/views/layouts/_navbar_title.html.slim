@@ -9,6 +9,7 @@ div.navbar-header
           li.text-center = link_to group.name, admin_group_tasks_path(group.id)
         - else
           li.text-center = link_to group.name, group_tasks_path(group.id)
+      li.divider
       li.text-center
         div id="new_group" data-toggle="modal" data-target="#new_group_modal"
           label グループを作成

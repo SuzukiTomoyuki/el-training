@@ -13,4 +13,5 @@ ul class="nav navbar-nav navbar-right"
         li = link_to t("description.common"), root_path
       - if @user.id != nil
         li = link_to "プロフィール", edit_user_path(@user.id)
+      li.nav-divider
       li = link_to t("description.logout"), sessions_destroy_path
