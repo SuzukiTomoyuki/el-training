@@ -19,7 +19,6 @@
 // Bootstrap Sass
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// toastr
 @import "toastr";
 
 @for $i from 0 through 30 {
@@ -106,6 +105,13 @@ body{
   &::before {right:auto !important; left:9px;}
   &::after {right:auto !important; left:10px;}
 }
+.dropdown-menu.right {
+  left:80%;
+  right:0;
+  &::before {right:auto !important; left:9px;}
+  &::after {right:auto !important; left:10px;}
+}
+
 
 .customNav > .active > a, .customNav > .active > a:hover, .customNav > .active > a:focus {
   background-color: #ddd;
@@ -136,7 +142,16 @@ body{
 }
 
 .navbar-nav {
-  padding-top: 5px;
+  //padding-top: 5px;
+  ////padding-bottom: 5px;
+  //margin-bottom: 0;
+  //font-weight: bold;
+  //text-align: center;
+  //background-repeat: repeat-x;
+}
+
+.title-nav {
+  padding-top: 8px;
   padding-bottom: 5px;
   margin-bottom: 0;
   font-weight: bold;

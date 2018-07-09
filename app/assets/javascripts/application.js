@@ -54,7 +54,7 @@ $(document).on('turbolinks:load', function(){
                 toastr.error(messages[i]);
             }
         })
-    })
+    });
 
     $('.data-submit-group').on('click', function(){
         // var $form = $(this).parent('.modal-body').children('.data-from');
@@ -81,7 +81,7 @@ $(document).on('turbolinks:load', function(){
                 toastr.error(messages[i]);
             }
         })
-    })
+    });
 
     $('.data-submit-group-delete').on('click', function(){
         // var $form = $(this).parent('.modal-body').children('.data-from');
@@ -218,6 +218,11 @@ $(document).on('turbolinks:load', function(){
             initShowSelectUserIcon($(this).attr('class').split(" "));
         });
     }
+
+    // $(".customNav").on('click', 'li', function () {
+    //    $(".customNav li.active").removeClass("bar");
+    //    $(this).addClass("bar")
+    // });
 });
 
 $(document).on('turbolinks:load', function(){
